@@ -24,11 +24,15 @@ This atlas writes out everything Y56 carries: all 56 lines in exact coordinates 
 
 The equation ($e = \sqrt2$):
 
-$$F = 3e\,z_0^2 z_1 z_2 + 3e\,z_1 z_2 z_3^2 - e\,z_1^3 z_2 - e\,z_1 z_2^3 + 4 z_0^3 z_3 - 4 z_0 z_3^3,$$
+```math
+F = 3e\,z_0^2 z_1 z_2 + 3e\,z_1 z_2 z_3^2 - e\,z_1^3 z_2 - e\,z_1 z_2^3 + 4 z_0^3 z_3 - 4 z_0 z_3^3,
+```
 
 and the pencil, with $w = z_0 + i z_3$ and $p = z_1 + i z_2$:
 
-$$G_s = \operatorname{Im}(w^4) + \operatorname{Im}(p^2)\,\bigl(s\lvert w\rvert^2 - \lvert p\rvert^2\bigr), \qquad \text{Y56 is } s^4 = 81/2 \text{ (after rescaling } z_1, z_2 \text{ by } 2^{1/8}).$$
+```math
+G_s = \mathrm{Im}(w^4) + \mathrm{Im}(p^2)\,\bigl(s\lvert w\rvert^2 - \lvert p\rvert^2\bigr), \qquad \text{Y56 is } s^4 = 81/2 \text{ (after rescaling } z_1, z_2 \text{ by } 2^{1/8}).
+```
 
 ## Scorecard
 

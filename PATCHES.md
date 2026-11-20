@@ -194,3 +194,12 @@ Copied from the referee's folder; sanitised as below. `ref_shape.out` was regene
 Also not shipped from the working folder: everything not named in FILELIST.md (earlier renders, numeric intermediates and pickles, working notes, the clean-room and staging tool folders). The atlas paper draft `atlas/PAPER.md` is shipped only in its edited form, `PAPER.md`.
 
 Written with AI assistance.
+
+## After release: GitHub math rendering (main branch, after v1.0)
+
+GitHub's math renderer rejects `\operatorname`, and its Markdown pass strips the backslash from `\,`, `\{` and similar inside `$$...$$` and some `$...$` spans. The mathematics and wording are unchanged; only the math markup changed, in 8 Markdown files (README.md, PAPER.md, CORRECTIONS.md, checks/README.md, checks/atlas-referee/REFEREE-ATLAS.md, family/README.md, lean/README.md, media/CAPTIONS.md):
+- `\operatorname{X}` became `\mathrm{X}` (40 places);
+- each one-line display `$$...$$` became a fenced `math` block (9 places);
+- each inline `$...$` holding a backslash before punctuation became `` $`...`$ `` (17 places).
+
+MANIFEST.sha256 was refreshed for these files. The Zenodo v1.0 archive keeps the original markup.

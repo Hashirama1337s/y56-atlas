@@ -39,15 +39,19 @@ What is not ours: the surface, the count 56 and its maximality and uniqueness, t
 
 With $e = \sqrt2$, Y56 is the surface $F = 0$ in $\mathbb{P}^3$, where
 
-$$F = 3e\,z_0^2 z_1 z_2 + 3e\,z_1 z_2 z_3^2 - e\,z_1^3 z_2 - e\,z_1 z_2^3 + 4 z_0^3 z_3 - 4 z_0 z_3^3 .$$
+```math
+F = 3e\,z_0^2 z_1 z_2 + 3e\,z_1 z_2 z_3^2 - e\,z_1^3 z_2 - e\,z_1 z_2^3 + 4 z_0^3 z_3 - 4 z_0 z_3^3 .
+```
 
 This is DIS equation (9.4) with $\varepsilon = \sqrt2$ [DIS, section 9.2]. (Provenance note: we read the equation from a page image of that equation.)
 
 **The eight-fold form (EXACT, sympy identity).** Put $w = z_0 + i z_3$ and $p = z_1 + i z_2$. Then
 
-$$F = \operatorname{Im}(w^4) + \tfrac{1}{\sqrt2}\,\operatorname{Im}(p^2)\,\bigl(3|w|^2 - |p|^2\bigr).$$
+```math
+F = \mathrm{Im}(w^4) + \tfrac{1}{\sqrt2}\,\mathrm{Im}(p^2)\,\bigl(3|w|^2 - |p|^2\bigr).
+```
 
-In this form the screw $(w,p) \mapsto (e^{i\pi/4} w,\; i p)$ visibly sends $F$ to $-F$; it is one of the 32 symmetries (the element $g_{04}$, of order 8). The quarter-turn $w \mapsto i w$ alone is also a symmetry. We checked this form only as an identity; we did not run a prior-art search for it, so we claim only that we checked it. The form and the screw are LEAN-CHECKED (`eightfold`, `screw`, `screw_coord`).
+In this form the screw $`(w,p) \mapsto (e^{i\pi/4} w,\; i p)`$ visibly sends $F$ to $-F$; it is one of the 32 symmetries (the element $g_{04}$, of order 8). The quarter-turn $w \mapsto i w$ alone is also a symmetry. We checked this form only as an identity; we did not run a prior-art search for it, so we claim only that we checked it. The form and the screw are LEAN-CHECKED (`eightfold`, `screw`, `screw_coord`).
 
 **Smoothness (EXACT, Singular).** The ideal $J$ of the four partial derivatives of $F$ over $\mathbb{Q}(\sqrt2)$ has an affine cone of dimension 0 and quotient dimension $\dim R/J = 81 = 3^4$; each $z_i^9$ lies in $J$, and $F \in J$ by Euler's identity. So $\nabla F$ has no projective zero and Y56 is smooth over $\mathbb{C}$. Hence Y56 is a K3 surface, every line on it is a rigid $(-2)$-curve, and its Fano scheme of lines is finite.
 
@@ -61,7 +65,7 @@ In this form the screw $(w,p) \mapsto (e^{i\pi/4} w,\; i p)$ visibly sends $F$ t
 
 *Lower bound (EXACT).* Appendix A lists 56 lines, each as the span of two points with coordinates in $\mathbb{Q}(\sqrt2)$. Substituting $z = tA + B$ into $F$ gives the zero polynomial for each of them, and their Plücker coordinates are pairwise non-proportional, so they are 56 distinct lines (`verify_all.py` checks 1a, 1b; LEAN-CHECKED: `lines_on_F`, `lines_distinct`, `lines_genuine`). The coordinates were first guessed by PSLQ on 65-digit numerics and then proved by this substitution.
 
-*Upper bound, first program (EXACT, Singular).* After a rational change of coordinates $z = Tw$ chosen so that no known line has vanishing Plücker coordinate $p_{01}$, a line in the chart $\{0,1\}$ of $G(2,4)$ is spanned by $(1,0,a,b)$ and $(0,1,c,d)$, and the five coefficients of $F(T(m\,p + q))$ give five equations in $a,b,c,d$ over $\mathbb{Q}(\sqrt2)$. Their Gröbner basis is zero-dimensional of length (vdim) 56. In each of the other five charts the equations together with $p_{01} = 0$ generate the unit ideal, so no line lies outside the first chart. The 56 known lines are 56 distinct solutions. Length 56 equals the number of distinct solutions, so every solution is simple and there are exactly 56.
+*Upper bound, first program (EXACT, Singular).* After a rational change of coordinates $z = Tw$ chosen so that no known line has vanishing Plücker coordinate $p_{01}$, a line in the chart $`\{0,1\}`$ of $G(2,4)$ is spanned by $(1,0,a,b)$ and $(0,1,c,d)$, and the five coefficients of $`F(T(m\,p + q))`$ give five equations in $a,b,c,d$ over $\mathbb{Q}(\sqrt2)$. Their Gröbner basis is zero-dimensional of length (vdim) 56. In each of the other five charts the equations together with $p_{01} = 0$ generate the unit ideal, so no line lies outside the first chart. The 56 known lines are 56 distinct solutions. Length 56 equals the number of distinct solutions, so every solution is simple and there are exactly 56.
 
 *Upper bound, second program (cross-check; msolve, Monte Carlo mode).* With an independent coordinate change (determinant $-46$), $\sqrt2$ handled by a variable $s$ with $s^2 = 2$, and the coefficients extracted homogeneously, msolve finds an ideal of degree $112 = 2 \times 56$ with 112 distinct solutions, all real; 56 have $s > 0$ (the lines of Y56) and 56 have $s < 0$ (the lines of the Galois-conjugate surface). The other five charts again give the unit ideal. msolve ran in its default Monte Carlo mode (correct with high probability, not formally certified); its solutions were not matched one by one with our list.
 
@@ -69,7 +73,7 @@ Credit: the count 56 is DIS's (section 9.2 with Theorem 1.1, Corollary 1.3; CITE
 
 **The incidence graph (EXACT).** Two lines meet exactly when the $4 \times 4$ determinant of their four spanning vectors vanishes. Over $\mathbb{Q}(\sqrt2)$ this gives 448 meeting pairs, and every line meets exactly 16 others: the graph is 16-regular (checks 2a, 2b; LEAN-CHECKED: `meets_iff_edge`, `edge_counts`). DIS give the incidence types (4,4) for 32 lines and (3,7) for 24 lines (Lemma 6.14; CITED); we use them only to colour pictures.
 
-**The eight anchor lines.** The 8-orbit of the symmetry group (Section 5) is $\{L02, L14, L22, L24, L27, L30, L43, L53\}$. Reading their coordinates in Appendix A, each lies in one of the planes $z_1 = 0$ or $z_2 = 0$, where $F = 4 z_0 z_3 (z_0^2 - z_3^2)$ splits into four lines through one point. These 8 lines lie on every member of the pencil of Section 7.
+**The eight anchor lines.** The 8-orbit of the symmetry group (Section 5) is $`\{L02, L14, L22, L24, L27, L30, L43, L53\}`$. Reading their coordinates in Appendix A, each lies in one of the planes $z_1 = 0$ or $z_2 = 0$, where $F = 4 z_0 z_3 (z_0^2 - z_3^2)$ splits into four lines through one point. These 8 lines lie on every member of the pencil of Section 7.
 
 **Figure 1.** `core/media/y56_chart3_b.png`. *The surface (blue sheet) with all 56 lines drawn on it. Pink are the 32 lines of incidence type (4,4), green the 24 of type (3,7). Every line shown lies entirely on the curved sheet, and several lines pass through single points.*
 
@@ -93,11 +97,11 @@ Representatives of the three orbits of line-free planes ($n \cdot z = 0$):
 
 - A (orbit of 8): $n = (\sqrt2 - 1 : \tfrac{3-\sqrt2}{7} : \tfrac{3-\sqrt2}{7} : 1)$
 - B (orbit of 8): $n = (1 : \tfrac{2\sqrt2-1}{7} : \tfrac{1-2\sqrt2}{7} : 1-\sqrt2)$
-- C (orbit of 4): the plane $4 z_2 + \sqrt2\,z_1 = 0$.
+- C (orbit of 4): the plane $`4 z_2 + \sqrt2\,z_1 = 0`$.
 
 The counts 636 and 20 are Degtyarev's [D1, Remark 7.4; CITED]; our completeness argument does not use them.
 
-*Proof of completeness (EXACT lattice computation, one CITED input; the conic-class criterion is ARGUED as standard).* Let $N$ be the $\mathbb{Z}$-span of the 56 line classes and the hyperplane class $h$. Exactly, $N$ has rank 20 and $|\operatorname{disc} N| = 64$; $h$ lies in the span of the lines with integer coordinates and $h^2 = 4$ (the Gram data are LEAN-CHECKED: `det_GB`, `rows_in_span`, `hyperplane_class`; the self-intersection $-2$ of a line is cited). Veniani's Table 1 gives $T = [2,0,32]$ for Y56 [V2; CITED], so $|\operatorname{disc} \mathrm{NS}(Y56)| = \det T = 64$. A sublattice of index $k$ has discriminant $k^2$ times larger, so $k = 1$ and $N = \mathrm{NS}(Y56)$. On a K3 quartic the class of a conic is a vector $c$ with $c \cdot h = 2$ and $c^2 = -2$; it is irreducible exactly when it is not the sum of two meeting lines, and an irreducible conic is rigid, so it is the only curve in its class. Enumerating $N$ (PARI `qfminim`, exact integers) gives 636 such classes: 448 sums of two meeting lines and 188 others. Since we exhibit 188 distinct irreducible conics, they are all of them. Exactly 20 unordered pairs $\{c, h-c\}$ have both members irreducible, which are our 20 planes.
+*Proof of completeness (EXACT lattice computation, one CITED input; the conic-class criterion is ARGUED as standard).* Let $N$ be the $\mathbb{Z}$-span of the 56 line classes and the hyperplane class $h$. Exactly, $N$ has rank 20 and $|\mathrm{disc} N| = 64$; $h$ lies in the span of the lines with integer coordinates and $h^2 = 4$ (the Gram data are LEAN-CHECKED: `det_GB`, `rows_in_span`, `hyperplane_class`; the self-intersection $-2$ of a line is cited). Veniani's Table 1 gives $T = [2,0,32]$ for Y56 [V2; CITED], so $|\mathrm{disc} \mathrm{NS}(Y56)| = \det T = 64$. A sublattice of index $k$ has discriminant $k^2$ times larger, so $k = 1$ and $N = \mathrm{NS}(Y56)$. On a K3 quartic the class of a conic is a vector $c$ with $c \cdot h = 2$ and $c^2 = -2$; it is irreducible exactly when it is not the sum of two meeting lines, and an irreducible conic is rigid, so it is the only curve in its class. Enumerating $N$ (PARI `qfminim`, exact integers) gives 636 such classes: 448 sums of two meeting lines and 188 others. Since we exhibit 188 distinct irreducible conics, they are all of them. Exactly 20 unordered pairs $`\{c, h-c\}`$ have both members irreducible, which are our 20 planes.
 
 Without the cited determinant, $\mathrm{NS}$ could be one of three index-2 overlattices of $N$ (the discriminant group has order 64 and exactly 3 nonzero isotropic classes); each would add no new lines but many new degree-2 classes, 4828 over the three (EXACT). The citation excludes them.
 
@@ -115,11 +119,11 @@ Without the cited determinant, $\mathrm{NS}$ could be one of three index-2 overl
 
 **Theorem 5.1.**
 
-1. (EXACT; order CITED; the 32 maps, their action on the lines and the group table LEAN-CHECKED: `sym_g00` to `sym_g31`, `maps_lines`, `group_facts`, `group_closed`, `matrices_compose`) There are exactly 32 real projective maps $M$ with $F(Mz) = cF(z)$, $c \in \{1,-1,4,-4\}$, all with entries in $\mathbb{Q}(\sqrt2)$; they act faithfully on the 56 lines. DIS prove that $\operatorname{Aut}(Y56)$ has order 32 and that all automorphisms are real (Proposition 9.9, Remark 9.10); Veniani lists the same order.
-2. (EXACT, GAP IdGroup; trusted software) The group is SmallGroup(32,43) $= C_8 \rtimes (C_2 \times C_2)$, the holomorph $\mathrm{Hol}(C_8) = C_8 \rtimes \operatorname{Aut}(C_8)$. Element orders: 1 (×1), 2 (×15), 4 (×8), 8 (×8) (LEAN-CHECKED: `order_counts`); centre $C_2$; derived subgroup $C_4$; 11 conjugacy classes. We identified this name; we did not search the literature for it.
+1. (EXACT; order CITED; the 32 maps, their action on the lines and the group table LEAN-CHECKED: `sym_g00` to `sym_g31`, `maps_lines`, `group_facts`, `group_closed`, `matrices_compose`) There are exactly 32 real projective maps $M$ with $F(Mz) = cF(z)$, $`c \in \{1,-1,4,-4\}`$, all with entries in $\mathbb{Q}(\sqrt2)$; they act faithfully on the 56 lines. DIS prove that $\mathrm{Aut}(Y56)$ has order 32 and that all automorphisms are real (Proposition 9.9, Remark 9.10); Veniani lists the same order.
+2. (EXACT, GAP IdGroup; trusted software) The group is SmallGroup(32,43) $= C_8 \rtimes (C_2 \times C_2)$, the holomorph $\mathrm{Hol}(C_8) = C_8 \rtimes \mathrm{Aut}(C_8)$. Element orders: 1 (×1), 2 (×15), 4 (×8), 8 (×8) (LEAN-CHECKED: `order_counts`); centre $C_2$; derived subgroup $C_4$; 11 conjugacy classes. We identified this name; we did not search the literature for it.
 3. (EXACT; line orbits also LEAN-CHECKED: `orbit_sizes`) Orbits: on the 56 lines $8 + 16 + 16 + 16$; on the 148 two-line planes $32, 16 \times 6, 8, 8, 4$; on the 50 four-line planes $16, 16, 16, 2$; on the 20 conic-pair planes $8, 8, 4$ (checks 3d, 7a to 7c). We name the line orbits by their role in Section 7: the **8-orbit** (the anchor lines), the orbit **S** of L00 (the 16 lines that exist only at Y56), and the orbits **A** of L01 and **B** of L03. Appendix A tags every line.
 4. (EXACT; count also CITED) The intersection graph of the 56 lines has exactly 64 automorphisms. The count is from a full enumeration with networkx, confirmed by a second algorithm (igraph/bliss, the same 64 as a set; `family/faces/a_aut.py`); Veniani's Table 1 gives the same number [V2, column $|O_h|$]. For each of the 64, the linear conditions for a projective map realising it (224 equations in 16 unknowns over $\mathbb{Q}(\sqrt2)$) were solved exactly: 32 have a one-dimensional solution space and 32 have none.
-5. (EXACT) **The Galois twist.** Let $\mathrm{Gal}: \sqrt2 \mapsto -\sqrt2$ and $R(z_0,z_1,z_2,z_3) = (z_0, -z_2, z_1, z_3)$, that is $p \mapsto ip$. Then $F(Ry) = F^{\mathrm{Gal}}(y)$ identically (LEAN-CHECKED: `galois_twist`), so $\tau = R \circ \mathrm{Gal}$ maps Y56 to itself semilinearly. $\tau$ permutes the 56 lines, it is a graph automorphism that no projective map realises, and $\tau$ times the 32 realised permutations is exactly the other 32. Hence $\operatorname{Aut}(\text{line graph}) = \operatorname{Aut}(Y56) \cup \tau\operatorname{Aut}(Y56)$, of order 64, with $\operatorname{Aut}(Y56)$ of index 2 ($\tau$ has order 4 on the lines and $\tau^2 \in \operatorname{Aut}(Y56)$; the extension splits, since the coset holds 16 involutions): every combinatorial symmetry of the 56 lines comes from a symmetry of the surface over $\mathbb{Q}(\sqrt2)$, semilinear for the extra 32. The unrealised coset has 16 elements of order 2, 8 of order 4 and 8 of order 8.
+5. (EXACT) **The Galois twist.** Let $\mathrm{Gal}: \sqrt2 \mapsto -\sqrt2$ and $R(z_0,z_1,z_2,z_3) = (z_0, -z_2, z_1, z_3)$, that is $p \mapsto ip$. Then $F(Ry) = F^{\mathrm{Gal}}(y)$ identically (LEAN-CHECKED: `galois_twist`), so $\tau = R \circ \mathrm{Gal}$ maps Y56 to itself semilinearly. $\tau$ permutes the 56 lines, it is a graph automorphism that no projective map realises, and $\tau$ times the 32 realised permutations is exactly the other 32. Hence $\mathrm{Aut}(\text{line graph}) = \mathrm{Aut}(Y56) \cup \tau\mathrm{Aut}(Y56)$, of order 64, with $\mathrm{Aut}(Y56)$ of index 2 ($\tau$ has order 4 on the lines and $\tau^2 \in \mathrm{Aut}(Y56)$; the extension splits, since the coset holds 16 involutions): every combinatorial symmetry of the 56 lines comes from a symmetry of the surface over $\mathbb{Q}(\sqrt2)$, semilinear for the extra 32. The unrealised coset has 16 elements of order 2, 8 of order 4 and 8 of order 8.
 6. (EXACT, GAP IdGroup; CITED match) Exactly 16 of the 32 maps act symplectically on the holomorphic 2-form ($\det(M)/c = +1$). GAP, run on these 16 maps as permutations of the 56 lines, gives a group of size 16 with IdGroup $[16,8]$ and structure description QD16, the quasidihedral (also called semidihedral) group SD16 of order 16 (`pencil/sd16/`). This matches the symplectic group recorded for Y56 by Degtyarev and Rams [DR, Table 1, entry $(16,8)_2$].
 
 All 32 maps are block-diagonal in $(z_0, z_3) \mid (z_1, z_2)$: they rotate or reflect the $w$-plane by multiples of $45°$ and the $p$-plane by multiples of $90°$. This is why they also act on every member of the pencil of Section 7.
@@ -132,7 +136,7 @@ All 32 maps are block-diagonal in $(z_0, z_3) \mid (z_1, z_2)$: they rotate or r
 
 **Plain words.** "Real point" depends on which complex conjugation you use. The equation of Y56 has 16 of them, and up to its symmetries they come in six kinds. Through the usual one you see a single sheet with ten handles carrying all 56 lines. Through the other five you see 12, 8, 4, 0 and 0 real lines, and the sheet becomes a two-handled surface (three times) or three separate bubbles (twice).
 
-A real structure on Y56 is $\sigma_g = g \circ \mathrm{conj}$ with $g$ in the group and $g^2 = 1$ projectively. Since all automorphisms are real, two of them are isomorphic exactly when the $g$ are conjugate. The identity and the 15 involutions give 16 real structures in six classes, matching DIS's "six real structures" (Remark 9.10; CITED). Each $M$ satisfies $M^2 = \lambda I$ with $\lambda \in \{1,2\}$, so every $\sigma_g$ is the standard real structure of $\mathbb{P}^3$ in suitable coordinates.
+A real structure on Y56 is $\sigma_g = g \circ \mathrm{conj}$ with $g$ in the group and $g^2 = 1$ projectively. Since all automorphisms are real, two of them are isomorphic exactly when the $g$ are conjugate. The identity and the 15 involutions give 16 real structures in six classes, matching DIS's "six real structures" (Remark 9.10; CITED). Each $M$ satisfies $M^2 = \lambda I$ with $`\lambda \in \{1,2\}`$, so every $\sigma_g$ is the standard real structure of $\mathbb{P}^3$ in suitable coordinates.
 
 **Table 6.1 (EXACT unless marked).** Real lines are the lines fixed by $g$. A conic is $\sigma$-real when $g$ maps it to itself; it has a real oval exactly when its real quadratic form is indefinite (signs decided exactly).
 
@@ -149,7 +153,7 @@ In the face $g_{12}$, 4 further conics in fixed planes are swapped in pairs by t
 
 **Topology, by independent methods.**
 
-- *Lefschetz (EXACT).* An antiholomorphic involution acts on $\mathrm{NS}$ as $-g^*$ and with trace 0 on $T \otimes \mathbb{R}$, and $\rho = 20$, so $\chi(X_\mathbb{R}) = 2 - \operatorname{tr}(g^* \mid \mathrm{NS})$. The traces, computed on an integral basis, are $20, 4, 4, 4, -4, -4$, giving $\chi = -18, -2, -2, -2, 6, 6$.
+- *Lefschetz (EXACT).* An antiholomorphic involution acts on $\mathrm{NS}$ as $-g^*$ and with trace 0 on $T \otimes \mathbb{R}$, and $\rho = 20$, so $\chi(X_\mathbb{R}) = 2 - \mathrm{tr}(g^* \mid \mathrm{NS})$. The traces, computed on an integral basis, are $20, 4, 4, 4, -4, -4$, giving $\chi = -18, -2, -2, -2, 6, 6$.
 - *Lattice (EXACT, with CITED classification).* $H^2(X,\mathbb{Z})$ was rebuilt as the even unimodular overlattice of $N \oplus T$ (all 4 gluings tried, identical results), and $L^+ = \ker(\sigma^* - 1)$ computed over $\mathbb{Z}$. By Nikulin and Kharlamov (as summarised in [DK]), $X_\mathbb{R} = S_g \sqcup k S^2$ with $g = (22-r-a)/2$ and $k = (r-a)/2$: genus 10, genus 2, and $S_0 \sqcup 2S^2$ (three spheres).
 - *Meshes (NUMERICAL).* Marching cubes on the double cover in $S^3$ at grids 160 and 260 give identical results: lifted $\chi = -36, -4, -4, -4, 12, 12$ and 1, 1, 1, 1, 6, 6 lifted components (three antipodal pairs in the last two rows).
 - *Morse counts (EXACT counts, NUMERICAL indices).* msolve critical points of a quadratic height on $X_\mathbb{R}$ give minima / saddles / maxima $2/23/3$, $2/6/2$, $1/5/2$, $2/6/2$, $3/0/3$, $4/3/5$, reproducing every $\chi$. For $g_{12}$ the 6 critical points (3 minima, 3 maxima) and an exact separation into three regions give a fifth, lattice-free proof of "three spheres" (`family/faces/b_anal.py`, `b_anal.log`, `b_anal2.log`).
@@ -174,13 +178,17 @@ The standard face, connected of genus 10, is DIS Proposition 9.12 (CITED) and se
 
 For $s \in \mathbb{C}$ let
 
-$$G_s = \operatorname{Im}(w^4) + \operatorname{Im}(p^2)\bigl(s|w|^2 - |p|^2\bigr) = 4z_0^3 z_3 - 4 z_0 z_3^3 + 2 z_1 z_2\bigl(s(z_0^2 + z_3^2) - (z_1^2 + z_2^2)\bigr),$$
+```math
+G_s = \mathrm{Im}(w^4) + \mathrm{Im}(p^2)\bigl(s|w|^2 - |p|^2\bigr) = 4z_0^3 z_3 - 4 z_0 z_3^3 + 2 z_1 z_2\bigl(s(z_0^2 + z_3^2) - (z_1^2 + z_2^2)\bigr),
+```
 
-with $w = z_0 + iz_3$, $p = z_1 + iz_2$, and $X_s = \{G_s = 0\}$. Rescaling $z_1, z_2$ by $2^{1/8}$ turns $F$ into $G_{s_*}$ with
+with $w = z_0 + iz_3$, $p = z_1 + iz_2$, and $`X_s = \{G_s = 0\}`$. Rescaling $z_1, z_2$ by $2^{1/8}$ turns $F$ into $G_{s_*}$ with
 
-$$s_* = 3 \cdot 2^{-1/4}, \qquad s_*^4 = 81/2,$$
+```math
+s_* = 3 \cdot 2^{-1/4}, \qquad s_*^4 = 81/2,
+```
 
-so Y56 is $X_{s_*}$ (DIS equation (9.4) after $z_1, z_2 \mapsto 2^{-1/8} z_1, z_2$). The Fermat-type member is $s = 0$, the wall is $s^4 = 16$, and $s = \infty$ is a degenerate union of planes. The pencil is the semi-invariant family of the group: in an exploratory computation, quartics with $F(Mz) = c_M F(z)$ for all 32 maps form a 3-dimensional space $a\operatorname{Im}(w^4) + \operatorname{Im}(p^2)(b|w|^2 + c|p|^2)$, and block scalings leave the single modulus $b^2/(ac)$.
+so Y56 is $X_{s_*}$ (DIS equation (9.4) after $z_1, z_2 \mapsto 2^{-1/8} z_1, z_2$). The Fermat-type member is $s = 0$, the wall is $s^4 = 16$, and $s = \infty$ is a degenerate union of planes. The pencil is the semi-invariant family of the group: in an exploratory computation, quartics with $F(Mz) = c_M F(z)$ for all 32 maps form a 3-dimensional space $a\mathrm{Im}(w^4) + \mathrm{Im}(p^2)(b|w|^2 + c|p|^2)$, and block scalings leave the single modulus $b^2/(ac)$.
 
 ### 7.2 The theorem
 
@@ -193,7 +201,9 @@ so Y56 is $X_{s_*}$ (DIS equation (9.4) after $z_1, z_2 \mapsto 2^{-1/8} z_1, z_
 5. **The 40-line lattice** (EXACT lattice data; constancy ARGUED). The 40 persistent lines form a finite étale family over the smooth base with constant Gram matrix. They span a primitive lattice $N_{19}$ of rank 19, determinant 128, Smith form $[2,8,8]$ and signature $(1,18)$, containing $h$.
 6. **Néron–Severi of the very general member.** $\mathrm{NS}(X_s) = N_{19}$ for very general $s$ (EXACT enumeration plus ARGUED primitivity; not separately refereed). So the very general member has Picard rank exactly 19 and a transcendental lattice of rank 3 with $|\det| = 128$.
 7. **Y56 is a Noether–Lefschetz point** (EXACT; the algebra after the substitution LEAN-CHECKED). In $\mathrm{NS}(Y56)$ (rank 20, $\det -64$) the orthogonal complement of $N_{19}$ is spanned by a class $v$ with $v^2 = -32$, $v \cdot h = 0$, and $v \cdot L = \pm 4$ on exactly 16 lines and $0$ on the other 40. These 16 lines are one orbit of the group, the orbit S:
-   $$L00, L06, L10, L11, L12, L19, L29, L33, L35, L36, L42, L44, L48, L50, L54, L55,$$
+   ```math
+   L00, L06, L10, L11, L12, L19, L29, L33, L35, L36, L42, L44, L48, L50, L54, L55,
+   ```
    and they are the solutions of a three-equation system that is consistent only when $2s^4 = 81$.
 8. **Conics** (EXACT lattice; effectivity CITED Riemann–Roch). There are 48 classes $L^+ + L^-$ of degree 2 and square $-2$, all in $N_{19}$; none is a sum of two persistent lines (0 of 48), so on a generic member each is an irreducible rigid conic. At Y56 each splits into a crossing pair of the 16 special lines. In one explicit family the norm of the conic determinant is $2^{24}(2s^4 - 81)^2$.
 9. **Real lines along the real line** (EXACT). For real $s$ (standard real structure) the number of real lines is 8 for $|s| < 2$ and for $s < -2$; 24 at $s = 2$ (a singular member); 40 for $s > 2$, $s \neq s_*$; and 56 at $s = s_*$.
@@ -202,9 +212,9 @@ The theorem was re-derived by a hostile referee with independent code before thi
 
 ### 7.3 Proofs and proof sketches
 
-**Item 1.** The referee computed the discriminant of the pencil directly. Independently, in the three-parameter form $a\operatorname{Im}(w^4) + \operatorname{Im}(p^2)(b|w|^2 + c|p|^2)$, Singular elimination with the saturated Jacobian gives singular members exactly at $c^3(b^2 - 4ac)(b^2 + 4ac) = 0$; with $(a,b,c) = (1,s,-1)$ this is $(s^2+4)(s^2-4) = 0$. The wall members are described in 7.4.
+**Item 1.** The referee computed the discriminant of the pencil directly. Independently, in the three-parameter form $a\mathrm{Im}(w^4) + \mathrm{Im}(p^2)(b|w|^2 + c|p|^2)$, Singular elimination with the saturated Jacobian gives singular members exactly at $c^3(b^2 - 4ac)(b^2 + 4ac) = 0$; with $(a,b,c) = (1,s,-1)$ this is $(s^2+4)(s^2-4) = 0$. The wall members are described in 7.4.
 
-**Item 2.** Every one of the 32 matrices is block-diagonal and satisfies $G_s(Mz) = c\,G_s(z)$ with the same $c$ for every $s$ (referee's check). The symplectic ones are those with $\det(M)/c = +1$.
+**Item 2.** Every one of the 32 matrices is block-diagonal and satisfies $`G_s(Mz) = c\,G_s(z)`$ with the same $c$ for every $s$ (referee's check). The symplectic ones are those with $\det(M)/c = +1$.
 
 **Item 4: the 40 lines.** In the graph chart $z_1 = Az_0 + Bz_3$, $z_2 = Cz_0 + Dz_3$, the Fano ideal over $\mathbb{Q}(s)$ has length 32, is radical, and splits into four components of degree 8:
 
@@ -221,7 +231,9 @@ where $f_1(D) = 4D^8 - 8sD^6 + 5s^2D^4 - s^3D^2 + 1$ and $f_2(C) = C^8 - 4sC^6 +
 
 **Item 7: why exactly $s^4 = 81/2$ (EXACT; a full proof).** The 16 special lines each pair an axis form in $(z_0, z_3)$ with a diagonal form $z_0 \pm z_3$. Take the shape $z_1 = \alpha z_0$, $z_2 = \beta(z_0 - z_3)$. Substituting into $G_s$, the $z_3^4$ coefficient vanishes identically and the other four must vanish; they generate the same ideal as the three equations:
 
-$$\alpha\beta\,(s - \alpha^2 - \beta^2) = 0, \qquad 2 + \alpha\beta\,(s - \beta^2) = 0, \qquad 1 + \alpha\beta^3 = 0.$$
+```math
+\alpha\beta\,(s - \alpha^2 - \beta^2) = 0, \qquad 2 + \alpha\beta\,(s - \beta^2) = 0, \qquad 1 + \alpha\beta^3 = 0.
+```
 
 The third equation makes $\alpha\beta \neq 0$, so the first gives $s = \alpha^2 + \beta^2$. The third gives $\alpha\beta = -1/\beta^2$; the second then reads $2 - (s - \beta^2)/\beta^2 = 0$, so $s = 3\beta^2$ and $\alpha^2 = 2\beta^2$. Squaring the third, $\alpha^2\beta^6 = 1$, so $2\beta^8 = 1$. Hence $s^4 = 81\beta^8 = 81/2$. Conversely $\beta = 2^{-1/8}$, $\alpha = -1/\beta^3$, $s = 3\beta^2$ is a real solution. For the axis–axis and diagonal–diagonal shapes only two equations remain, which is why those lines exist for every $s$. The group of order 32 moves the one line found this way through an orbit of 16. A Sympy Gröbner elimination of the same three-coefficient system gives exactly $2s^4 - 81$, in agreement with the Singular eliminant. The step is LEAN-CHECKED over any commutative ring (`pencil_forces`: the three equations force $s = 3\beta^2$, $\alpha^2 = 2\beta^2$, $2\beta^8 = 1$ and $2s^4 = 81$), together with the converse over $\mathbb{R}$ (`pencil_solvable`); see Section 8.
 
@@ -281,9 +293,11 @@ We found no earlier description of this 8-nodal member, but the search was thin 
 
 $G_0 = 4z_0 z_3(z_0^2 - z_3^2) - 2z_1 z_2(z_1^2 + z_2^2)$. Let $K = \mathbb{Q}(\zeta_8)(r)$ with $r^2 = 1 - i$, a field of degree 8 over $\mathbb{Q}$, and set
 
-$$y_0 = r(z_0 + iz_3),\quad y_1 = \zeta_8 r(z_0 - iz_3),\quad y_2 = z_1 - z_2,\quad y_3 = \zeta_8(z_1 + z_2).$$
+```math
+y_0 = r(z_0 + iz_3),\quad y_1 = \zeta_8 r(z_0 - iz_3),\quad y_2 = z_1 - z_2,\quad y_3 = \zeta_8(z_1 + z_2).
+```
 
-Then $y_0^4 + y_1^4 + y_2^4 + y_3^4 = 4G_0(z)$ exactly, with $\det = -4(\zeta_8^2 - 1) \neq 0$ (EXACT, sympy reduction modulo $\zeta^4 + 1$ and $r^2 - (1 - \zeta^2)$). The reason: $\operatorname{Im}(w^4) = (w^4 - \bar w^4)/2i$, $2ab(a^2 + b^2) = ((a+b)^4 - (a-b)^4)/4$, and $r^4 = -2i$.
+Then $y_0^4 + y_1^4 + y_2^4 + y_3^4 = 4G_0(z)$ exactly, with $\det = -4(\zeta_8^2 - 1) \neq 0$ (EXACT, sympy reduction modulo $\zeta^4 + 1$ and $r^2 - (1 - \zeta^2)$). The reason: $\mathrm{Im}(w^4) = (w^4 - \bar w^4)/2i$, $2ab(a^2 + b^2) = ((a+b)^4 - (a-b)^4)/4$, and $r^4 = -2i$.
 
 The Fermat member and Y56 are different K3 surfaces: $T = [8,0,8]$ for Fermat against $[2,0,32]$ for Y56 (DIS Table 2; Shimada–Shioda [SS]; Degtyarev [D4]; CITED). So the pencil joins genuinely different surfaces.
 
@@ -294,7 +308,7 @@ The Fermat member and Y56 are different K3 surfaces: $T = [8,0,8]$ for Fermat ag
 Every one of the 32 maps acts on every member, so all six real structures live on every real member of the pencil.
 
 - **Real nodes at the wall (EXACT, tested in $\mathbb{Q}(t)$):** $g_{00}$ 8, $g_{01}$ 2, $g_{02}$ 0, $g_{12}$ 2, $g_{13}$ 4, $g_{24}$ 0.
-- **Real structures on the Fermat member (EXACT).** Transporting the 16 structures to Fermat and testing all 1536 projective automorphisms of the Fermat quartic in exact $K$-arithmetic merges the six classes into two: $\{g_{00}, g_{02}, g_{13}, g_{24}\}$ and $\{g_{01}, g_{12}\}$. This assumes the standard description of $\operatorname{Aut}$(Fermat) as the order-1536 monomial group.
+- **Real structures on the Fermat member (EXACT).** Transporting the 16 structures to Fermat and testing all 1536 projective automorphisms of the Fermat quartic in exact $K$-arithmetic merges the six classes into two: $`\{g_{00}, g_{02}, g_{13}, g_{24}\}`$ and $`\{g_{01}, g_{12}\}`$. This assumes the standard description of $\mathrm{Aut}$(Fermat) as the order-1536 monomial group.
 - **The Fermat route for $g_{02} \sim g_{24}$ (ARGUED, with numerical steps).** Both see no real wall node; the path from Y56 along the pencil can be pushed off the wall inside smooth real quartics (conjugate node pairs have real codimension 2), reaches the Fermat member, where the two structures are equivalent by an automorphism that can be chosen in the identity component of $PGL(4,\mathbb{R})$, and returns. This agrees with the CITED classification of Section 6. The same route does not connect $g_{01}$ or the three-sphere faces.
 - **Vanishing bubbles (NUMERICAL).** In the face $g_{12}$ the two real wall nodes are definite and lie in the two bare spheres: moving toward the wall, the two oval-free spheres shrink to points and disappear, while the sphere carrying all 22 ovals survives. Mesh Euler characteristics on the two sides change by twice the number of real nodes in every face.
 

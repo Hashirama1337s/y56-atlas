@@ -76,8 +76,8 @@ The phrase "at s = 0 the surface is the Fermat quartic" is also too strong, beca
 Do the same in pencil/REPORT.md line 61 ("beta(z3 - z0)" becomes "beta(z0 - z3)").
 
 **B2. PAPER.md §5, item 5.**
-- Old: "Hence $\operatorname{Aut}(\text{line graph}) = \operatorname{Aut}(Y56) \rtimes \langle\tau\rangle$, of order 64:"
-- New: "Hence $\operatorname{Aut}(\text{line graph}) = \operatorname{Aut}(Y56) \cup \tau\operatorname{Aut}(Y56)$, of order 64, with $\operatorname{Aut}(Y56)$ of index 2 ($\tau$ has order 4 on the lines and $\tau^2 \in \operatorname{Aut}(Y56)$; the extension splits, since the coset holds 16 involutions):"
+- Old: "Hence $\mathrm{Aut}(\text{line graph}) = \mathrm{Aut}(Y56) \rtimes \langle\tau\rangle$, of order 64:"
+- New: "Hence $\mathrm{Aut}(\text{line graph}) = \mathrm{Aut}(Y56) \cup \tau\mathrm{Aut}(Y56)$, of order 64, with $\mathrm{Aut}(Y56)$ of index 2 ($\tau$ has order 4 on the lines and $\tau^2 \in \mathrm{Aut}(Y56)$; the extension splits, since the coset holds 16 involutions):"
 
 **B3. PAPER.md §7.3, Item 6, and its echoes.**
 - Old: "and it contains $N_{19}$ with finite index by items 3 and 5."
