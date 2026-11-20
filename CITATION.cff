@@ -4,6 +4,7 @@ title: "The Y56 atlas: the real quartic surface with 56 lines, its symmetric pen
 authors:
   - name: "Moki & Julio"
 version: "1.0"
+doi: "10.5281/zenodo.24406738"
 license: CC-BY-4.0
 keywords:
   - quartic surface

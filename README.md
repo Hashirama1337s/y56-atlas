@@ -2,7 +2,7 @@
 
 **The real quartic surface with 56 lines, its symmetric pencil, and a machine-checked core**
 
-Moki & Julio (AI-assisted) · 2026 · version 1.0
+Moki & Julio (AI-assisted) · 2026 · version 1.0 · DOI [10.5281/zenodo.24406738](https://doi.org/10.5281/zenodo.24406738)
 
 > Turn one dial in the equation of the record-holding surface and 16 of its 56 straight lines vanish at once: they exist only where $2s^4 = 81$, one setting on the real dial (all four complex roots give Y56), because three equations in two unknowns agree only there.
 
