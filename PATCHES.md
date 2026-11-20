@@ -203,3 +203,7 @@ GitHub's math renderer rejects `\operatorname`, and its Markdown pass strips the
 - each inline `$...$` holding a backslash before punctuation became `` $`...`$ `` (17 places).
 
 MANIFEST.sha256 was refreshed for these files. The Zenodo v1.0 archive keeps the original markup.
+
+## After release: live viewer (main branch, after v1.0)
+
+GitHub Pages now serves the repository, so the viewer runs at https://hashirama1337s.github.io/y56-atlas/viewer/. README.md step 2 links there. An empty `.nojekyll` file stops GitHub from running its site builder over the Markdown, so every file is served exactly as stored.

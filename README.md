@@ -19,7 +19,7 @@ This atlas writes out everything Y56 carries: all 56 lines in exact coordinates 
 *Y56, the smooth real quartic with the most real straight lines possible, is bent step by step along a one-parameter family. The instant it leaves its exact setting the real lines drop from 56 to 40 (the 16 amber lines vanish together), they fall to 24 at a wall where the surface pinches at 8 gold points, and only the 8 cyan lines are left at the Fermat-type end. Exploratory rendering; the line counts it shows agree with the exact theorem (video: [media/y56_to_fermat.mp4](media/y56_to_fermat.mp4)).*
 
 1. Read [PAPER.md](PAPER.md), the full write-up. Each section opens with a paragraph in plain words.
-2. Open the interactive viewer: [viewer/index.html](viewer/index.html) (see "How to re-check"). Spin Y56, touch a line to read its exact coordinates, turn the family dial and watch the 16 lines flash into existence at one single setting.
+2. Open the interactive viewer in your browser: **[hashirama1337s.github.io/y56-atlas/viewer](https://hashirama1337s.github.io/y56-atlas/viewer/)** (or open [viewer/index.html](viewer/index.html) from a download; see "How to re-check"). Spin Y56, touch a line to read its exact coordinates, turn the family dial and watch the 16 lines flash into existence at one single setting.
 3. Look up any claim in [RESULTS.md](RESULTS.md): its status, its evidence file, and which part is kernel-checked in Lean.
 
 The equation ($e = \sqrt2$):
