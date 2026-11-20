@@ -1,0 +1,17 @@
+// Nodal wall of the symmetric pencil: a=1, b=2, c=-1 (kappa = b^2/(ac) = -4).  Singular points: degree, Milnor/Tjurina, coordinates.
+LIB "solve.lib"; LIB "elim.lib";
+ring R = 0, (z0,z1,z2,z3), dp;
+poly F = 4*z0^3*z3 - 4*z0*z3^3 + 2*2*z1*z2*(z0^2+z3^2) + 2*(-1)*z1*z2*(z1^2+z2^2);
+ideal J = jacob(F);
+def SS = sat(J, maxideal(1)); if (typeof(SS)=="list") { ideal S = SS[1]; } else { ideal S = SS; }
+S = std(S);
+print("dim (projective = dim-1):"); print(dim(S)); print("degree of singular scheme (affine cone):"); print(mult(S));
+ideal Sr = radical(S); Sr = std(Sr); print("degree of reduced singular set:"); print(mult(Sr));
+// affine chart computations for coordinates: charts z_i = 1
+for (int i=1; i<=4; i++) {
+  ideal T = std(Sr + ideal(var(i)-1));
+  print("chart z" + string(i-1) + "=1: vdim reduced = " + string(vdim(T)));
+}
+ring Rc = (complex,30), (z0,z1,z2,z3), dp;
+ideal Sc = imap(R, Sr);
+quit;

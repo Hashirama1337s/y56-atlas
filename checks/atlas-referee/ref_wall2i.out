@@ -1,0 +1,4 @@
+s = 2.0 : distinct singular points found: 8
+s = (0.0 + 2.0j) : distinct singular points found: 8
+s = 3.0 : distinct singular points found: 0
+memcap: exit 0, peak 0.02 GB of 4.00 GB cap

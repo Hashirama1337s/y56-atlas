@@ -1,0 +1,30 @@
+(a) y = A z with y0 = r(z0 + i z3), y1 = zeta8 r (z0 - i z3), y2 = z1 - z2, y3 = zeta8 (z1 + z2),  r^2 = 1 - i:
+    y0^4 + y1^4 + y2^4 + y3^4 - 4 F0(z) reduces to 0 in K[z]: True
+    det A (reduced) = -4*(zeta - 1)*(zeta + 1)  (nonzero)
+    K arithmetic: conj is a field automorphism equal to complex conjugation (20 random checks); inverses exact
+    A^-1 exact (A A^-1 = I in K)
+    every transported sigma_g satisfies N conj(N) ~ I exactly (15 involutions + identity)
+(b) |Aut(Fermat)| projective = 1536
+    g00 -> {'g00': 32, 'g02': 128, 'g13': 64, 'g24': 32}
+    g01 -> {'g01': 192, 'g12': 192}
+    g02 -> {'g00': 32, 'g02': 128, 'g13': 64, 'g24': 32}
+    g12 -> {'g01': 192, 'g12': 192}
+    g13 -> {'g00': 32, 'g02': 128, 'g13': 64, 'g24': 32}
+    g24 -> {'g00': 32, 'g02': 128, 'g13': 64, 'g24': 32}
+    EXACT classes of the transported real structures on the Fermat member: [['g00', 'g02', 'g13', 'g24'], ['g01', 'g12']]
+(c) 8 nodes, exact in Q(t), t = 2cos(pi/8): all gradients vanish exactly; numeric:
+     [2.414214, -1.847759, 1.847759, 1.0]    exact: [t**2 - 1, -t, t, 1]
+     [0.414214, 0.765367, 0.765367, 1.0]    exact: [t**2 - 3, t**3 - 3*t, t**3 - 3*t, 1]
+     [2.414214, 1.847759, -1.847759, 1.0]    exact: [t**2 - 1, t, -t, 1]
+     [0.414214, -0.765367, -0.765367, 1.0]    exact: [t**2 - 3, -t**3 + 3*t, -t**3 + 3*t, 1]
+     [-0.414214, -0.765367, 0.765367, 1.0]    exact: [3 - t**2, -t**3 + 3*t, t**3 - 3*t, 1]
+     [-2.414214, 1.847759, 1.847759, 1.0]    exact: [1 - t**2, t, t, 1]
+     [-0.414214, 0.765367, -0.765367, 1.0]    exact: [3 - t**2, t**3 - 3*t, -t**3 + 3*t, 1]
+     [-2.414214, -1.847759, -1.847759, 1.0]    exact: [1 - t**2, -t, -t, 1]
+    g00: sigma_g-real wall nodes (g n ~ n, n real) = 8
+    g01: sigma_g-real wall nodes (g n ~ n, n real) = 2
+    g02: sigma_g-real wall nodes (g n ~ n, n real) = 0
+    g12: sigma_g-real wall nodes (g n ~ n, n real) = 2
+    g13: sigma_g-real wall nodes (g n ~ n, n real) = 4
+    g24: sigma_g-real wall nodes (g n ~ n, n real) = 0
+memcap: exit 0, peak 0.80 GB of 8.00 GB cap

@@ -1,0 +1,17 @@
+g01: msolve real solutions 36, with s = +sqrt2: 20; max box width 0.0e+00
+   RP^3 critical points: 10 (all antipodally paired: True)
+   sorted index pattern: mmssssssMM
+   component h-intervals: None
+g02: msolve real solutions 40, with s = +sqrt2: 20; max box width 0.0e+00
+   RP^3 critical points: 10 (all antipodally paired: True)
+   sorted index pattern: mmssssssMM
+   component h-intervals: None
+g24: msolve real solutions 32, with s = +sqrt2: 16; max box width 0.0e+00
+   RP^3 critical points: 8 (all antipodally paired: True)
+   sorted index pattern: msssssMM
+   component h-intervals: None
+g00: msolve real solutions 112, with s = +sqrt2: 56; max box width 0.0e+00
+   RP^3 critical points: 28 (all antipodally paired: True)
+   sorted index pattern: mmssssssssssssssssssssMsssMM
+   component h-intervals: None
+memcap: exit 0, peak 0.48 GB of 8.00 GB cap

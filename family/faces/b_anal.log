@@ -1,0 +1,27 @@
+g12: msolve real solutions 32, with s = +sqrt2: 12; max box width 0.0e+00
+   RP^3 critical points: 6 (all antipodally paired: True)
+   h = -7.891251471  index 0  Hessian eigs  2.327e+01, 2.423e+01  |G| 0.0e+00
+   h = -3.242093102  index 0  Hessian eigs  1.070e+02, 8.849e+02  |G| 4.4e-16
+   h = -0.257456751  index 0  Hessian eigs  8.232e+01, 5.594e+02  |G| 0.0e+00
+   h =  2.837032229  index 2  Hessian eigs -2.155e+02,-2.878e+01  |G| 4.4e-16
+   h =  2.837634825  index 2  Hessian eigs -3.194e+02,-5.726e+01  |G| 0.0e+00
+   h =  4.456227746  index 2  Hessian eigs -3.472e+01,-2.002e+01  |G| 1.3e-16
+   sorted index pattern: mmmMMM
+   component h-intervals: None
+g13: msolve real solutions 40, with s = +sqrt2: 24; max box width 0.0e+00
+   RP^3 critical points: 12 (all antipodally paired: True)
+   h = -7.653642366  index 0  Hessian eigs  1.156e+01, 2.570e+01  |G| 1.4e-17
+   h = -3.860322865  index 0  Hessian eigs  3.547e+01, 7.782e+01  |G| 1.0e-16
+   h =  2.184742413  index 1  Hessian eigs -1.646e+01, 3.954e+00  |G| 2.1e-16
+   h =  2.278322171  index 2  Hessian eigs -2.256e+01,-7.732e+00  |G| 1.2e-16
+   h =  2.501510669  index 2  Hessian eigs -1.811e+01,-1.235e+01  |G| 1.5e-16
+   h =  4.169786828  index 2  Hessian eigs -2.393e+01,-1.347e+01  |G| 5.7e-17
+   h =  4.919461492  index 0  Hessian eigs  1.994e+01, 3.728e+01  |G| 1.5e-16
+   h =  5.180664959  index 0  Hessian eigs  1.263e+01, 4.238e+01  |G| 1.4e-17
+   h =  5.744060550  index 1  Hessian eigs -9.244e+00, 1.990e+01  |G| 6.9e-17
+   h =  7.850664917  index 1  Hessian eigs -2.180e+01, 4.586e+00  |G| 1.3e-16
+   h =  7.876685438  index 2  Hessian eigs -2.426e+01,-4.856e+00  |G| 2.4e-17
+   h =  8.384788350  index 2  Hessian eigs -2.694e+01,-1.061e+01  |G| 1.5e-16
+   sorted index pattern: mmsMMMmmssMM
+   component h-intervals: None
+memcap: exit 0, peak 0.48 GB of 8.00 GB cap

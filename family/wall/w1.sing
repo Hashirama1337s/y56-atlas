@@ -1,0 +1,32 @@
+// Round 2, task 1: the 8-nodal wall quartic W = Im(w^4) + Im(p^2)(2|w|^2 - |p|^2), w = z0 + i z3, p = z1 + i z2 (a,b,c = 1,2,-1).
+// Exact over Q: singular scheme, components, ordinary-node check (Tjurina length 1 and Hessian rank 3), quadrics through the nodes.
+LIB "primdec.lib"; LIB "elim.lib";
+ring R = 0, (z0,z1,z2,z3), dp;
+poly F = 4*z0^3*z3 - 4*z0*z3^3 + 4*z1*z2*(z0^2+z3^2) - 2*z1*z2*(z1^2+z2^2);
+ideal J = jacob(F);
+def SS = sat(J, maxideal(1)); if (typeof(SS)=="list") { ideal S = SS[1]; } else { ideal S = SS; }
+S = std(S);
+"affine-cone dim of singular scheme (1 = finitely many projective points):"; dim(S);
+"degree of singular scheme (sum of Tjurina numbers):"; mult(S);
+ideal Sr = std(radical(S));
+"degree of reduced singular set (number of singular points):"; mult(Sr);
+"singular scheme == its radical (every Tjurina number 1, i.e. A1):"; size(reduce(Sr, S)) == 0;
+"minimal generators of the radical (ideal of the 8 nodes):"; minbase(Sr);
+"components over Q (minAssGTZ):"; list P = minAssGTZ(Sr); P;
+// Hessian rank: rank <= 2 at a singular point iff all 3x3 minors vanish there.
+matrix H = jacob(J);
+ideal M3 = minor(H, 3);
+ideal B = std(Sr + M3);
+"singular points with Hessian rank <= 2: affine-cone dim (0 or -1 = none):"; dim(B);
+"saturation of (nodes + 3x3 minors) w.r.t. irrelevant ideal (1 = no such point):";
+def BB = sat(B, maxideal(1)); if (typeof(BB)=="list") { ideal Bs = BB[1]; } else { ideal Bs = BB; } Bs;
+// Hessian rank 4 impossible at a singular point (Euler): check det H in ideal of nodes.
+"det(Hessian) vanishes on all nodes:"; reduce(det(H), Sr) == 0;
+// quadrics through the nodes
+ideal Q2 = 0; int k;
+for (k=1; k<=size(minbase(Sr)); k++) { if (deg(minbase(Sr)[k])==2) { Q2 = Q2 + minbase(Sr)[k]; } }
+"number of independent quadrics through the 8 nodes:"; size(Q2);
+"quartic in the square of the quadric ideal (F in (Q)^2):"; reduce(F, std(Q2^2)) == 0;
+"quartic in the quadric ideal (F in (Q)):"; reduce(F, std(Q2)) == 0;
+"is the node set the complete intersection of the quadrics (deg of std(Q2), dim):"; ideal Q2s = std(Q2); dim(Q2s); mult(Q2s);
+quit;

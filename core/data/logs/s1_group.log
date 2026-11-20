@@ -1,0 +1,23 @@
+F(Mz) = c F(z) exactly for all 32 listed maps: True
+all 56 lines on F: True
+intersecting pairs (exact): 448  degrees: [16]
+listed line permutations verified exactly: True
+graph automorphisms of the 56-line intersection graph: 64
+graph automorphisms realised by a projective map (solution space dim 1): 32 ; the rest: dim 0
+realised set == listed 32 permutations: True
+element orders: {1: 1, 2: 15, 4: 8, 8: 8}
+classes of {1} + involutions: 6 [1, 4, 4, 4, 2, 1]
+g00 class size 1 members ['g00']  c=1  M^2 = 1 * I: True, lambda>0 for all members: True  fixed lines 56
+g01 class size 4 members ['g01', 'g07', 'g08', 'g25']  c=4  M^2 = 2 * I: True, lambda>0 for all members: True  fixed lines 4
+g02 class size 4 members ['g02', 'g05', 'g15', 'g18']  c=-1  M^2 = 1 * I: True, lambda>0 for all members: True  fixed lines 12
+g12 class size 4 members ['g12', 'g17', 'g27', 'g29']  c=4  M^2 = 2 * I: True, lambda>0 for all members: True  fixed lines 0
+g13 class size 2 members ['g13', 'g16']  c=1  M^2 = 1 * I: True, lambda>0 for all members: True  fixed lines 0
+g24 class size 1 members ['g24']  c=1  M^2 = 1 * I: True, lambda>0 for all members: True  fixed lines 8
+g00 every fixed line carries a real circle (A^2 = lambda I, lambda>0): True
+g01 every fixed line carries a real circle (A^2 = lambda I, lambda>0): True
+g02 every fixed line carries a real circle (A^2 = lambda I, lambda>0): True
+g12 every fixed line carries a real circle (A^2 = lambda I, lambda>0): True
+g13 every fixed line carries a real circle (A^2 = lambda I, lambda>0): True
+g24 every fixed line carries a real circle (A^2 = lambda I, lambda>0): True
+time 31.8s
+memcap: exit 0, peak 0.07 GB of 8.00 GB cap

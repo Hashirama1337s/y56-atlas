@@ -1,0 +1,54 @@
+{
+ "orbit_sizes": {
+  "anchor": 8,
+  "wallA": 16,
+  "wallB": 16,
+  "y56only": 16
+ },
+ "each_line_meets": 16,
+ "conic148_fit_rel_residual": 1.0342642973912393e-14,
+ "conics": {
+  "total": 188,
+  "fam0": 148,
+  "fam1": 40
+ },
+ "centre_stabiliser": 16,
+ "family_fit_residual": 1.7042183603203667e-15,
+ "wall_nodes": {
+  "max_G": 5.551115123125783e-17,
+  "max_grad": 5.551115123125783e-11
+ },
+ "faces": {
+  "g00": [
+   56,
+   188,
+   188
+  ],
+  "g02": [
+   12,
+   14,
+   10
+  ],
+  "g24": [
+   8,
+   12,
+   8
+  ],
+  "g01": [
+   4,
+   12,
+   8
+  ],
+  "g12": [
+   0,
+   28,
+   22
+  ],
+  "g13": [
+   0,
+   28,
+   20
+  ]
+ },
+ "family_branches_match_y56": true
+}

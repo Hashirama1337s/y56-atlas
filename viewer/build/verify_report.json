@@ -1,0 +1,332 @@
+{
+ "results": {
+  "s_star = 3/2^(1/4)": {
+   "ok": true,
+   "value": 2.5226892457611436
+  },
+  "A1 56 lines x 160 points: max |G_s*(y)|": {
+   "ok": true,
+   "value": 1.1136195099403778e-07
+  },
+  "A2 same points in release coordinates: max |F(z)|, z = (y0, m y1, m y2, y3)": {
+   "ok": true,
+   "value": 1.1136195110506009e-07
+  },
+  "A3 every line point lies on the exact line of lines_exact.txt with the same index": {
+   "ok": true,
+   "value": 3.311347318568636e-08
+  },
+  "A4 orbit sizes 8 + 16 + 16 + 16": {
+   "ok": true,
+   "value": [
+    8,
+    16,
+    16,
+    16
+   ]
+  },
+  "A5 orbit labels are invariant under all 32 symmetries": {
+   "ok": true,
+   "value": true
+  },
+  "A6 each line meets exactly 16 others (incidence lists)": {
+   "ok": true,
+   "value": 16
+  },
+  "B1 188 conics x 240 points: max |G_s*(y)|": {
+   "ok": true,
+   "value": 8.770346005271268e-07
+  },
+  "B2 148 + 40 conics": {
+   "ok": true,
+   "value": [
+    148,
+    40
+   ]
+  },
+  "B3 every conic point lies in its exact plane (planes_exact / conic_pair_planes_exact)": {
+   "ok": true,
+   "value": 3.786320009134903e-08
+  },
+  "B4 the 148 conics are listed with the two lines of their plane": {
+   "ok": true,
+   "value": true
+  },
+  "B5 each conic spans a plane, not a line (3rd singular value)": {
+   "ok": true,
+   "value": 5.931218542048699
+  },
+  "B6 the 20 drawn planes (picture coordinates) contain their 40 conics": {
+   "ok": true,
+   "value": 2.7257461010510298e-08
+  },
+  "C0 g00: frame A is unitary and maps real x to sigma-real points (M conj(A) = A)": {
+   "ok": true,
+   "value": 0.0
+  },
+  "C1 g00: drawn quartic = G_s*(A x)/phase, real": {
+   "ok": true,
+   "value": 7.099242672425654e-16
+  },
+  "C2 g00: real lines / sigma-real conics / ovals = (56, 188, 188)": {
+   "ok": true,
+   "value": [
+    56,
+    188,
+    188
+   ]
+  },
+  "C3 g00: the drawn lines are exactly the lines fixed by g00": {
+   "ok": true,
+   "value": 56
+  },
+  "C0 g02: frame A is unitary and maps real x to sigma-real points (M conj(A) = A)": {
+   "ok": true,
+   "value": 0.0
+  },
+  "C1 g02: drawn quartic = G_s*(A x)/phase, real": {
+   "ok": true,
+   "value": 1.0958664706345988e-15
+  },
+  "C2 g02: real lines / sigma-real conics / ovals = (12, 14, 10)": {
+   "ok": true,
+   "value": [
+    12,
+    14,
+    10
+   ]
+  },
+  "C3 g02: the drawn lines are exactly the lines fixed by g02": {
+   "ok": true,
+   "value": 12
+  },
+  "C4 g02: every drawn point y = A x satisfies |G_s*(y)| ~ 0, is sigma-real, and lies on its exact line / in its exact plane": {
+   "ok": true,
+   "value": {
+    "G": 1.916907109575213e-07,
+    "on_exact": 2.699368906178279e-08,
+    "sigma_real": 0.0
+   }
+  },
+  "C0 g24: frame A is unitary and maps real x to sigma-real points (M conj(A) = A)": {
+   "ok": true,
+   "value": 0.0
+  },
+  "C1 g24: drawn quartic = G_s*(A x)/phase, real": {
+   "ok": true,
+   "value": 9.736259085854497e-16
+  },
+  "C2 g24: real lines / sigma-real conics / ovals = (8, 12, 8)": {
+   "ok": true,
+   "value": [
+    8,
+    12,
+    8
+   ]
+  },
+  "C3 g24: the drawn lines are exactly the lines fixed by g24": {
+   "ok": true,
+   "value": 8
+  },
+  "C4 g24: every drawn point y = A x satisfies |G_s*(y)| ~ 0, is sigma-real, and lies on its exact line / in its exact plane": {
+   "ok": true,
+   "value": {
+    "G": 1.7470999584545677e-07,
+    "on_exact": 1.4982016068674606e-08,
+    "sigma_real": 0.0
+   }
+  },
+  "C0 g01: frame A is unitary and maps real x to sigma-real points (M conj(A) = A)": {
+   "ok": true,
+   "value": 1.1102230246251565e-16
+  },
+  "C1 g01: drawn quartic = G_s*(A x)/phase, real": {
+   "ok": true,
+   "value": 3.448814354227421e-15
+  },
+  "C2 g01: real lines / sigma-real conics / ovals = (4, 12, 8)": {
+   "ok": true,
+   "value": [
+    4,
+    12,
+    8
+   ]
+  },
+  "C3 g01: the drawn lines are exactly the lines fixed by g01": {
+   "ok": true,
+   "value": 4
+  },
+  "C4 g01: every drawn point y = A x satisfies |G_s*(y)| ~ 0, is sigma-real, and lies on its exact line / in its exact plane": {
+   "ok": true,
+   "value": {
+    "G": 1.4918157018734002e-07,
+    "on_exact": 3.016747839567375e-08,
+    "sigma_real": 1.1857187100668868e-16
+   }
+  },
+  "C0 g12: frame A is unitary and maps real x to sigma-real points (M conj(A) = A)": {
+   "ok": true,
+   "value": 1.1102230246251565e-16
+  },
+  "C1 g12: drawn quartic = G_s*(A x)/phase, real": {
+   "ok": true,
+   "value": 5.099899984119036e-16
+  },
+  "C2 g12: real lines / sigma-real conics / ovals = (0, 28, 22)": {
+   "ok": true,
+   "value": [
+    0,
+    28,
+    22
+   ]
+  },
+  "C3 g12: the drawn lines are exactly the lines fixed by g12": {
+   "ok": true,
+   "value": 0
+  },
+  "C4 g12: every drawn point y = A x satisfies |G_s*(y)| ~ 0, is sigma-real, and lies on its exact line / in its exact plane": {
+   "ok": true,
+   "value": {
+    "G": 2.0632739217152363e-07,
+    "on_exact": 5.476151414932994e-08,
+    "sigma_real": 1.1443916996305594e-16
+   }
+  },
+  "C0 g13: frame A is unitary and maps real x to sigma-real points (M conj(A) = A)": {
+   "ok": true,
+   "value": 0.0
+  },
+  "C1 g13: drawn quartic = G_s*(A x)/phase, real": {
+   "ok": true,
+   "value": 2.97296060918603e-15
+  },
+  "C2 g13: real lines / sigma-real conics / ovals = (0, 28, 20)": {
+   "ok": true,
+   "value": [
+    0,
+    28,
+    20
+   ]
+  },
+  "C3 g13: the drawn lines are exactly the lines fixed by g13": {
+   "ok": true,
+   "value": 0
+  },
+  "C4 g13: every drawn point y = A x satisfies |G_s*(y)| ~ 0, is sigma-real, and lies on its exact line / in its exact plane": {
+   "ok": true,
+   "value": {
+    "G": 3.083479139520673e-07,
+    "on_exact": 4.555401284732873e-08,
+    "sigma_real": 0.0
+   }
+  },
+  "D1 family lines drawn by core.js (float32 samples) lie on G_s (all s on the dial, 307 values)": {
+   "ok": true,
+   "value": 1.2801815127633578e-07
+  },
+  "D2 real line count per s matches the exact table (8 below the wall, 24 at s = 2, 40 past it, 56 at s^4 = 81/2)": {
+   "ok": true,
+   "value": {
+    "s<2": [
+     8
+    ],
+    "s=2": [
+     24
+    ],
+    "s>2": [
+     40
+    ],
+    "s*": [
+     56
+    ]
+   }
+  },
+  "D3 at s^4 = 81/2 the 40 formula lines are exactly the 40 non-special Y56 lines; with the 16 they give all 56": {
+   "ok": true,
+   "value": 40
+  },
+  "D4 the 16 special lines are one orbit (orbit S)": {
+   "ok": true,
+   "value": [
+    0,
+    6,
+    10,
+    11,
+    12,
+    19,
+    29,
+    33,
+    35,
+    36,
+    42,
+    44,
+    48,
+    50,
+    54,
+    55
+   ]
+  },
+  "E1 marching cubes (browser code): max |f| at mesh vertices relative to field scale (grid interpolation)": {
+   "ok": true,
+   "value": {
+    "y56_N96": 0.000312,
+    "wall_N64": 0.000666,
+    "fermat_N64": 0.000489,
+    "face_g00": 0.000428,
+    "face_g02": 0.000104,
+    "face_g24": 0.000169,
+    "face_g01": 7.7e-05,
+    "face_g12": 3.1e-05,
+    "face_g13": 0.000154
+   }
+  },
+  "E2 family coefficients at s* equal the standard-face quartic": {
+   "ok": true,
+   "value": 7.771561172376096e-15
+  },
+  "E3 curve pieces stay in the ball and end on the glass": {
+   "ok": true,
+   "value": {
+    "lines": {
+     "nseg": 56,
+     "maxR": 1.0000000000000002,
+     "maxStep": 0.01951624522860884,
+     "maxEndpointOffGlass": 2.220446049250313e-16
+    },
+    "conics": {
+     "nseg": 328,
+     "maxR": 1.0000000000000002,
+     "maxStep": 0.023996682055566067,
+     "maxEndpointOffGlass": 2.220446049250313e-16
+    }
+   }
+  },
+  "E4 the 8 gold points at the wall are singular points of G_2 (G = 0, gradient = 0)": {
+   "ok": true,
+   "value": {
+    "G": 5.551115123125783e-17,
+    "grad": 5.551115123125783e-11
+   }
+  },
+  "F1 total size under 15 MB": {
+   "ok": true,
+   "value": {
+    "index.html": 50724,
+    "core.js": 12760,
+    "data\\y56-data.js": 1623809
+   }
+  },
+  "F2 no local paths, personal names or AI product names in shipped files": {
+   "ok": true,
+   "value": []
+  },
+  "F3 external libraries only from cdn.jsdelivr.net/npm with an exact version": {
+   "ok": true,
+   "value": [
+    "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+   ]
+  }
+ },
+ "failed": []
+}

@@ -1,0 +1,14 @@
+Y56_Pencil_neg.lean:32:2: error: ring failed, ring expressions not equal
+K : Type u_1
+inst✝ : CommRing K
+a b s : K
+h1 : a * b * (s - a ^ 2 - b ^ 2) = 0
+h2 : 2 + a * b * (s - b ^ 2) = 0
+h3 : 1 + a * b ^ 3 = 0
+k1 : s - a ^ 2 - b ^ 2 = 0
+k2 : 2 + a ^ 3 * b = 0
+k4 : a ^ 2 - 2 * b ^ 2 = 0
+k5 : s - 3 * b ^ 2 = 0
+k6 : 2 * b ^ 8 - 1 = 0
+⊢ 1 = 0
+seconds: 19

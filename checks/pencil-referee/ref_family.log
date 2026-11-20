@@ -1,0 +1,20 @@
+generic graph lines 32  residual 16
+max |G| on generic 3.76e-48  on residual 1.37e-48
+generic -> indices distinct 32  max err 6.41e-50
+residual -> indices [0, 6, 10, 11, 12, 19, 29, 33, 35, 36, 42, 44, 48, 50, 54, 55]  max err 6.68e-51
+meet lines ->  [30, 43, 22, 14, 27, 53, 2, 24]  max err 0.0
+persistent 40 == complement of listed 16: True 40
+residual set == listed 16: True
+remainder of cubic / (z1-A(z0+z3)) mod f1 (should be 0): True
+Norm_{f1}(det conic) = 1024*(2*s**4 - 81)**2
+s= -9/4  real roots f1,f2 (with mult) 0 0  distinct 0 0  => real lines 8
+s= -2  real roots f1,f2 (with mult) 0 0  distinct 0 0  => real lines 8
+s= -1/2  real roots f1,f2 (with mult) 0 0  distinct 0 0  => real lines 8
+s= 0  real roots f1,f2 (with mult) 0 0  distinct 0 0  => real lines 8
+s= 3/2  real roots f1,f2 (with mult) 0 0  distinct 0 0  => real lines 8
+s= 2  real roots f1,f2 (with mult) 8 8  distinct 4 4  => real lines 24
+s= 21/10  real roots f1,f2 (with mult) 8 8  distinct 8 8  => real lines 40
+s= 11/4  real roots f1,f2 (with mult) 8 8  distinct 8 8  => real lines 40
+s= 5  real roots f1,f2 (with mult) 8 8  distinct 8 8  => real lines 40
+q(s-delta) = delta**4 - delta**2*s**2 + 4
+memcap: exit 0, peak 0.06 GB of 8.00 GB cap

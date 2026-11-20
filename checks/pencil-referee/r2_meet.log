@@ -1,0 +1,54 @@
+// ** redefining show (inimal primes",size(L); int i; for(i=1;i<=size(L);i++){ "  prime",i; L[i]; } }) r2_meet.sing:9
+z3=l z0, z0=a z1+b z2 : minimal primes 1
+  prime 1
+_[1]=1
+z3=l z0, z1=a z2 : minimal primes 6
+  prime 1
+_[1]=a2+1
+_[2]=s
+_[3]=l+1
+  prime 2
+_[1]=a2+1
+_[2]=s
+_[3]=l-1
+  prime 3
+_[1]=a2+1
+_[2]=s
+_[3]=l
+  prime 4
+_[1]=a
+_[2]=l+1
+  prime 5
+_[1]=a
+_[2]=l-1
+  prime 6
+_[1]=a
+_[2]=l
+z3=l z0, z2=0 : minimal primes 3
+  prime 1
+_[1]=l+1
+  prime 2
+_[1]=l-1
+  prime 3
+_[1]=l
+z0=0, z1=a z2+b z3 : minimal primes 2
+  prime 1
+_[1]=a2+1
+_[2]=s
+_[3]=b
+  prime 2
+_[1]=b
+_[2]=a
+z0=0, z2=a z1, (z1,z3)=(p,q) : minimal primes 2
+  prime 1
+_[1]=a2+1
+_[2]=s
+  prime 2
+_[1]=a
+z0=0, z2=0 : minimal primes 1
+  prime 1
+_[1]=0
+z0=z1=z2=0 point check (not a line) : minimal primes 1
+  prime 1
+_[1]=0
+exit 0

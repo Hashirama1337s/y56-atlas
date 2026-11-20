@@ -1,0 +1,19 @@
+order 32
+IdGroup [ 32, 43 ]
+StructureDescription C8 : (C2 x C2)
+exponent 8
+center C2
+derived C4
+abelianisation C2 x C2 x C2
+element orders [ [ 1, 1 ], [ 2, 15 ], [ 4, 8 ], [ 8, 8 ] ]
+nilpotency class 3
+conj classes 11
+subgroups by order [ [ 1, 1 ], [ 2, 5 ], [ 4, 9 ], [ 8, 11 ], [ 16, 7 ], 
+  [ 32, 1 ] ]
+subgroup counts by order [ [ 1, 1 ], [ 2, 15 ], [ 4, 19 ], [ 8, 15 ], 
+  [ 16, 7 ], [ 32, 1 ] ]
+Frattini C4
+minimal gens 3
+faithful irreps degrees [ [ 1, 8 ], [ 2, 2 ], [ 4, 1 ] ]
+SmallGroup(32,k) with same invariants: [ 43 ]
+IsomorphismGroups check: true

@@ -1,0 +1,28 @@
+I[1]=-2*A3C-2*AC3+(2s)*AC
+I[2]=-6*A2BC-2*BC3-2*A3D-6*AC2D+(2s)*BC+(2s)*AD+4
+I[3]=-6*AB2C-6*A2BD-6*BC2D-6*ACD2+(2s)*AC+(2s)*BD
+I[4]=-2*B3C-6*AB2D-6*BCD2-2*AD3+(2s)*BC+(2s)*AD-4
+I[5]=-2*B3D-2*BD3+(2s)*BD
+dim 2 vdim -1
+radical vdim -1
+component 1 vdim -1
+_[1]=4*D8+(-8s)*D6+(5s2)*D4+(-s3)*D2+1
+_[2]=C+D
+_[3]=2*D5+(-3s)*D3+B+(s2)*D
+_[4]=2*D5+(-3s)*D3+A+(s2)*D
+component 2 vdim -1
+_[1]=4*D8+(-8s)*D6+(5s2)*D4+(-s3)*D2+1
+_[2]=C-D
+_[3]=-2*D5+(3s)*D3+B+(-s2)*D
+_[4]=2*D5+(-3s)*D3+A+(s2)*D
+component 3 vdim -1
+_[1]=C8+(-4s)*C6+(5s2)*C4+(-2s3)*C2+4
+_[2]=D
+_[3]=C5+(-3s)*C3+2*B+(2s2)*C
+_[4]=A
+component 4 vdim -1
+_[1]=D8+(-4s)*D6+(5s2)*D4+(-2s3)*D2+4
+_[2]=C
+_[3]=B
+_[4]=-D5+(3s)*D3+2*A+(-2s2)*D
+exit 0

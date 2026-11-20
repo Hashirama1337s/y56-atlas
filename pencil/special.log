@@ -1,0 +1,75 @@
+dim I 1 degree 32
+containments (0 = component lies in Fano ideal's zero set): 0 0 0 0
+residual: dim 0 vdim 64
+eliminant in s:
+E[1]=2s4-81
+[1]:
+   _[1]=1
+   _[2]=2s4-81
+[2]:
+   1,1
+residual component 1 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=D
+_[3]=C8-8
+_[4]=-C5+4B
+_[5]=-C5+4A
+residual component 2 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=D
+_[3]=C8-8
+_[4]=-C5+4B
+_[5]=C5+4A
+residual component 3 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=2D8-1
+_[3]=C-D
+_[4]=B
+_[5]=-2D5+A
+residual component 4 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=2D8-1
+_[3]=C-D
+_[4]=2D5+B
+_[5]=A
+residual component 5 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=2D8-1
+_[3]=C+D
+_[4]=B
+_[5]=-2D5+A
+residual component 6 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=2D8-1
+_[3]=C+D
+_[4]=-2D5+B
+_[5]=A
+residual component 7 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=D8-8
+_[3]=C
+_[4]=-D5+4B
+_[5]=D5+4A
+residual component 8 vdim 8
+_[1]=-3/2C2-3/2D2+s
+_[2]=D8-8
+_[3]=C
+_[4]=D5+4B
+_[5]=D5+4A
+disc f1:
+[1]:
+   _[1]=16777216
+   _[2]=s-2
+   _[3]=s+2
+   _[4]=s2+4
+[2]:
+   1,4,4,4
+disc f2:
+[1]:
+   _[1]=4194304
+   _[2]=s-2
+   _[3]=s+2
+   _[4]=s2+4
+[2]:
+   1,4,4,4
+exit 0

@@ -1,0 +1,8 @@
+msolve header (dim code, #?) ('0', '1')
+real solutions (a,b,c,d,s boxes): 112
+s>0: 56  s<0: 56
+distinct midpoints: 112
+overlapping box pairs: 0
+GB elements: 85
+standard monomials (vdim over Q with s adjoined, with multiplicity): 112
+memcap: exit 0, peak 0.08 GB of 8.00 GB cap

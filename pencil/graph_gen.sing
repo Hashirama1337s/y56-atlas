@@ -1,0 +1,9 @@
+// Lines of G_s that are graphs z1 = A z0 + B z3, z2 = C z0 + D z3 (i.e. not meeting the line z0=z3=0), over Q(s). kappa=-s^2.
+LIB "primdec.lib";
+ring R = (0,s), (A,B,C,D,x,y), dp;
+poly z0=x; poly z3=y; poly z1=A*x+B*y; poly z2=C*x+D*y;
+poly G=4*z0^3*z3 - 4*z0*z3^3 + 2*z1*z2*(s*(z0^2+z3^2) - (z1^2+z2^2));
+matrix M=coef(G,x*y); ideal I=M[2,1..ncols(M)]; I;
+ideal J=std(I); "dim",dim(J),"vdim",vdim(J); ideal Jr=std(radical(I)); "radical vdim",vdim(Jr);
+list L=minAssGTZ(I); int i; for(i=1;i<=size(L);i++){ "component",i,"vdim",vdim(std(L[i])); L[i]; }
+quit;

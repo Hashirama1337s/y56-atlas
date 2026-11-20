@@ -1,0 +1,9 @@
+LIB "primdec.lib"; ring R = (0,s), (A,B,C,D), dp;
+ideal I = -2*A^3*C-2*A*C^3+2*s*A*C,
+ -6*A^2*B*C-2*B*C^3-2*A^3*D-6*A*C^2*D+2*s*B*C+2*s*A*D+4,
+ -6*A*B^2*C-6*A^2*B*D-6*B*C^2*D-6*A*C*D^2+2*s*A*C+2*s*B*D,
+ -2*B^3*C-6*A*B^2*D-6*B*C*D^2-2*A*D^3+2*s*B*C+2*s*A*D-4,
+ -2*B^3*D-2*B*D^3+2*s*B*D;
+ideal J=std(I); ideal Jr=std(radical(I));
+"generic: graph-chart lines: length",vdim(J)," distinct",vdim(Jr)," => total with the 8 (+8 at s=0) lines meeting z0=z3=0 added by hand";
+quit;

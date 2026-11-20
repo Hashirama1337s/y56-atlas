@@ -1,0 +1,23 @@
+g00: 8 real nodes
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+g01: 2 real nodes
+     indefinite (neck pinch)
+     indefinite (neck pinch)
+g02: 0 real nodes
+g12: 2 real nodes
+     definite (sphere shrinks to a point); separating form q = -8.656 (region 0; thresholds 1.333, 38.250)
+     definite (sphere shrinks to a point); separating form q = 47.735 (region 2; thresholds 1.333, 38.250)
+g13: 4 real nodes
+     indefinite (neck pinch); separating form q = 18.856 (region 2; thresholds -16.429, 16.500)
+     indefinite (neck pinch); separating form q = 18.856 (region 2; thresholds -16.429, 16.500)
+     indefinite (neck pinch); separating form q = -18.856 (region 0; thresholds -16.429, 16.500)
+     indefinite (neck pinch); separating form q = -18.856 (region 0; thresholds -16.429, 16.500)
+g24: 0 real nodes
+memcap: exit 0, peak 0.81 GB of 8.00 GB cap

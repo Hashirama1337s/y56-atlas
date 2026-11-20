@@ -1,0 +1,50 @@
+p=(0,1,t,0), q=(1,0,e,f) : components 6
+  comp 1 dim 1
+_[1]=t2+1
+_[2]=s
+_[3]=f+1
+_[4]=e
+  comp 2 dim 1
+_[1]=t2+1
+_[2]=s
+_[3]=f-1
+_[4]=e
+  comp 3 dim 1
+_[1]=t2+1
+_[2]=s
+_[3]=f
+_[4]=e
+  comp 4 dim 2
+_[1]=f+1
+_[2]=e
+_[3]=t
+  comp 5 dim 2
+_[1]=f-1
+_[2]=e
+_[3]=t
+  comp 6 dim 2
+_[1]=f
+_[2]=e
+_[3]=t
+p=(0,1,t,0), q=(0,0,e,1) : components 2
+  comp 1 dim 2
+_[1]=t2+1
+_[2]=s
+_[3]=e
+  comp 2 dim 3
+_[1]=e
+_[2]=t
+p=(0,0,1,0), q=(1,e,0,f)   [t unused] : components 3
+  comp 1 dim 3
+_[1]=f+1
+_[2]=e
+  comp 2 dim 3
+_[1]=f-1
+_[2]=e
+  comp 3 dim 3
+_[1]=f
+_[2]=e
+p=(0,0,1,0), q=(0,e,0,1)   [t,f unused] : components 1
+  comp 1 dim 4
+_[1]=e
+exit 0

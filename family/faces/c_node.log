@@ -1,0 +1,34 @@
+// ** redefining blowup0 (;return();) c_node.sing:2
+// ** redefining blowup0 (;return();) c_node.sing:2
+// ** redefining elimRing (;return();) c_node.sing:2
+// ** redefining elimRing (;return();) c_node.sing:2
+// ** redefining elim (;return();) c_node.sing:2
+// ** redefining elim (;return();) c_node.sing:2
+// ** redefining elim2 (;return();) c_node.sing:2
+// ** redefining elim2 (;return();) c_node.sing:2
+// ** redefining elim1 (;return();) c_node.sing:2
+// ** redefining elim1 (;return();) c_node.sing:2
+// ** redefining nselect (;return();) c_node.sing:2
+// ** redefining nselect (;return();) c_node.sing:2
+// ** redefining sat (;return();) c_node.sing:2
+// ** redefining sat (;return();) c_node.sing:2
+// ** redefining sat_with_exp (;return();) c_node.sing:2
+// ** redefining sat_with_exp (;return();) c_node.sing:2
+// ** redefining select (;return();) c_node.sing:2
+// ** redefining select (;return();) c_node.sing:2
+// ** redefining select1 (;return();) c_node.sing:2
+// ** redefining select1 (;return();) c_node.sing:2
+dim (projective = dim-1):
+1
+degree of singular scheme (affine cone):
+8
+degree of reduced singular set:
+8
+chart z0=1: vdim reduced = 8
+// ** redefining T (  ideal T = std(Sr + ideal(var(i)-1));) c_node.sing:12
+chart z1=1: vdim reduced = 8
+// ** redefining T (  ideal T = std(Sr + ideal(var(i)-1));) c_node.sing:12
+chart z2=1: vdim reduced = 8
+// ** redefining T (  ideal T = std(Sr + ideal(var(i)-1));) c_node.sing:12
+chart z3=1: vdim reduced = 8
+exit 0

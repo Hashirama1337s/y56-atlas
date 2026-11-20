@@ -1,0 +1,30 @@
+// Referee R1: (1) smoothness of the member; (2) number of lines at a fixed s in random rational coordinates z = T x:
+// graph chart x2 = a x0 + b x1, x3 = c x0 + d x1 (lines missing {x0=x1=0}) + emptiness of the complementary stratum.
+LIB "primdec.lib";
+ring S2 = 0, (z0,z1,z2,z3), dp; 
+poly F=4*z0^3*z3 - 4*z0*z3^3 + 2*z1*z2*(0*(z0^2+z3^2) - (z1^2+z2^2));
+ideal Sg=std(jacob(F)); "singular locus of the affine cone: dim (0 = smooth member):",dim(Sg);
+ring R = 0, (a,b,c,d,u,v,m), dp; 
+matrix T[4][4] = 3,1,-2,5, -1,4,1,2, 2,-3,5,1, 1,1,1,-4;
+proc Gof(poly x0, poly x1, poly x2, poly x3)
+{
+ poly z0=T[1,1]*x0+T[1,2]*x1+T[1,3]*x2+T[1,4]*x3;
+ poly z1=T[2,1]*x0+T[2,2]*x1+T[2,3]*x2+T[2,4]*x3;
+ poly z2=T[3,1]*x0+T[3,2]*x1+T[3,3]*x2+T[3,4]*x3;
+ poly z3=T[4,1]*x0+T[4,2]*x1+T[4,3]*x2+T[4,4]*x3;
+ return(4*z0^3*z3 - 4*z0*z3^3 + 2*z1*z2*(0*(z0^2+z3^2) - (z1^2+z2^2)));
+}
+"det T", det(T);
+poly G=subst(Gof(u, v, a*u+b*v, c*u+d*v),v,1);
+matrix M=coeffs(G,u); ideal I; int k; for(k=1;k<=nrows(M);k++){ I=I+M[k,1]; }
+proc strat(list P, list Q)
+{
+ poly G2=Gof(m*P[1]+Q[1], m*P[2]+Q[2], m*P[3]+Q[3], m*P[4]+Q[4]);
+ matrix N=coeffs(G2,m); ideal K; int i; for(i=1;i<=nrows(N);i++){K=K+N[i,1];}
+ K=std(K); return(K[1]);
+}
+"stratum (lines meeting x0=x1=0) leading GB element (1 = empty):", strat(list(0,0,1,a),list(1,b,0,c)), strat(list(0,0,1,a),list(0,1,0,c)), strat(list(0,0,0,1),list(1,b,a,0)), strat(list(0,0,0,1),list(0,1,a,0));
+ring R4 = 0, (a,b,c,d), dp; 
+ideal I=imap(R,I);
+ideal J=std(I); "graph chart: dim",dim(J)," length (vdim)",vdim(J);
+quit;

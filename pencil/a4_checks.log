@@ -1,0 +1,38 @@
+(a) f2(D)=q(D^2): True ; 4 f1(D)=q(2D^2): True ; q(s-delta)= delta**4 - delta**2*s**2 + 4
+(a) component C1 lies on G_s for all s (remainder mod f = 0): True
+(a) component C2 lies on G_s for all s (remainder mod f = 0): True
+(a) component C4 lies on G_s for all s (remainder mod f = 0): True
+(a) component C3 lies on G_s: True
+(b) real roots of f1,f2 (each gives 2 components x that many real lines):
+   s = -7  kappa=-s^2= -49.0  real roots f1,f2: 0 0  => real lines 8 + 0 = 8
+   s = -3  kappa=-s^2= -9.0  real roots f1,f2: 0 0  => real lines 8 + 0 = 8
+   s = -5/2  kappa=-s^2= -6.25  real roots f1,f2: 0 0  => real lines 8 + 0 = 8
+   s = -1  kappa=-s^2= -1.0  real roots f1,f2: 0 0  => real lines 8 + 0 = 8
+   s = 0  kappa=-s^2= 0.0  real roots f1,f2: 0 0  => real lines 8 + 0 = 8
+   s = 1  kappa=-s^2= -1.0  real roots f1,f2: 0 0  => real lines 8 + 0 = 8
+   s = 19/10  kappa=-s^2= -3.61  real roots f1,f2: 0 0  => real lines 8 + 0 = 8
+   s = 201/100  kappa=-s^2= -4.0401  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+   s = 9/4  kappa=-s^2= -5.0625  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+   s = 5/2  kappa=-s^2= -6.25  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+   s = 25227/10000  kappa=-s^2= -6.36401529  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+   s = 6307/2500  kappa=-s^2= -6.36451984  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+   s = 13/5  kappa=-s^2= -6.76  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+   s = 3  kappa=-s^2= -9.0  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+   s = 7  kappa=-s^2= -49.0  real roots f1,f2: 8 8  => real lines 8 + 32 = 40
+(c) cubic = (z1 - E(z0+z3)) * conic, remainder mod f1 zero: True
+(c) Norm over D of det(conic) = 16777216*(2*s**4 - 81)**2
+(d) s = 2.5  lines 40  rank 19  det 128  smith [2, 8, 8]  min nonzero |det| 0.00682  max zero 1.72e-41
+     valencies [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+(d) s = 2.6  lines 40  rank 19  det 128  smith [2, 8, 8]  min nonzero |det| 0.00765  max zero 2.66e-41
+     valencies [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+(d) s = 3.0  lines 40  rank 19  det 128  smith [2, 8, 8]  min nonzero |det| 0.00995  max zero 1.08e-40
+     valencies [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+(d) s = 1.0  lines 40  rank 19  det 128  smith [2, 8, 8]  min nonzero |det| 0.0308  max zero 6.4e-42
+     valencies [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+(d) s = (0.0 + 2.3333333j)  lines 40  rank 19  det 128  smith [2, 8, 8]  min nonzero |det| 0.0051  max zero 4.16e-41
+     valencies [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+(d) s = 0.0  lines 48  rank 20  det -64  smith [8, 8]  min nonzero |det| 0.0821  max zero 4.38e-42
+     valencies [14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14]
+     40-sublattice at s=0: rank 19 det 128 smith [2, 8, 8]
+     the 8 extra lines: mutual incidences 16  each meets persistent: [10, 10, 10, 10, 10, 10, 10, 10]
+memcap: exit 0, peak 0.06 GB of 8.00 GB cap

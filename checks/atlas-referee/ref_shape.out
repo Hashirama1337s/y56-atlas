@@ -1,0 +1,10 @@
+z1=a z0, z2=b(z3-z0) | nonzero coeffs: 4 | same ideal as paper's 3 eqs: False
+    [-2*alpha*beta*(-alpha**2 - beta**2 + s), 2*(-alpha**3*beta - 3*alpha*beta**3 + alpha*beta*s + 2), -2*alpha*beta*(-3*beta**2 + s), 2*(-alpha*beta**3 + alpha*beta*s - 2), 0]
+z1=a z0, z2=b(z0-z3) | nonzero coeffs: 4 | same ideal as paper's 3 eqs: True
+    [2*alpha*beta*(-alpha**2 - beta**2 + s), -2*(-alpha**3*beta - 3*alpha*beta**3 + alpha*beta*s - 2), 2*alpha*beta*(-3*beta**2 + s), -2*(-alpha*beta**3 + alpha*beta*s + 2), 0]
+z1=-a z0, z2=b(z3-z0) | nonzero coeffs: 4 | same ideal as paper's 3 eqs: True
+    [2*alpha*beta*(-alpha**2 - beta**2 + s), -2*(-alpha**3*beta - 3*alpha*beta**3 + alpha*beta*s - 2), 2*alpha*beta*(-3*beta**2 + s), -2*(-alpha*beta**3 + alpha*beta*s + 2), 0]
+paper converse on stated shape, max|coef| = 8.00000000000000000000000000000
+with alpha=+1/beta^3, max|coef| = 0
+corrected shape z2=b(z0-z3), paper's converse point: max|coef| = 0
+memcap: exit 0, peak 0.05 GB of 4.00 GB cap

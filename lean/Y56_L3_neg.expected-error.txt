@@ -1,0 +1,20 @@
+Y56_L3_neg.lean:293:64: error: Tactic `decide` proved that the proposition
+  (List.range' 0 2).all meetRow = true
+is false
+Y56_L3_neg.lean:296:64: error: Tactic `decide` proved that the proposition
+  (List.range' 6 2).all meetRow = true
+is false
+Y56_L3_neg.lean:373:19: warning: This simp argument is unused:
+  Bool.false_eq_true
+Y56_L3_neg.lean:421:2: error: Tactic `decide` proved that the proposition
+  NB.length = 56 ∧
+    ((List.range 56).all fun i =>
+          (NB.getD i []).length == 16 && !(NB.getD i []).contains i &&
+            (NB.getD i []).all fun j => decide (j < 56) && (NB.getD j []).contains i) =
+        true ∧
+      List.flatMap (fun i => List.map (fun j => (i, j)) (List.filter (fun j => decide (i < j)) (NB.getD i [])))
+            (List.range 56) =
+          EDGES ∧
+        strictInc EDGES = true ∧ EDGES.length = 448 ∧ 56 * 55 / 2 - 448 = 1092
+is false
+seconds: 41

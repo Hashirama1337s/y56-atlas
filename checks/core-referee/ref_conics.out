@@ -1,0 +1,8 @@
+Z-basis of N found among generators: True (trial 3)
+signature (exact LDL pivots): (1, 19), det = -64
+all 57 generators have integral coordinates in the basis: True
+Q min eigenvalue 0.0230 (positive definite: True)
+vectors with Q <= 4 (incl. 0): 8809
+classes c with c.h = 2, c^2 = -2: 636
+sums of two meeting lines: 448 (all in set: True); others: 188
+pairs {c, h-c} with both not line-pair sums: 20

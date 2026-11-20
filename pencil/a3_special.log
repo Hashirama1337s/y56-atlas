@@ -1,0 +1,33 @@
+8 MIXED type: z1 prop. to an axis form, other prop. to a diagonal form [0, 6, 10, 11, 12, 33, 36, 48]
+16 diagonal type (z1,z2 prop. to z0+z3, z0-z3 in some order) [1, 4, 5, 13, 15, 17, 18, 20, 28, 31, 34, 39, 41, 45, 46, 47]
+8 meets z0=z3=0 [2, 14, 22, 24, 27, 30, 43, 53]
+16 axis type (z1,z2 prop. to z0,z3 in some order) [3, 7, 8, 9, 16, 21, 23, 25, 26, 32, 37, 38, 40, 49, 51, 52]
+8 MIXED type: z2 prop. to an axis form, other prop. to a diagonal form [19, 29, 35, 42, 44, 50, 54, 55]
+MIXED set == first-order-obstructed set: True
+v.L=+4: [6, 10, 29, 33, 35, 36, 50, 54]
+v.L=-4: [0, 11, 12, 19, 42, 44, 48, 55]
+incidences within +: 0  within -: 0
+meeting (+,-) pairs: 48 [(6, 0), (6, 11), (6, 19), (6, 42), (6, 44), (6, 55), (10, 0), (10, 12), (10, 19), (10, 42), (10, 44), (10, 55), (29, 0), (29, 11), (29, 12), (29, 42), (29, 48), (29, 55), (33, 12), (33, 19), (33, 42), (33, 44), (33, 48), (33, 55), (35, 0), (35, 11), (35, 12), (35, 19), (35, 44), (35, 48), (36, 11), (36, 19), (36, 42), (36, 44), (36, 48), (36, 55), (50, 0), (50, 11), (50, 12), (50, 42), (50, 44), (50, 48), (54, 0), (54, 11), (54, 12), (54, 19), (54, 48), (54, 55)]
+ L00 meets special: [6, 10, 29, 35, 50, 54]  persistent count: 10
+ L06 meets special: [0, 11, 19, 42, 44, 55]  persistent count: 10
+ L10 meets special: [0, 12, 19, 42, 44, 55]  persistent count: 10
+ L11 meets special: [6, 29, 35, 36, 50, 54]  persistent count: 10
+ L12 meets special: [10, 29, 33, 35, 50, 54]  persistent count: 10
+ L19 meets special: [6, 10, 33, 35, 36, 54]  persistent count: 10
+ L29 meets special: [0, 11, 12, 42, 48, 55]  persistent count: 10
+ L33 meets special: [12, 19, 42, 44, 48, 55]  persistent count: 10
+ L35 meets special: [0, 11, 12, 19, 44, 48]  persistent count: 10
+ L36 meets special: [11, 19, 42, 44, 48, 55]  persistent count: 10
+ L42 meets special: [6, 10, 29, 33, 36, 50]  persistent count: 10
+ L44 meets special: [6, 10, 33, 35, 36, 50]  persistent count: 10
+ L48 meets special: [29, 33, 35, 36, 50, 54]  persistent count: 10
+ L50 meets special: [0, 11, 12, 42, 44, 48]  persistent count: 10
+ L54 meets special: [0, 11, 12, 19, 48, 55]  persistent count: 10
+ L55 meets special: [6, 10, 29, 33, 36, 54]  persistent count: 10
+w.L_k: [8, 0, 0, 0, 0, 0, -8, 0, 0, 0, -8, 8, 8, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, 0, 0, 0, -8, 0, -8, -8, 0, 0, 0, 0, 0, 8, 0, 8, 0, 0, 0, 8, 0, -8, 0, 0, 0, -8, 8]
+w = -2 v ? True
+4-line plane [0, 6, 23, 24] special pair [0, 6] signs [-4, 4] meet True
+4-line plane [0, 9, 17, 54] special pair [0, 54] signs [-4, 4] meet True
+4-line plane [0, 10, 39, 43] special pair [0, 10] signs [-4, 4] meet True
+planes by (number of lines, number of special lines): {(2, 2): 16, (2, 1): 32, (2, 0): 100, (4, 2): 32, (4, 0): 18}
+memcap: exit 0, peak 0.06 GB of 8.00 GB cap

@@ -1,0 +1,13 @@
+# Tool versions used for the exact checks (Python 3.11 on Windows; GAP, Singular, msolve and PARI run through passagemath wheels under WSL Ubuntu)
+sympy==1.14.0
+mpmath==1.3.0
+networkx==3.6.1
+numpy==2.4.4
+scipy==1.17.1
+scikit-image==0.26.0
+python-flint==0.9.0
+cypari2   # l2.py and l3.py run under WSL with passagemath-pari
+passagemath-singular==10.8.14
+passagemath-msolve==10.8.14   # msolve 0.10.1, run in default Monte Carlo mode
+passagemath-gap
+passagemath-pari

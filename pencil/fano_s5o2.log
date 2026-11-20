@@ -1,0 +1,9 @@
+case (5/2)
+chart 0 1 : dim 0  vdim 39  distinct 39
+chart 0 2 : dim 0  vdim 1  distinct 1
+chart 0 3 : empty
+chart 1 2 : empty
+chart 1 3 : empty
+chart 2 3 : empty
+TOTAL lines with multiplicity: 40   distinct lines: 40
+exit 0

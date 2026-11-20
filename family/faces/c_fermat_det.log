@@ -1,0 +1,9 @@
+the 32-group reps act on F0 with constant character: True
+g00: centraliser order 32; signs of det of its real symmetries (in sister coords): [-1, 1]
+g01: centraliser order 8; signs of det of its real symmetries (in sister coords): [-1, 1]
+g02: centraliser order 4; signs of det of its real symmetries (in sister coords): [1]
+g12: centraliser order 8; signs of det of its real symmetries (in sister coords): [-1, 1]
+g13: centraliser order 16; signs of det of its real symmetries (in sister coords): [-1, 1]
+g24: centraliser order 32; signs of det of its real symmetries (in sister coords): [-1, 1]
+h in Aut(F0) carrying sigma_g02 to sigma_g24: 32; induced real maps (sister coords) det signs: [-1, 1]
+memcap: exit 0, peak 0.44 GB of 8.00 GB cap

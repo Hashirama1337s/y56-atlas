@@ -1,0 +1,27 @@
+Y56_L8_neg.lean:129:2: error: Tactic `decide` proved that the proposition
+  ∀ (a b : Fin 20), (List.ofFn fun k => Af a k * GBf k b).sum = Tf a b
+is false
+Y56_L8_neg.lean:145:8: warning: `Matrix.det_of_lowerTriangular` has been deprecated: Use `Matrix.det_of_isLowerTriangular` instead
+  Matrix.det_of_l̵i̲s̲L̲owerTriangular
+Y56_L8_neg.lean:148:8: warning: `Matrix.det_of_upperTriangular` has been deprecated: Use `Matrix.det_of_isUpperTriangular` instead
+  Matrix.det_of_u̵i̲s̲U̲pperTriangular
+Y56_L8_neg.lean:171:64: error: Tactic `decide` proved that the proposition
+  (List.range' 24 4).all relRow = true
+is false
+Y56_L8_neg.lean:172:64: error: Tactic `decide` proved that the proposition
+  (List.range' 28 4).all relRow = true
+is false
+Y56_L8_neg.lean:175:65: error: Tactic `decide` proved that the proposition
+  (List.range' 40 4).all relRow = true
+is false
+Y56_L8_neg.lean:177:65: error: Tactic `decide` proved that the proposition
+  (List.range' 48 4).all relRow = true
+is false
+Y56_L8_neg.lean:178:65: error: Tactic `decide` proved that the proposition
+  (List.range' 52 4).all relRow = true
+is false
+Y56_L8_neg.lean:214:2: error: Tactic `decide` proved that the proposition
+  (List.map (fun a => (List.map (fun b => Gf a b) [0, 6, 23, 24]).sum) [0, 6, 23, 24]).sum = 4 ∧
+    ((List.range 56).all fun j => (List.map (fun a => Gf a j) [0, 6, 23, 24]).sum == 1) = true
+is false
+seconds: 40

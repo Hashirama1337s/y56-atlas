@@ -1,0 +1,4 @@
+pairing of orthogonal class with the 8 extra lines: [-1, 1, -1, 1, 1, -1, 1, -1]  with the 40: {0}
+self-intersection of this (line-pairing-primitive) class: -2
+extra-line incidence among the 8: [[-2, 1, 1, 0, 1, 0, 1, 0], [1, -2, 0, 1, 0, 1, 0, 1], [1, 0, -2, 1, 1, 0, 1, 0], [0, 1, 1, -2, 0, 1, 0, 1], [1, 0, 1, 0, -2, 1, 1, 0], [0, 1, 0, 1, 1, -2, 0, 1], [1, 0, 1, 0, 1, 0, -2, 1], [0, 1, 0, 1, 0, 1, 1, -2]]
+memcap: exit 0, peak 0.05 GB of 8.00 GB cap

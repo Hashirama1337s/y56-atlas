@@ -1,0 +1,7 @@
+g12 mesh components (RP^3): 3  samples: [2346, 1589, 2264]
+   best LP order (2, 1, 0) margin 0.2731
+   integer Q = [[-20, 0, 2, 4], [0, 20, 0, -20], [2, 0, 20, -20], [4, -20, -20, 19]]  ranges by component: [(np.float64(43.634), np.float64(47.773)), (np.float64(6.841), np.float64(32.868)), (np.float64(-9.247), np.float64(-4.215))]  thresholds ['4/3', '153/4']
+g13 mesh components (RP^3): 3  samples: [1678, 2910, 1680]
+   best LP order (0, 1, 2) margin 0.1786
+   integer Q = [[20, 0, -20, 0], [0, 0, 0, 1], [-20, 0, -20, 0], [0, 1, 0, 14]]  ranges by component: [(np.float64(-22.088), np.float64(-20.0)), (np.float64(-12.86), np.float64(12.962)), (np.float64(20.001), np.float64(25.842))]  thresholds ['-115/7', '33/2']
+memcap: exit 0, peak 0.90 GB of 8.00 GB cap

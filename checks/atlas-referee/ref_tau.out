@@ -1,0 +1,2 @@
+tau is identity? False | tau^2 identity? False | tau^4 identity? True
+memcap: exit 0, peak 0.06 GB of 4.00 GB cap

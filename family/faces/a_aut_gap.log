@@ -1,0 +1,21 @@
+Error, reached the pre-set memory limit
+(change it with the -o command line option)
+Stack trace:
+*[1] Add( res, func( i ) );
+   @ <GAP library>/lib/list.gi:720
+ [2] Set( e, function ( i )
+      return OnSets( i, g );
+  end )
+   @ <GAP library>/lib/oprtperm.gi:1622
+ [3] act( orb[p], acts[i] )
+   @ <GAP library>/lib/oprt.gi:1280
+ [4] DoOrbitStabilizerAlgorithmStabsize( G, D, blist, gens, acts, dopr )
+   @ <GAP library>/lib/oprt.gi:1525
+ [5] OrbitStabilizerAlgorithm( G, false, false, gens, acts, rec(
+    pnt := d,
+    act := act,
+    onlystab := true ) )
+   @ <GAP library>/lib/oprt.gi:3117
+...  at a_aut.g:3
+you can 'return;'
+[1m[34m[0m[31m

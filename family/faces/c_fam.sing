@@ -1,0 +1,11 @@
+// Singular members of the symmetric family F = Im(w^4) + Im(p^2)(b|w|^2 + c|p|^2) (complex form), with a = 1.
+// Eliminate z from the saturated Jacobian ideal: result = polynomial in b, c whose zeros are singular members.
+LIB "elim.lib";
+ring R = 0, (z0,z1,z2,z3,b,c), dp;
+poly F = 4*z0^3*z3 - 4*z0*z3^3 + 2*b*z1*z2*(z0^2+z3^2) + 2*c*z1*z2*(z1^2+z2^2);
+ideal I = diff(F,z0), diff(F,z1), diff(F,z2), diff(F,z3);
+def SS = sat(I, ideal(z0,z1,z2,z3)); if (typeof(SS)=="list") { ideal S = SS[1]; } else { ideal S = SS; }
+ideal E = eliminate(S, z0*z1*z2*z3);
+print("eliminant in (b,c):"); print(E);
+print("factors:"); print(factorize(E[1]));
+quit;

@@ -1,0 +1,23 @@
+// All special s where extra graph-lines appear: s as a variable. I = Fano ideal in graph chart; remove the four generic components by saturation.
+LIB "primdec.lib"; 
+ring R = 0, (A,B,C,D,s), dp;
+ideal I = -2*A^3*C-2*A*C^3+2*s*A*C,
+ -6*A^2*B*C-2*B*C^3-2*A^3*D-6*A*C^2*D+2*s*B*C+2*s*A*D+4,
+ -6*A*B^2*C-6*A^2*B*D-6*B*C^2*D-6*A*C*D^2+2*s*A*C+2*s*B*D,
+ -2*B^3*C-6*A*B^2*D-6*B*C*D^2-2*A*D^3+2*s*B*C+2*s*A*D-4,
+ -2*B^3*D-2*B*D^3+2*s*B*D;
+ideal J=std(I); "dim I",dim(J),"degree",mult(J);
+ideal C1 = 4*D^8-8*s*D^6+5*s^2*D^4-s^3*D^2+1, C+D, 2*D^5-3*s*D^3+B+s^2*D, 2*D^5-3*s*D^3+A+s^2*D;
+ideal C2 = 4*D^8-8*s*D^6+5*s^2*D^4-s^3*D^2+1, C-D, -2*D^5+3*s*D^3+B-s^2*D, 2*D^5-3*s*D^3+A+s^2*D;
+ideal C3 = C^8-4*s*C^6+5*s^2*C^4-2*s^3*C^2+4, D, C^5-3*s*C^3+2*B+2*s^2*C, A;
+ideal C4 = D^8-4*s*D^6+5*s^2*D^4-2*s^3*D^2+4, C, B, -D^5+3*s*D^3+2*A-2*s^2*D;
+"containments (0 = component lies in Fano ideal's zero set):", size(reduce(I,std(C1))), size(reduce(I,std(C2))), size(reduce(I,std(C3))), size(reduce(I,std(C4)));
+ideal K=I; K=sat(K,C1); K=sat(K,C2); K=sat(K,C3); K=sat(K,C4);
+K=std(K); "residual: dim",dim(K),"vdim",vdim(K);
+ideal E=eliminate(K,A*B*C*D); "eliminant in s:"; E; factorize(E[1]);
+list L=minAssGTZ(K); int i; for(i=1;i<=size(L);i++){ "residual component",i,"vdim",vdim(std(L[i])); L[i]; }
+// discriminant-type data: where generic components collide
+ring S=0,(s,D),dp;
+poly f1=4*D^8-8*s*D^6+5*s^2*D^4-s^3*D^2+1; poly f2=D^8-4*s*D^6+5*s^2*D^4-2*s^3*D^2+4;
+"disc f1:"; factorize(resultant(f1,diff(f1,D),D)); "disc f2:"; factorize(resultant(f2,diff(f2,D),D));
+quit;

@@ -1,0 +1,7 @@
+graph automorphisms: 64
+realised projective permutations: 32  all are graph automorphisms: True
+F(R y) == Fg(y): True   F(R y) == -Fg(y): False
+tau permutes the 56 lines: True
+tau is a graph automorphism: True  tau realised projectively: False
+tau * (32 realised) == the 32 unrealised: True
+memcap: exit 0, peak 0.07 GB of 8.00 GB cap

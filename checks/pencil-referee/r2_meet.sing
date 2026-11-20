@@ -1,0 +1,19 @@
+// Referee R2b: lines meeting L0={z0=z3=0}, all s at once, via the pencil of planes through L0.
+// Plane z3 = l*z0 (coords z0,z1,z2) and plane z0 = 0 (coords z1,z2,z3).
+LIB "primdec.lib";
+ring R = 0, (l,a,b,s,p,q), dp;
+proc H(poly z0, poly z1, poly z2, poly z3){ return(4*z0^3*z3 - 4*z0*z3^3 + 2*z1*z2*(s*(z0^2+z3^2) - (z1^2+z2^2))); }
+proc show(poly F, string nm)
+{ matrix M=coeffs(subst(F,q,1),p); ideal I; int k; for(k=1;k<=nrows(M);k++){I=I+M[k,1];}
+  list L=minAssGTZ(I); nm,": minimal primes",size(L); int i; for(i=1;i<=size(L);i++){ "  prime",i; L[i]; } }
+// plane z3=l z0, line z0 = a z1 + b z2 ; points (z1,z2)=(p,q)
+show(H(a*p+b*q, p, q, l*(a*p+b*q)), "z3=l z0, z0=a z1+b z2");
+// plane z3=l z0, line z1 = a z2 (passes through (1,0,0,l)); points z0=p, z2=q
+show(H(p, a*q, q, l*p), "z3=l z0, z1=a z2");
+show(H(p, q, 0, l*p), "z3=l z0, z2=0");
+// plane z0=0, line z1 = a z2 + b z3 ; points (z2,z3)=(p,q)
+show(H(0, a*p+b*q, p, q), "z0=0, z1=a z2+b z3");
+show(H(0, p, a*p, q), "z0=0, z2=a z1, (z1,z3)=(p,q)");
+show(H(0, p, 0, q), "z0=0, z2=0");
+show(H(0, 0, 0, 1)+0*p, "z0=z1=z2=0 point check (not a line)");
+quit;

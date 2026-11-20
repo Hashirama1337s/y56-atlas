@@ -1,0 +1,45 @@
+rank of 56x56 intersection matrix: 20
+Z-basis of the line lattice N: det Gram = -64  even: True
+Smith invariants of N: [2, 32]
+  generator of order 2: q = -3239182695051764624794594698466502186470097/2 (mod 2)
+  generator of order 32: q = -734359416409888905185413998811975023595945230137/32 (mod 2)
+anti-isometries A_N -> A_T: 4
+  g00: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g01: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g02: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g03: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g04: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g05: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g06: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g07: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g08: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g09: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g10: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g11: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g12: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g13: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g14: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g15: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g16: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g17: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g18: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g19: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g20: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g21: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g22: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g23: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g24: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g25: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g26: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g27: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g28: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g29: g on A_N = -1;  det(M)/c = -1;  agree: True
+  g30: g on A_N = 1;  det(M)/c = 1;  agree: True
+  g31: g on A_N = 1;  det(M)/c = 1;  agree: True
+g00: tr(g|NS)=20  chi(Lefschetz)=-18  g on T: eps=1  sigma on T=[1, -1]  tr(sigma*|H2)=-20 (2+tr=-18)  L+: r=1 a=1 (F2 rank of 1+sigma: 1) 2-elementary=True delta=1  => S_10 + 0 S^2; total F2-Betti of X_R = 22
+g01: tr(g|NS)=4  chi(Lefschetz)=-2  g on T: eps=1  sigma on T=[1, -1]  tr(sigma*|H2)=-4 (2+tr=-2)  L+: r=9 a=9 (F2 rank of 1+sigma: 9) 2-elementary=True delta=1  => S_2 + 0 S^2; total F2-Betti of X_R = 6
+g02: tr(g|NS)=4  chi(Lefschetz)=-2  g on T: eps=-1  sigma on T=[-1, 1]  tr(sigma*|H2)=-4 (2+tr=-2)  L+: r=9 a=9 (F2 rank of 1+sigma: 9) 2-elementary=True delta=1  => S_2 + 0 S^2; total F2-Betti of X_R = 6
+g12: tr(g|NS)=-4  chi(Lefschetz)=6  g on T: eps=-1  sigma on T=[-1, 1]  tr(sigma*|H2)=4 (2+tr=6)  L+: r=13 a=9 (F2 rank of 1+sigma: 9) 2-elementary=True delta=1  => S_0 + 2 S^2; total F2-Betti of X_R = 6
+g13: tr(g|NS)=-4  chi(Lefschetz)=6  g on T: eps=-1  sigma on T=[-1, 1]  tr(sigma*|H2)=4 (2+tr=6)  L+: r=13 a=9 (F2 rank of 1+sigma: 9) 2-elementary=True delta=1  => S_0 + 2 S^2; total F2-Betti of X_R = 6
+g24: tr(g|NS)=4  chi(Lefschetz)=-2  g on T: eps=1  sigma on T=[1, -1]  tr(sigma*|H2)=-4 (2+tr=-2)  L+: r=9 a=9 (F2 rank of 1+sigma: 9) 2-elementary=True delta=1  => S_2 + 0 S^2; total F2-Betti of X_R = 6
+memcap: exit 0, peak 0.06 GB of 8.00 GB cap

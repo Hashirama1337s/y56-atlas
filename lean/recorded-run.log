@@ -1,0 +1,571 @@
+=== POS Y56_L1
+lean: Y56_L1.lean  sha256 64e0bfc5e3a8b2a4  20 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.F_line, Y56.C0_map, Y56.C1_map, Y56.C2_map, Y56.C3_map, Y56.C4_map, Y56.coeffs_all, Y56.lines_on_F, Y56.dist_all, Y56.indep_all, Y56.lines_distinct, Y56.lines_genuine
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.F_line  axioms: propext, Quot.sound
+  ok   Y56.C0_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.C1_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.C2_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.C3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.C4_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.coeffs_all  axioms: propext
+  ok   Y56.lines_on_F  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.dist_all  axioms: propext
+  ok   Y56.indep_all  axioms: propext
+  ok   Y56.lines_distinct  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.lines_genuine  axioms: propext, Classical.choice, Quot.sound
+PASS  29 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L7
+lean: Y56_L7.lean  sha256 77c16560457d2ce3  9 theorem(s): Y56.im_pow_four, Y56.im_sq', Y56.eightfold, Y56.zeta_sq, Y56.zeta_pow_four, Y56.normSq_zeta, Y56.screw, Y56.screw_coord, Y56.galois_twist
+  ok   Y56.im_pow_four  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.im_sq'  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.eightfold  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.zeta_sq  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.zeta_pow_four  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.normSq_zeta  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.screw  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.screw_coord  axioms: propext, Quot.sound
+  ok   Y56.galois_twist  axioms: propext, Quot.sound
+PASS  19 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_Pencil
+lean: Y56_Pencil.lean  sha256 dcc2f57e9e8ed2cb  2 theorem(s): Y56.pencil_forces, Y56.pencil_solvable
+  ok   Y56.pencil_forces  axioms: propext, Quot.sound
+  ok   Y56.pencil_solvable  axioms: propext, Classical.choice, Quot.sound
+PASS  18 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L2
+lean: Y56_L2.lean  sha256 ec09ec57061623c4  80 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.sym_g00, Y56.sym_g01, Y56.sym_g02, Y56.sym_g03, Y56.sym_g04, Y56.sym_g05, Y56.sym_g06, Y56.sym_g07, Y56.sym_g08, Y56.sym_g09, Y56.sym_g10, Y56.sym_g11, Y56.sym_g12, Y56.sym_g13, Y56.sym_g14, Y56.sym_g15, Y56.sym_g16, Y56.sym_g17, Y56.sym_g18, Y56.sym_g19, Y56.sym_g20, Y56.sym_g21, Y56.sym_g22, Y56.sym_g23, Y56.sym_g24, Y56.sym_g25, Y56.sym_g26, Y56.sym_g27, Y56.sym_g28, Y56.sym_g29, Y56.sym_g30, Y56.sym_g31, Y56.span_all_0, Y56.span_all_1, Y56.span_all_2, Y56.span_all_3, Y56.span_all_4, Y56.span_all_5, Y56.span_all_6, Y56.span_all_7, Y56.span_all_8, Y56.span_all_9, Y56.span_all_10, Y56.span_all_11, Y56.span_all_12, Y56.span_all_13, Y56.span_all_14, Y56.span_all_15, Y56.span_all, Y56.div_span, Y56.maps_lines, Y56.group_facts, Y56.group_closed_0, Y56.group_closed_1, Y56.group_closed_2, Y56.group_closed_3, Y56.group_closed_4, Y56.group_closed_5, Y56.group_closed_6, Y56.group_closed_7, Y56.group_closed, Y56.matrices_compose_0, Y56.matrices_compose_1, Y56.matrices_compose_2, Y56.matrices_compose_3, Y56.matrices_compose_4, Y56.matrices_compose_5, Y56.matrices_compose_6, Y56.matrices_compose_7, Y56.matrices_compose, Y56.order_counts, Y56.orbit_sizes
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.sym_g00  axioms: propext, Quot.sound
+  ok   Y56.sym_g01  axioms: propext, Quot.sound
+  ok   Y56.sym_g02  axioms: propext, Quot.sound
+  ok   Y56.sym_g03  axioms: propext, Quot.sound
+  ok   Y56.sym_g04  axioms: propext, Quot.sound
+  ok   Y56.sym_g05  axioms: propext, Quot.sound
+  ok   Y56.sym_g06  axioms: propext, Quot.sound
+  ok   Y56.sym_g07  axioms: propext, Quot.sound
+  ok   Y56.sym_g08  axioms: propext, Quot.sound
+  ok   Y56.sym_g09  axioms: propext, Quot.sound
+  ok   Y56.sym_g10  axioms: propext, Quot.sound
+  ok   Y56.sym_g11  axioms: propext, Quot.sound
+  ok   Y56.sym_g12  axioms: propext, Quot.sound
+  ok   Y56.sym_g13  axioms: propext, Quot.sound
+  ok   Y56.sym_g14  axioms: propext, Quot.sound
+  ok   Y56.sym_g15  axioms: propext, Quot.sound
+  ok   Y56.sym_g16  axioms: propext, Quot.sound
+  ok   Y56.sym_g17  axioms: propext, Quot.sound
+  ok   Y56.sym_g18  axioms: propext, Quot.sound
+  ok   Y56.sym_g19  axioms: propext, Quot.sound
+  ok   Y56.sym_g20  axioms: propext, Quot.sound
+  ok   Y56.sym_g21  axioms: propext, Quot.sound
+  ok   Y56.sym_g22  axioms: propext, Quot.sound
+  ok   Y56.sym_g23  axioms: propext, Quot.sound
+  ok   Y56.sym_g24  axioms: propext, Quot.sound
+  ok   Y56.sym_g25  axioms: propext, Quot.sound
+  ok   Y56.sym_g26  axioms: propext, Quot.sound
+  ok   Y56.sym_g27  axioms: propext, Quot.sound
+  ok   Y56.sym_g28  axioms: propext, Quot.sound
+  ok   Y56.sym_g29  axioms: propext, Quot.sound
+  ok   Y56.sym_g30  axioms: propext, Quot.sound
+  ok   Y56.sym_g31  axioms: propext, Quot.sound
+  ok   Y56.span_all_0  axioms: propext
+  ok   Y56.span_all_1  axioms: propext
+  ok   Y56.span_all_2  axioms: propext
+  ok   Y56.span_all_3  axioms: propext
+  ok   Y56.span_all_4  axioms: propext
+  ok   Y56.span_all_5  axioms: propext
+  ok   Y56.span_all_6  axioms: propext
+  ok   Y56.span_all_7  axioms: propext
+  ok   Y56.span_all_8  axioms: propext
+  ok   Y56.span_all_9  axioms: propext
+  ok   Y56.span_all_10  axioms: propext
+  ok   Y56.span_all_11  axioms: propext
+  ok   Y56.span_all_12  axioms: propext
+  ok   Y56.span_all_13  axioms: propext
+  ok   Y56.span_all_14  axioms: propext
+  ok   Y56.span_all_15  axioms: propext
+  ok   Y56.span_all  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.div_span  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.maps_lines  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.group_facts  axioms: propext
+  ok   Y56.group_closed_0  axioms: propext
+  ok   Y56.group_closed_1  axioms: propext
+  ok   Y56.group_closed_2  axioms: propext
+  ok   Y56.group_closed_3  axioms: propext
+  ok   Y56.group_closed_4  axioms: propext
+  ok   Y56.group_closed_5  axioms: propext
+  ok   Y56.group_closed_6  axioms: propext
+  ok   Y56.group_closed_7  axioms: propext
+  ok   Y56.group_closed  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.matrices_compose_0  axioms: propext
+  ok   Y56.matrices_compose_1  axioms: propext
+  ok   Y56.matrices_compose_2  axioms: propext
+  ok   Y56.matrices_compose_3  axioms: propext
+  ok   Y56.matrices_compose_4  axioms: propext
+  ok   Y56.matrices_compose_5  axioms: propext
+  ok   Y56.matrices_compose_6  axioms: propext
+  ok   Y56.matrices_compose_7  axioms: propext
+  ok   Y56.matrices_compose  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.order_counts  axioms: propext
+  ok   Y56.orbit_sizes  axioms: propext
+PASS  114 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L3
+lean: Y56_L3.lean  sha256 55aabe18bc7874ae  42 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.det4_map, Y56.cramer1, Y56.cramer2, Y56.meet_all_0, Y56.meet_all_1, Y56.meet_all_2, Y56.meet_all_3, Y56.meet_all_4, Y56.meet_all_5, Y56.meet_all_6, Y56.meet_all_7, Y56.meet_all_8, Y56.meet_all_9, Y56.meet_all_10, Y56.meet_all_11, Y56.meet_all_12, Y56.meet_all_13, Y56.meet_all_14, Y56.meet_all_15, Y56.meet_all_16, Y56.meet_all_17, Y56.meet_all_18, Y56.meet_all_19, Y56.meet_all_20, Y56.meet_all_21, Y56.meet_all_22, Y56.meet_all_23, Y56.meet_all_24, Y56.meet_all_25, Y56.meet_all_26, Y56.meet_all_27, Y56.meet_all, Y56.meets_iff_edge, Y56.edge_counts
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det4_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.cramer1  axioms: propext, Quot.sound
+  ok   Y56.cramer2  axioms: propext, Quot.sound
+  ok   Y56.meet_all_0  axioms: propext
+  ok   Y56.meet_all_1  axioms: propext
+  ok   Y56.meet_all_2  axioms: propext
+  ok   Y56.meet_all_3  axioms: propext
+  ok   Y56.meet_all_4  axioms: propext
+  ok   Y56.meet_all_5  axioms: propext
+  ok   Y56.meet_all_6  axioms: propext
+  ok   Y56.meet_all_7  axioms: propext
+  ok   Y56.meet_all_8  axioms: propext
+  ok   Y56.meet_all_9  axioms: propext
+  ok   Y56.meet_all_10  axioms: propext
+  ok   Y56.meet_all_11  axioms: propext
+  ok   Y56.meet_all_12  axioms: propext
+  ok   Y56.meet_all_13  axioms: propext
+  ok   Y56.meet_all_14  axioms: propext
+  ok   Y56.meet_all_15  axioms: propext
+  ok   Y56.meet_all_16  axioms: propext
+  ok   Y56.meet_all_17  axioms: propext
+  ok   Y56.meet_all_18  axioms: propext
+  ok   Y56.meet_all_19  axioms: propext
+  ok   Y56.meet_all_20  axioms: propext
+  ok   Y56.meet_all_21  axioms: propext
+  ok   Y56.meet_all_22  axioms: propext
+  ok   Y56.meet_all_23  axioms: propext
+  ok   Y56.meet_all_24  axioms: propext
+  ok   Y56.meet_all_25  axioms: propext
+  ok   Y56.meet_all_26  axioms: propext
+  ok   Y56.meet_all_27  axioms: propext
+  ok   Y56.meet_all  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.meets_iff_edge  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.edge_counts  axioms: propext
+PASS  43 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L6
+lean: Y56_L6.lean  sha256 337d99becbdb3334  89 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.planes_lines, Y56.plane_rows_0, Y56.plane_rows_1, Y56.plane_rows_2, Y56.plane_rows_3, Y56.plane_rows_4, Y56.plane_rows_5, Y56.plane_rows_6, Y56.plane_rows_7, Y56.plane_rows_8, Y56.plane_rows_9, Y56.plane_rows_10, Y56.plane_rows_11, Y56.plane_rows_12, Y56.plane_rows_13, Y56.plane_rows_14, Y56.plane_rows_15, Y56.plane_rows_16, Y56.plane_rows_17, Y56.plane_rows, Y56.pc_rows_0, Y56.pc_rows_1, Y56.pc_rows_2, Y56.pc_rows_3, Y56.pc_rows, Y56.dist_rows_0, Y56.dist_rows_1, Y56.dist_rows_2, Y56.dist_rows_3, Y56.dist_rows_4, Y56.dist_rows_5, Y56.dist_rows_6, Y56.dist_rows_7, Y56.dist_rows_8, Y56.dist_rows_9, Y56.dist_rows_10, Y56.dist_rows_11, Y56.dist_rows_12, Y56.dist_rows_13, Y56.dist_rows_14, Y56.dist_rows_15, Y56.dist_rows_16, Y56.dist_rows_17, Y56.dist_rows_18, Y56.dist_rows_19, Y56.dist_rows_20, Y56.dist_rows_21, Y56.dist_rows_22, Y56.dist_rows_23, Y56.dist_rows_24, Y56.dist_rows_25, Y56.dist_rows_26, Y56.dist_rows_27, Y56.dist_rows_28, Y56.dist_rows_29, Y56.dist_rows_30, Y56.dist_rows_31, Y56.dist_rows_32, Y56.dist_rows_33, Y56.dist_rows_34, Y56.dist_rows_35, Y56.dist_rows_36, Y56.dist_rows, Y56.inPlane_iff_listed, Y56.plane_pairs_are_edges, Y56.edge_cover_0, Y56.edge_cover_1, Y56.edge_cover_2, Y56.edge_cover_3, Y56.edge_cover_4, Y56.edge_cover_5, Y56.edge_cover_6, Y56.edge_cover_7, Y56.edge_cover_8, Y56.edge_cover_9, Y56.edge_cover_10, Y56.edge_cover_11, Y56.edge_cover_12, Y56.edge_cover_13, Y56.edge_cover, Y56.line_in_plane_iff
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.planes_lines  axioms: none
+  ok   Y56.plane_rows_0  axioms: propext
+  ok   Y56.plane_rows_1  axioms: propext
+  ok   Y56.plane_rows_2  axioms: propext
+  ok   Y56.plane_rows_3  axioms: propext
+  ok   Y56.plane_rows_4  axioms: propext
+  ok   Y56.plane_rows_5  axioms: propext
+  ok   Y56.plane_rows_6  axioms: propext
+  ok   Y56.plane_rows_7  axioms: propext
+  ok   Y56.plane_rows_8  axioms: propext
+  ok   Y56.plane_rows_9  axioms: propext
+  ok   Y56.plane_rows_10  axioms: propext
+  ok   Y56.plane_rows_11  axioms: propext
+  ok   Y56.plane_rows_12  axioms: propext
+  ok   Y56.plane_rows_13  axioms: propext
+  ok   Y56.plane_rows_14  axioms: propext
+  ok   Y56.plane_rows_15  axioms: propext
+  ok   Y56.plane_rows_16  axioms: propext
+  ok   Y56.plane_rows_17  axioms: propext
+  ok   Y56.plane_rows  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.pc_rows_0  axioms: propext
+  ok   Y56.pc_rows_1  axioms: propext
+  ok   Y56.pc_rows_2  axioms: propext
+  ok   Y56.pc_rows_3  axioms: propext
+  ok   Y56.pc_rows  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.dist_rows_0  axioms: propext
+  ok   Y56.dist_rows_1  axioms: propext
+  ok   Y56.dist_rows_2  axioms: propext
+  ok   Y56.dist_rows_3  axioms: propext
+  ok   Y56.dist_rows_4  axioms: propext
+  ok   Y56.dist_rows_5  axioms: propext
+  ok   Y56.dist_rows_6  axioms: propext
+  ok   Y56.dist_rows_7  axioms: propext
+  ok   Y56.dist_rows_8  axioms: propext
+  ok   Y56.dist_rows_9  axioms: propext
+  ok   Y56.dist_rows_10  axioms: propext
+  ok   Y56.dist_rows_11  axioms: propext
+  ok   Y56.dist_rows_12  axioms: propext
+  ok   Y56.dist_rows_13  axioms: propext
+  ok   Y56.dist_rows_14  axioms: propext
+  ok   Y56.dist_rows_15  axioms: propext
+  ok   Y56.dist_rows_16  axioms: propext
+  ok   Y56.dist_rows_17  axioms: propext
+  ok   Y56.dist_rows_18  axioms: propext
+  ok   Y56.dist_rows_19  axioms: propext
+  ok   Y56.dist_rows_20  axioms: propext
+  ok   Y56.dist_rows_21  axioms: propext
+  ok   Y56.dist_rows_22  axioms: propext
+  ok   Y56.dist_rows_23  axioms: propext
+  ok   Y56.dist_rows_24  axioms: propext
+  ok   Y56.dist_rows_25  axioms: propext
+  ok   Y56.dist_rows_26  axioms: propext
+  ok   Y56.dist_rows_27  axioms: propext
+  ok   Y56.dist_rows_28  axioms: propext
+  ok   Y56.dist_rows_29  axioms: propext
+  ok   Y56.dist_rows_30  axioms: propext
+  ok   Y56.dist_rows_31  axioms: propext
+  ok   Y56.dist_rows_32  axioms: propext
+  ok   Y56.dist_rows_33  axioms: propext
+  ok   Y56.dist_rows_34  axioms: propext
+  ok   Y56.dist_rows_35  axioms: propext
+  ok   Y56.dist_rows_36  axioms: propext
+  ok   Y56.dist_rows  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.inPlane_iff_listed  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.plane_pairs_are_edges  axioms: propext
+  ok   Y56.edge_cover_0  axioms: propext
+  ok   Y56.edge_cover_1  axioms: propext
+  ok   Y56.edge_cover_2  axioms: propext
+  ok   Y56.edge_cover_3  axioms: propext
+  ok   Y56.edge_cover_4  axioms: propext
+  ok   Y56.edge_cover_5  axioms: propext
+  ok   Y56.edge_cover_6  axioms: propext
+  ok   Y56.edge_cover_7  axioms: propext
+  ok   Y56.edge_cover_8  axioms: propext
+  ok   Y56.edge_cover_9  axioms: propext
+  ok   Y56.edge_cover_10  axioms: propext
+  ok   Y56.edge_cover_11  axioms: propext
+  ok   Y56.edge_cover_12  axioms: propext
+  ok   Y56.edge_cover_13  axioms: propext
+  ok   Y56.edge_cover  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.line_in_plane_iff  axioms: propext, Classical.choice, Quot.sound
+PASS  90 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L5a
+lean: Y56_L5a.lean  sha256 39fea4f23cfb7b20  159 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.hess_product, Y56.conic_irreducible, Y56.secP2_000, Y56.secP2_001, Y56.secP2_002, Y56.secP2_003, Y56.secP2_004, Y56.secP2_005, Y56.secP2_006, Y56.secP2_007, Y56.secP2_008, Y56.secP2_009, Y56.secP2_010, Y56.secP2_011, Y56.secP2_012, Y56.secP2_013, Y56.secP2_014, Y56.secP2_015, Y56.secP2_016, Y56.secP2_017, Y56.secP2_018, Y56.secP2_019, Y56.secP2_020, Y56.secP2_021, Y56.secP2_022, Y56.secP2_023, Y56.secP2_024, Y56.secP2_025, Y56.secP2_026, Y56.secP2_027, Y56.secP2_028, Y56.secP2_029, Y56.secP2_030, Y56.secP2_031, Y56.secP2_032, Y56.secP2_033, Y56.secP2_034, Y56.secP2_035, Y56.secP2_036, Y56.secP2_037, Y56.secP2_038, Y56.secP2_039, Y56.secP2_040, Y56.secP2_041, Y56.secP2_042, Y56.secP2_043, Y56.secP2_044, Y56.secP2_045, Y56.secP2_046, Y56.secP2_047, Y56.secP2_048, Y56.secP2_049, Y56.secP2_050, Y56.secP2_051, Y56.secP2_052, Y56.secP2_053, Y56.secP2_054, Y56.secP2_055, Y56.secP2_056, Y56.secP2_057, Y56.secP2_058, Y56.secP2_059, Y56.secP2_060, Y56.secP2_061, Y56.secP2_062, Y56.secP2_063, Y56.secP2_064, Y56.secP2_065, Y56.secP2_066, Y56.secP2_067, Y56.secP2_068, Y56.secP2_069, Y56.secP2_070, Y56.secP2_071, Y56.secP2_072, Y56.secP2_073, Y56.secP2_074, Y56.secP2_075, Y56.secP2_076, Y56.secP2_077, Y56.secP2_078, Y56.secP2_079, Y56.secP2_080, Y56.secP2_081, Y56.secP2_082, Y56.secP2_083, Y56.secP2_084, Y56.secP2_085, Y56.secP2_086, Y56.secP2_087, Y56.secP2_088, Y56.secP2_089, Y56.secP2_090, Y56.secP2_091, Y56.secP2_092, Y56.secP2_093, Y56.secP2_094, Y56.secP2_095, Y56.secP2_096, Y56.secP2_097, Y56.secP2_098, Y56.secP2_099, Y56.secP2_100, Y56.secP2_101, Y56.secP2_102, Y56.secP2_103, Y56.secP2_104, Y56.secP2_105, Y56.secP2_106, Y56.secP2_107, Y56.secP2_108, Y56.secP2_109, Y56.secP2_110, Y56.secP2_111, Y56.secP2_112, Y56.secP2_113, Y56.secP2_114, Y56.secP2_115, Y56.secP2_116, Y56.secP2_117, Y56.secP2_118, Y56.secP2_119, Y56.secP2_120, Y56.secP2_121, Y56.secP2_122, Y56.secP2_123, Y56.secP2_124, Y56.secP2_125, Y56.secP2_126, Y56.secP2_127, Y56.secP2_128, Y56.secP2_129, Y56.secP2_130, Y56.secP2_131, Y56.secP2_132, Y56.secP2_133, Y56.secP2_134, Y56.secP2_135, Y56.secP2_136, Y56.secP2_137, Y56.secP2_138, Y56.secP2_139, Y56.secP2_140, Y56.secP2_141, Y56.secP2_142, Y56.secP2_143, Y56.secP2_144, Y56.secP2_145, Y56.secP2_146, Y56.secP2_147, Y56.conics_nondegenerate
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.hess_product  axioms: propext, Quot.sound
+  ok   Y56.conic_irreducible  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.secP2_000  axioms: propext, Quot.sound
+  ok   Y56.secP2_001  axioms: propext, Quot.sound
+  ok   Y56.secP2_002  axioms: propext, Quot.sound
+  ok   Y56.secP2_003  axioms: propext, Quot.sound
+  ok   Y56.secP2_004  axioms: propext, Quot.sound
+  ok   Y56.secP2_005  axioms: propext, Quot.sound
+  ok   Y56.secP2_006  axioms: propext, Quot.sound
+  ok   Y56.secP2_007  axioms: propext, Quot.sound
+  ok   Y56.secP2_008  axioms: propext, Quot.sound
+  ok   Y56.secP2_009  axioms: propext, Quot.sound
+  ok   Y56.secP2_010  axioms: propext, Quot.sound
+  ok   Y56.secP2_011  axioms: propext, Quot.sound
+  ok   Y56.secP2_012  axioms: propext, Quot.sound
+  ok   Y56.secP2_013  axioms: propext, Quot.sound
+  ok   Y56.secP2_014  axioms: propext, Quot.sound
+  ok   Y56.secP2_015  axioms: propext, Quot.sound
+  ok   Y56.secP2_016  axioms: propext, Quot.sound
+  ok   Y56.secP2_017  axioms: propext, Quot.sound
+  ok   Y56.secP2_018  axioms: propext, Quot.sound
+  ok   Y56.secP2_019  axioms: propext, Quot.sound
+  ok   Y56.secP2_020  axioms: propext, Quot.sound
+  ok   Y56.secP2_021  axioms: propext, Quot.sound
+  ok   Y56.secP2_022  axioms: propext, Quot.sound
+  ok   Y56.secP2_023  axioms: propext, Quot.sound
+  ok   Y56.secP2_024  axioms: propext, Quot.sound
+  ok   Y56.secP2_025  axioms: propext, Quot.sound
+  ok   Y56.secP2_026  axioms: propext, Quot.sound
+  ok   Y56.secP2_027  axioms: propext, Quot.sound
+  ok   Y56.secP2_028  axioms: propext, Quot.sound
+  ok   Y56.secP2_029  axioms: propext, Quot.sound
+  ok   Y56.secP2_030  axioms: propext, Quot.sound
+  ok   Y56.secP2_031  axioms: propext, Quot.sound
+  ok   Y56.secP2_032  axioms: propext, Quot.sound
+  ok   Y56.secP2_033  axioms: propext, Quot.sound
+  ok   Y56.secP2_034  axioms: propext, Quot.sound
+  ok   Y56.secP2_035  axioms: propext, Quot.sound
+  ok   Y56.secP2_036  axioms: propext, Quot.sound
+  ok   Y56.secP2_037  axioms: propext, Quot.sound
+  ok   Y56.secP2_038  axioms: propext, Quot.sound
+  ok   Y56.secP2_039  axioms: propext, Quot.sound
+  ok   Y56.secP2_040  axioms: propext, Quot.sound
+  ok   Y56.secP2_041  axioms: propext, Quot.sound
+  ok   Y56.secP2_042  axioms: propext, Quot.sound
+  ok   Y56.secP2_043  axioms: propext, Quot.sound
+  ok   Y56.secP2_044  axioms: propext, Quot.sound
+  ok   Y56.secP2_045  axioms: propext, Quot.sound
+  ok   Y56.secP2_046  axioms: propext, Quot.sound
+  ok   Y56.secP2_047  axioms: propext, Quot.sound
+  ok   Y56.secP2_048  axioms: propext, Quot.sound
+  ok   Y56.secP2_049  axioms: propext, Quot.sound
+  ok   Y56.secP2_050  axioms: propext, Quot.sound
+  ok   Y56.secP2_051  axioms: propext, Quot.sound
+  ok   Y56.secP2_052  axioms: propext, Quot.sound
+  ok   Y56.secP2_053  axioms: propext, Quot.sound
+  ok   Y56.secP2_054  axioms: propext, Quot.sound
+  ok   Y56.secP2_055  axioms: propext, Quot.sound
+  ok   Y56.secP2_056  axioms: propext, Quot.sound
+  ok   Y56.secP2_057  axioms: propext, Quot.sound
+  ok   Y56.secP2_058  axioms: propext, Quot.sound
+  ok   Y56.secP2_059  axioms: propext, Quot.sound
+  ok   Y56.secP2_060  axioms: propext, Quot.sound
+  ok   Y56.secP2_061  axioms: propext, Quot.sound
+  ok   Y56.secP2_062  axioms: propext, Quot.sound
+  ok   Y56.secP2_063  axioms: propext, Quot.sound
+  ok   Y56.secP2_064  axioms: propext, Quot.sound
+  ok   Y56.secP2_065  axioms: propext, Quot.sound
+  ok   Y56.secP2_066  axioms: propext, Quot.sound
+  ok   Y56.secP2_067  axioms: propext, Quot.sound
+  ok   Y56.secP2_068  axioms: propext, Quot.sound
+  ok   Y56.secP2_069  axioms: propext, Quot.sound
+  ok   Y56.secP2_070  axioms: propext, Quot.sound
+  ok   Y56.secP2_071  axioms: propext, Quot.sound
+  ok   Y56.secP2_072  axioms: propext, Quot.sound
+  ok   Y56.secP2_073  axioms: propext, Quot.sound
+  ok   Y56.secP2_074  axioms: propext, Quot.sound
+  ok   Y56.secP2_075  axioms: propext, Quot.sound
+  ok   Y56.secP2_076  axioms: propext, Quot.sound
+  ok   Y56.secP2_077  axioms: propext, Quot.sound
+  ok   Y56.secP2_078  axioms: propext, Quot.sound
+  ok   Y56.secP2_079  axioms: propext, Quot.sound
+  ok   Y56.secP2_080  axioms: propext, Quot.sound
+  ok   Y56.secP2_081  axioms: propext, Quot.sound
+  ok   Y56.secP2_082  axioms: propext, Quot.sound
+  ok   Y56.secP2_083  axioms: propext, Quot.sound
+  ok   Y56.secP2_084  axioms: propext, Quot.sound
+  ok   Y56.secP2_085  axioms: propext, Quot.sound
+  ok   Y56.secP2_086  axioms: propext, Quot.sound
+  ok   Y56.secP2_087  axioms: propext, Quot.sound
+  ok   Y56.secP2_088  axioms: propext, Quot.sound
+  ok   Y56.secP2_089  axioms: propext, Quot.sound
+  ok   Y56.secP2_090  axioms: propext, Quot.sound
+  ok   Y56.secP2_091  axioms: propext, Quot.sound
+  ok   Y56.secP2_092  axioms: propext, Quot.sound
+  ok   Y56.secP2_093  axioms: propext, Quot.sound
+  ok   Y56.secP2_094  axioms: propext, Quot.sound
+  ok   Y56.secP2_095  axioms: propext, Quot.sound
+  ok   Y56.secP2_096  axioms: propext, Quot.sound
+  ok   Y56.secP2_097  axioms: propext, Quot.sound
+  ok   Y56.secP2_098  axioms: propext, Quot.sound
+  ok   Y56.secP2_099  axioms: propext, Quot.sound
+  ok   Y56.secP2_100  axioms: propext, Quot.sound
+  ok   Y56.secP2_101  axioms: propext, Quot.sound
+  ok   Y56.secP2_102  axioms: propext, Quot.sound
+  ok   Y56.secP2_103  axioms: propext, Quot.sound
+  ok   Y56.secP2_104  axioms: propext, Quot.sound
+  ok   Y56.secP2_105  axioms: propext, Quot.sound
+  ok   Y56.secP2_106  axioms: propext, Quot.sound
+  ok   Y56.secP2_107  axioms: propext, Quot.sound
+  ok   Y56.secP2_108  axioms: propext, Quot.sound
+  ok   Y56.secP2_109  axioms: propext, Quot.sound
+  ok   Y56.secP2_110  axioms: propext, Quot.sound
+  ok   Y56.secP2_111  axioms: propext, Quot.sound
+  ok   Y56.secP2_112  axioms: propext, Quot.sound
+  ok   Y56.secP2_113  axioms: propext, Quot.sound
+  ok   Y56.secP2_114  axioms: propext, Quot.sound
+  ok   Y56.secP2_115  axioms: propext, Quot.sound
+  ok   Y56.secP2_116  axioms: propext, Quot.sound
+  ok   Y56.secP2_117  axioms: propext, Quot.sound
+  ok   Y56.secP2_118  axioms: propext, Quot.sound
+  ok   Y56.secP2_119  axioms: propext, Quot.sound
+  ok   Y56.secP2_120  axioms: propext, Quot.sound
+  ok   Y56.secP2_121  axioms: propext, Quot.sound
+  ok   Y56.secP2_122  axioms: propext, Quot.sound
+  ok   Y56.secP2_123  axioms: propext, Quot.sound
+  ok   Y56.secP2_124  axioms: propext, Quot.sound
+  ok   Y56.secP2_125  axioms: propext, Quot.sound
+  ok   Y56.secP2_126  axioms: propext, Quot.sound
+  ok   Y56.secP2_127  axioms: propext, Quot.sound
+  ok   Y56.secP2_128  axioms: propext, Quot.sound
+  ok   Y56.secP2_129  axioms: propext, Quot.sound
+  ok   Y56.secP2_130  axioms: propext, Quot.sound
+  ok   Y56.secP2_131  axioms: propext, Quot.sound
+  ok   Y56.secP2_132  axioms: propext, Quot.sound
+  ok   Y56.secP2_133  axioms: propext, Quot.sound
+  ok   Y56.secP2_134  axioms: propext, Quot.sound
+  ok   Y56.secP2_135  axioms: propext, Quot.sound
+  ok   Y56.secP2_136  axioms: propext, Quot.sound
+  ok   Y56.secP2_137  axioms: propext, Quot.sound
+  ok   Y56.secP2_138  axioms: propext, Quot.sound
+  ok   Y56.secP2_139  axioms: propext, Quot.sound
+  ok   Y56.secP2_140  axioms: propext, Quot.sound
+  ok   Y56.secP2_141  axioms: propext, Quot.sound
+  ok   Y56.secP2_142  axioms: propext, Quot.sound
+  ok   Y56.secP2_143  axioms: propext, Quot.sound
+  ok   Y56.secP2_144  axioms: propext, Quot.sound
+  ok   Y56.secP2_145  axioms: propext, Quot.sound
+  ok   Y56.secP2_146  axioms: propext, Quot.sound
+  ok   Y56.secP2_147  axioms: propext, Quot.sound
+  ok   Y56.conics_nondegenerate  axioms: propext
+PASS  31 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L5b
+lean: Y56_L5b.lean  sha256 3bd529a1fff2f0b1  60 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.hess_product, Y56.conic_irreducible, Y56.secP4_000, Y56.secP4_001, Y56.secP4_002, Y56.secP4_003, Y56.secP4_004, Y56.secP4_005, Y56.secP4_006, Y56.secP4_007, Y56.secP4_008, Y56.secP4_009, Y56.secP4_010, Y56.secP4_011, Y56.secP4_012, Y56.secP4_013, Y56.secP4_014, Y56.secP4_015, Y56.secP4_016, Y56.secP4_017, Y56.secP4_018, Y56.secP4_019, Y56.secP4_020, Y56.secP4_021, Y56.secP4_022, Y56.secP4_023, Y56.secP4_024, Y56.secP4_025, Y56.secP4_026, Y56.secP4_027, Y56.secP4_028, Y56.secP4_029, Y56.secP4_030, Y56.secP4_031, Y56.secP4_032, Y56.secP4_033, Y56.secP4_034, Y56.secP4_035, Y56.secP4_036, Y56.secP4_037, Y56.secP4_038, Y56.secP4_039, Y56.secP4_040, Y56.secP4_041, Y56.secP4_042, Y56.secP4_043, Y56.secP4_044, Y56.secP4_045, Y56.secP4_046, Y56.secP4_047, Y56.secP4_048, Y56.secP4_049
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.hess_product  axioms: propext, Quot.sound
+  ok   Y56.conic_irreducible  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.secP4_000  axioms: propext, Quot.sound
+  ok   Y56.secP4_001  axioms: propext, Quot.sound
+  ok   Y56.secP4_002  axioms: propext, Quot.sound
+  ok   Y56.secP4_003  axioms: propext, Quot.sound
+  ok   Y56.secP4_004  axioms: propext, Quot.sound
+  ok   Y56.secP4_005  axioms: propext, Quot.sound
+  ok   Y56.secP4_006  axioms: propext, Quot.sound
+  ok   Y56.secP4_007  axioms: propext, Quot.sound
+  ok   Y56.secP4_008  axioms: propext, Quot.sound
+  ok   Y56.secP4_009  axioms: propext, Quot.sound
+  ok   Y56.secP4_010  axioms: propext, Quot.sound
+  ok   Y56.secP4_011  axioms: propext, Quot.sound
+  ok   Y56.secP4_012  axioms: propext, Quot.sound
+  ok   Y56.secP4_013  axioms: propext, Quot.sound
+  ok   Y56.secP4_014  axioms: propext, Quot.sound
+  ok   Y56.secP4_015  axioms: propext, Quot.sound
+  ok   Y56.secP4_016  axioms: propext, Quot.sound
+  ok   Y56.secP4_017  axioms: propext, Quot.sound
+  ok   Y56.secP4_018  axioms: propext, Quot.sound
+  ok   Y56.secP4_019  axioms: propext, Quot.sound
+  ok   Y56.secP4_020  axioms: propext, Quot.sound
+  ok   Y56.secP4_021  axioms: propext, Quot.sound
+  ok   Y56.secP4_022  axioms: propext, Quot.sound
+  ok   Y56.secP4_023  axioms: propext, Quot.sound
+  ok   Y56.secP4_024  axioms: propext, Quot.sound
+  ok   Y56.secP4_025  axioms: propext, Quot.sound
+  ok   Y56.secP4_026  axioms: propext, Quot.sound
+  ok   Y56.secP4_027  axioms: propext, Quot.sound
+  ok   Y56.secP4_028  axioms: propext, Quot.sound
+  ok   Y56.secP4_029  axioms: propext, Quot.sound
+  ok   Y56.secP4_030  axioms: propext, Quot.sound
+  ok   Y56.secP4_031  axioms: propext, Quot.sound
+  ok   Y56.secP4_032  axioms: propext, Quot.sound
+  ok   Y56.secP4_033  axioms: propext, Quot.sound
+  ok   Y56.secP4_034  axioms: propext, Quot.sound
+  ok   Y56.secP4_035  axioms: propext, Quot.sound
+  ok   Y56.secP4_036  axioms: propext, Quot.sound
+  ok   Y56.secP4_037  axioms: propext, Quot.sound
+  ok   Y56.secP4_038  axioms: propext, Quot.sound
+  ok   Y56.secP4_039  axioms: propext, Quot.sound
+  ok   Y56.secP4_040  axioms: propext, Quot.sound
+  ok   Y56.secP4_041  axioms: propext, Quot.sound
+  ok   Y56.secP4_042  axioms: propext, Quot.sound
+  ok   Y56.secP4_043  axioms: propext, Quot.sound
+  ok   Y56.secP4_044  axioms: propext, Quot.sound
+  ok   Y56.secP4_045  axioms: propext, Quot.sound
+  ok   Y56.secP4_046  axioms: propext, Quot.sound
+  ok   Y56.secP4_047  axioms: propext, Quot.sound
+  ok   Y56.secP4_048  axioms: propext, Quot.sound
+  ok   Y56.secP4_049  axioms: propext, Quot.sound
+PASS  25 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L5c
+lean: Y56_L5c.lean  sha256 bf3af25e68a1fae7  31 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.hess_product, Y56.conic_irreducible, Y56.secPC_000, Y56.secPC_001, Y56.secPC_002, Y56.secPC_003, Y56.secPC_004, Y56.secPC_005, Y56.secPC_006, Y56.secPC_007, Y56.secPC_008, Y56.secPC_009, Y56.secPC_010, Y56.secPC_011, Y56.secPC_012, Y56.secPC_013, Y56.secPC_014, Y56.secPC_015, Y56.secPC_016, Y56.secPC_017, Y56.secPC_018, Y56.secPC_019, Y56.conics_nondegenerate
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.hess_product  axioms: propext, Quot.sound
+  ok   Y56.conic_irreducible  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.secPC_000  axioms: propext, Quot.sound
+  ok   Y56.secPC_001  axioms: propext, Quot.sound
+  ok   Y56.secPC_002  axioms: propext, Quot.sound
+  ok   Y56.secPC_003  axioms: propext, Quot.sound
+  ok   Y56.secPC_004  axioms: propext, Quot.sound
+  ok   Y56.secPC_005  axioms: propext, Quot.sound
+  ok   Y56.secPC_006  axioms: propext, Quot.sound
+  ok   Y56.secPC_007  axioms: propext, Quot.sound
+  ok   Y56.secPC_008  axioms: propext, Quot.sound
+  ok   Y56.secPC_009  axioms: propext, Quot.sound
+  ok   Y56.secPC_010  axioms: propext, Quot.sound
+  ok   Y56.secPC_011  axioms: propext, Quot.sound
+  ok   Y56.secPC_012  axioms: propext, Quot.sound
+  ok   Y56.secPC_013  axioms: propext, Quot.sound
+  ok   Y56.secPC_014  axioms: propext, Quot.sound
+  ok   Y56.secPC_015  axioms: propext, Quot.sound
+  ok   Y56.secPC_016  axioms: propext, Quot.sound
+  ok   Y56.secPC_017  axioms: propext, Quot.sound
+  ok   Y56.secPC_018  axioms: propext, Quot.sound
+  ok   Y56.secPC_019  axioms: propext, Quot.sound
+  ok   Y56.conics_nondegenerate  axioms: propext
+PASS  22 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== POS Y56_L8
+lean: Y56_L8.lean  sha256 0459e2bb1ddf91c4  32 theorem(s): Y56.two_not_square, Y56.iota_e2, Y56.iota_q, Y56.iota_injective, Y56.forall_of_chunks, Y56.det3_map, Y56.det3_span, Y56.cols_lt, Y56.AG_entries, Y56.AG_eq, Y56.A_lower, Y56.T_upper, Y56.A_diag, Y56.T_diag, Y56.det_GB, Y56.rel_rows_0, Y56.rel_rows_1, Y56.rel_rows_2, Y56.rel_rows_3, Y56.rel_rows_4, Y56.rel_rows_5, Y56.rel_rows_6, Y56.rel_rows_7, Y56.rel_rows_8, Y56.rel_rows_9, Y56.rel_rows_10, Y56.rel_rows_11, Y56.rel_rows_12, Y56.rel_rows_13, Y56.rel_rows, Y56.rows_in_span, Y56.hyperplane_class
+  ok   Y56.two_not_square  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.iota_e2  axioms: propext, Quot.sound
+  ok   Y56.iota_q  axioms: propext, Quot.sound
+  ok   Y56.iota_injective  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.forall_of_chunks  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_map  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.det3_span  axioms: propext, Quot.sound
+  ok   Y56.cols_lt  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.AG_entries  axioms: propext
+  ok   Y56.AG_eq  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.A_lower  axioms: propext
+  ok   Y56.T_upper  axioms: propext
+  ok   Y56.A_diag  axioms: propext
+  ok   Y56.T_diag  axioms: propext
+  ok   Y56.det_GB  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_0  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_1  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_2  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_3  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_4  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_5  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_6  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_7  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_8  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_9  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_10  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_11  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_12  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows_13  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rel_rows  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.rows_in_span  axioms: propext, Classical.choice, Quot.sound
+  ok   Y56.hyperplane_class  axioms: propext, Classical.choice, Quot.sound
+PASS  42 s  kernel-checked; no sorry, admit, axiom declaration or native_decide
+=== NEG Y56_L1_neg
+1
+=== NEG Y56_L7_neg
+1
+=== NEG Y56_Pencil_neg
+1
+=== NEG Y56_L2_neg
+10
+=== NEG Y56_L3_neg
+3
+=== NEG Y56_L6_neg
+2
+=== NEG Y56_L5c_neg
+1
+=== NEG Y56_L8_neg
+7
+=== DONE

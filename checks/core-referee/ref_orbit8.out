@@ -1,0 +1,4 @@
+8-orbit: [2, 14, 22, 24, 27, 30, 43, 53]
+m1 index 24  m2 index 30
+skew pairs with 10 common neighbours: 4 [(2, 14), (22, 27), (24, 30), (43, 53)]  lines covered: [2, 14, 22, 24, 27, 30, 43, 53]
+memcap: exit 0, peak 0.01 GB of 4.00 GB cap

@@ -1,0 +1,8 @@
+// Referee R3: which members of the pencil are singular (s free). Eliminate z from the Jacobian ideal after saturating the irrelevant ideal.
+LIB "elim.lib";
+ring R = 0, (z0,z1,z2,z3,s), dp;
+poly F=4*z0^3*z3 - 4*z0*z3^3 + 2*z1*z2*(s*(z0^2+z3^2) - (z1^2+z2^2));
+ideal J=jacob(F); J=J[1..4];
+def rr=sat(J,ideal(z0,z1,z2,z3)); ideal Js; if(typeof(rr)=="list"){Js=rr[1];} else {Js=rr;}
+ideal E=eliminate(Js,z0*z1*z2*z3); "discriminant locus in s:"; factorize(E[1]);
+quit;

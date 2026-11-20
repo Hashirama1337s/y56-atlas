@@ -1,0 +1,17 @@
+name = "y56lean"
+version = "1.0.0"
+keywords = ["math"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0-rc2"
+
+# The Y56 files are standalone (each starts with `import Mathlib`) and are checked one at a time
+# with `lake env lean <file>`; see run_all.sh. No library target is needed.

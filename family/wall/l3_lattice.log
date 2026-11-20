@@ -1,0 +1,33 @@
+4-line planes: 50
+distinct h vectors from the 4-line planes: 1 (must be 1: all plane sections are linearly equivalent)
+h.h = 4
+g00: rank L+ 1, L- 21, S=h^perp in L- 20; div(h) in H 1, in L- 1; h in (1-sigma)H: False; h in L+ + 2H: False
+      A(L+) ((2, 1),) q-fingerprint ((Fraction(0, 1), 1), (Fraction(1, 2), 1))
+      A(L-) ((2, 1),) q-fingerprint ((Fraction(0, 1), 1), (Fraction(3, 2), 1))
+      A(S)  ((2, 1), (4, 1)) q-fingerprint ((Fraction(0, 1), 1), (Fraction(1, 2), 1), (Fraction(1, 1), 1), (Fraction(5, 4), 2), (Fraction(3, 2), 1), (Fraction(7, 4), 2))
+g01: rank L+ 9, L- 13, S=h^perp in L- 12; div(h) in H 1, in L- 1; h in (1-sigma)H: False; h in L+ + 2H: False
+      A(L+) ((2, 9),) q-fingerprint ((Fraction(0, 1), 136), (Fraction(1, 2), 136), (Fraction(1, 1), 120), (Fraction(3, 2), 120))
+      A(L-) ((2, 9),) q-fingerprint ((Fraction(0, 1), 136), (Fraction(1, 2), 120), (Fraction(1, 1), 120), (Fraction(3, 2), 136))
+      A(S)  ((2, 9), (4, 1)) q-fingerprint ((Fraction(0, 1), 256), (Fraction(1, 4), 240), (Fraction(1, 2), 256), (Fraction(3, 4), 240), (Fraction(1, 1), 256), (Fraction(5, 4), 272), (Fraction(3, 2), 256), (Fraction(7, 4), 272))
+g02: rank L+ 9, L- 13, S=h^perp in L- 12; div(h) in H 1, in L- 1; h in (1-sigma)H: False; h in L+ + 2H: False
+      A(L+) ((2, 9),) q-fingerprint ((Fraction(0, 1), 136), (Fraction(1, 2), 136), (Fraction(1, 1), 120), (Fraction(3, 2), 120))
+      A(L-) ((2, 9),) q-fingerprint ((Fraction(0, 1), 136), (Fraction(1, 2), 120), (Fraction(1, 1), 120), (Fraction(3, 2), 136))
+      A(S)  ((2, 9), (4, 1)) q-fingerprint ((Fraction(0, 1), 256), (Fraction(1, 4), 240), (Fraction(1, 2), 256), (Fraction(3, 4), 240), (Fraction(1, 1), 256), (Fraction(5, 4), 272), (Fraction(3, 2), 256), (Fraction(7, 4), 272))
+g12: rank L+ 13, L- 9, S=h^perp in L- 8; div(h) in H 1, in L- 2; h in (1-sigma)H: True; h in L+ + 2H: True
+      A(L+) ((2, 9),) q-fingerprint ((Fraction(0, 1), 120), (Fraction(1, 2), 120), (Fraction(1, 1), 136), (Fraction(3, 2), 136))
+      A(L-) ((2, 9),) q-fingerprint ((Fraction(0, 1), 120), (Fraction(1, 2), 136), (Fraction(1, 1), 136), (Fraction(3, 2), 120))
+      A(S)  ((2, 7), (4, 1)) q-fingerprint ((Fraction(0, 1), 64), (Fraction(1, 4), 72), (Fraction(1, 2), 64), (Fraction(3, 4), 72), (Fraction(1, 1), 64), (Fraction(5, 4), 56), (Fraction(3, 2), 64), (Fraction(7, 4), 56))
+g13: rank L+ 13, L- 9, S=h^perp in L- 8; div(h) in H 1, in L- 2; h in (1-sigma)H: True; h in L+ + 2H: True
+      A(L+) ((2, 9),) q-fingerprint ((Fraction(0, 1), 120), (Fraction(1, 2), 120), (Fraction(1, 1), 136), (Fraction(3, 2), 136))
+      A(L-) ((2, 9),) q-fingerprint ((Fraction(0, 1), 120), (Fraction(1, 2), 136), (Fraction(1, 1), 136), (Fraction(3, 2), 120))
+      A(S)  ((2, 7), (4, 1)) q-fingerprint ((Fraction(0, 1), 64), (Fraction(1, 4), 72), (Fraction(1, 2), 64), (Fraction(3, 4), 72), (Fraction(1, 1), 64), (Fraction(5, 4), 56), (Fraction(3, 2), 64), (Fraction(7, 4), 56))
+g24: rank L+ 9, L- 13, S=h^perp in L- 12; div(h) in H 1, in L- 1; h in (1-sigma)H: False; h in L+ + 2H: False
+      A(L+) ((2, 9),) q-fingerprint ((Fraction(0, 1), 136), (Fraction(1, 2), 136), (Fraction(1, 1), 120), (Fraction(3, 2), 120))
+      A(L-) ((2, 9),) q-fingerprint ((Fraction(0, 1), 136), (Fraction(1, 2), 120), (Fraction(1, 1), 120), (Fraction(3, 2), 136))
+      A(S)  ((2, 9), (4, 1)) q-fingerprint ((Fraction(0, 1), 256), (Fraction(1, 4), 240), (Fraction(1, 2), 256), (Fraction(3, 4), 240), (Fraction(1, 1), 256), (Fraction(5, 4), 272), (Fraction(3, 2), 256), (Fraction(7, 4), 272))
+
+g01 vs g02: all invariants equal: True; differing fields: []
+g01 vs g24: all invariants equal: True; differing fields: []
+g02 vs g24: all invariants equal: True; differing fields: []
+g12 vs g13: all invariants equal: True; differing fields: []
+memcap: exit 0, peak 0.06 GB of 8.00 GB cap

@@ -1,0 +1,64 @@
+// ** redefining blowup0 (;return();) w1.sing:3
+// ** redefining blowup0 (;return();) w1.sing:3
+// ** redefining elimRing (;return();) w1.sing:3
+// ** redefining elimRing (;return();) w1.sing:3
+// ** redefining elim (;return();) w1.sing:3
+// ** redefining elim (;return();) w1.sing:3
+// ** redefining elim2 (;return();) w1.sing:3
+// ** redefining elim2 (;return();) w1.sing:3
+// ** redefining elim1 (;return();) w1.sing:3
+// ** redefining elim1 (;return();) w1.sing:3
+// ** redefining nselect (;return();) w1.sing:3
+// ** redefining nselect (;return();) w1.sing:3
+// ** redefining sat (;return();) w1.sing:3
+// ** redefining sat (;return();) w1.sing:3
+// ** redefining sat_with_exp (;return();) w1.sing:3
+// ** redefining sat_with_exp (;return();) w1.sing:3
+// ** redefining select (;return();) w1.sing:3
+// ** redefining select (;return();) w1.sing:3
+// ** redefining select1 (;return();) w1.sing:3
+// ** redefining select1 (;return();) w1.sing:3
+affine-cone dim of singular scheme (1 = finitely many projective points):
+1
+degree of singular scheme (sum of Tjurina numbers):
+8
+degree of reduced singular set (number of singular points):
+8
+singular scheme == its radical (every Tjurina number 1, i.e. A1):
+1
+minimal generators of the radical (ideal of the 8 nodes):
+_[1]=z1^2-z2^2
+_[2]=z0^2-2*z2^2+z3^2
+_[3]=z2^3+z0*z1*z3-z2*z3^2
+_[4]=z1*z2^2+z0*z2*z3-z1*z3^2
+_[5]=z0*z2^2+z1*z2*z3-2*z0*z3^2
+_[6]=z0*z1*z2+3*z2^2*z3-2*z3^3
+components over Q (minAssGTZ):
+[1]:
+   _[1]=z2^4-4*z2^2*z3^2+2*z3^4
+   _[2]=-z2^2+z0*z3+z3^2
+   _[3]=z0*z2^2-3*z0*z3^2-z3^3
+   _[4]=z0^2-2*z0*z3-z3^2
+   _[5]=z1+z2
+[2]:
+   _[1]=z2^4-4*z2^2*z3^2+2*z3^4
+   _[2]=z2^2+z0*z3-z3^2
+   _[3]=z0*z2^2-3*z0*z3^2+z3^3
+   _[4]=z0^2+2*z0*z3-z3^2
+   _[5]=z1-z2
+singular points with Hessian rank <= 2: affine-cone dim (0 or -1 = none):
+0
+saturation of (nodes + 3x3 minors) w.r.t. irrelevant ideal (1 = no such point):
+Bs[1]=1
+det(Hessian) vanishes on all nodes:
+1
+number of independent quadrics through the 8 nodes:
+2
+quartic in the square of the quadric ideal (F in (Q)^2):
+0
+quartic in the quadric ideal (F in (Q)):
+0
+is the node set the complete intersection of the quadrics (deg of std(Q2), dim):
+2
+4
+exit 0

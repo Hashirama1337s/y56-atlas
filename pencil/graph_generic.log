@@ -1,0 +1,2 @@
+generic: graph-chart lines: length 32  distinct 32  => total with the 8 (+8 at s=0) lines meeting z0=z3=0 added by hand
+exit 0

@@ -1,0 +1,11 @@
+g12: thresholds t1=4/3 t2=153/4; critical points of h on the lift (12) per region: [4, 4, 4]
+   region 0: 0 ovals (0 two-line-plane, 0 pair-plane)
+   region 1: 22 ovals (16 two-line-plane, 6 pair-plane)
+   region 2: 0 ovals (0 two-line-plane, 0 pair-plane)
+   min distance of any oval point (1500 per oval) from a separating level: 5.761;  real lines: 0
+g13: thresholds t1=-115/7 t2=33/2; critical points of h on the lift (24) per region: [4, 8, 12]
+   region 0: 4 ovals (2 two-line-plane, 2 pair-plane)
+   region 1: 12 ovals (4 two-line-plane, 8 pair-plane)
+   region 2: 4 ovals (2 two-line-plane, 2 pair-plane)
+   min distance of any oval point (1500 per oval) from a separating level: 4.185;  real lines: 0
+memcap: exit 0, peak 0.47 GB of 8.00 GB cap

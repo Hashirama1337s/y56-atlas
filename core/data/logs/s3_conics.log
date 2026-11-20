@@ -1,0 +1,9 @@
+conics built and verified exactly: 188 (148 residual: F|plane = l1 l2 Q; 40 pair: F|plane = c Q1 Q2)
+g00: sigma-real conics: residual 148 (with real points 148), pair-plane 40 (with real points 40); total 188 invariant, 188 with a real oval; conics in fixed pair-planes that are swapped: 0
+g01: sigma-real conics: residual 4 (with real points 2), pair-plane 8 (with real points 6); total 12 invariant, 8 with a real oval; conics in fixed pair-planes that are swapped: 0
+g02: sigma-real conics: residual 14 (with real points 10), pair-plane 0 (with real points 0); total 14 invariant, 10 with a real oval; conics in fixed pair-planes that are swapped: 0
+g12: sigma-real conics: residual 16 (with real points 16), pair-plane 12 (with real points 6); total 28 invariant, 22 with a real oval; conics in fixed pair-planes that are swapped: 4
+g13: sigma-real conics: residual 12 (with real points 8), pair-plane 16 (with real points 12); total 28 invariant, 20 with a real oval; conics in fixed pair-planes that are swapped: 0
+g24: sigma-real conics: residual 4 (with real points 0), pair-plane 8 (with real points 8); total 12 invariant, 8 with a real oval; conics in fixed pair-planes that are swapped: 0
+time 2.9s
+memcap: exit 0, peak 0.06 GB of 8.00 GB cap

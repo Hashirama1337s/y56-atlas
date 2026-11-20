@@ -1,0 +1,9 @@
+PARI stack size set to 2000000000 bytes, maximum size set to 2000003072
+P2 definite (qfsign): [20, 0]
+number of vectors (pairs +-): 8808 max 8.00000000000000
+columns 4404
+classes with c.h=2, c^2=-2: 636
+distinct line classes 56
+line-pair sums 448 all among conic-classes: True
+irreducible conic classes (not a sum of two meeting lines): 188  reducible: 448
+planes with two irreducible conics (c and h-c both irreducible): 20

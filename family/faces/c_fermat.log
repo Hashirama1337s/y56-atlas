@@ -1,0 +1,21 @@
+F0(T y) == sum y^4 : True
+Aut(F0) elements built: 1536
+all preserve F0 up to scalar: True
+the 32-group reps act on F0 with constant character: True
+on F0: sigma_g00 isomorphic to sigma_g01: False
+on F0: sigma_g00 isomorphic to sigma_g02: True
+on F0: sigma_g00 isomorphic to sigma_g12: False
+on F0: sigma_g00 isomorphic to sigma_g13: True
+on F0: sigma_g00 isomorphic to sigma_g24: True
+on F0: sigma_g01 isomorphic to sigma_g02: False
+on F0: sigma_g01 isomorphic to sigma_g12: True
+on F0: sigma_g01 isomorphic to sigma_g13: False
+on F0: sigma_g01 isomorphic to sigma_g24: False
+on F0: sigma_g02 isomorphic to sigma_g12: False
+on F0: sigma_g02 isomorphic to sigma_g13: True
+on F0: sigma_g02 isomorphic to sigma_g24: True
+on F0: sigma_g12 isomorphic to sigma_g13: False
+on F0: sigma_g12 isomorphic to sigma_g24: False
+on F0: sigma_g13 isomorphic to sigma_g24: True
+Y56 real-structure classes merged on the Fermat-type member: [['g00', 'g02', 'g13', 'g24'], ['g01', 'g12']]
+memcap: exit 0, peak 0.44 GB of 8.00 GB cap

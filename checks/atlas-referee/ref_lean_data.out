@@ -1,0 +1,33 @@
+PASS data.lines56 
+PASS data.syms32 
+PASS lean.LU_LV identical Y56_L1 vs L1 
+PASS lean.LU_LV identical Y56_L2 vs L1 
+PASS lean.LU_LV identical Y56_L3 vs L1 
+PASS lean.LU_LV identical Y56_L6 vs L1 
+PASS lean.lines == lines_exact.txt (same line, projectively) bad=[]
+PASS Y56_L3.NB == edges.json 448 vs 448
+PASS Y56_L3.EDGES == edges.json 
+PASS Y56_L6.NB == edges.json 448 vs 448
+PASS Y56_L6.EDGES == edges.json 
+PASS Y56_L8.NB == edges.json 448 vs 448
+PASS edges.json == recomputed 4x4-det incidence 448
+PASS L2.MS has 32 matrices 
+PASS L2.MS == symmetry_exact M (entrywise) 
+PASS L2.SIG == symmetry_exact sigma 
+PASS L2.sym_gXX substitution == MS row-by-row (all 32) bad=[]
+PASS L2.sym_gXX constant c == symmetry_exact c 
+PASS independent F(Mz)=cF(z) for 32 maps 
+PASS independent M_g(line i) == line sigma_g(i) (1792) 
+PASS symplectic det(M)/c=+1 count == 16 16
+PASS line orbit sizes 8+16+16+16 [8, 16, 16, 16]
+PASS orbit of L00 == paper's S list [0, 6, 10, 11, 12, 19, 29, 33, 35, 36, 42, 44, 48, 50, 54, 55]
+PASS orbit of L02 == paper's 8-orbit {02,14,22,24,27,30,43,53} [2, 14, 22, 24, 27, 30, 43, 53]
+PASS 8-orbit lines lie in z1=0 or z2=0 
+PASS {0,6,23,24} is a listed four-line plane #P4=50
+PASS rank Gram (56 lines) == 20 
+PASS det of L8 basis block == -64 
+PASS L6.PL == planes_exact.txt line lists (order kept) 198 vs 198
+FAIL ideal(5 coefficients) == ideal(paper's 3 equations) 
+  coeffs-GB=[9*alpha - 2*beta*s**2, 3*beta**2 - s, 2*s**4 - 81]
+  eqs-GB=[9*alpha + 2*beta*s**2, 3*beta**2 - s, 2*s**4 - 81]
+PASS eliminant in s [2*s**4 - 81]

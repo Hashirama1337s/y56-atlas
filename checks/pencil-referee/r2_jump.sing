@@ -1,0 +1,20 @@
+// Referee R2: jump set over all complex s, own derivation.
+LIB "primdec.lib";
+ring R = 0, (A,B,C,D,s,x,y), dp;
+poly z0=x; poly z3=y; poly z1=A*x+B*y; poly z2=C*x+D*y;
+poly G=4*z0^3*z3 - 4*z0*z3^3 + 2*z1*z2*(s*(z0^2+z3^2) - (z1^2+z2^2));
+matrix M=coeffs(subst(G,y,1),x); ideal I; int k; for(k=1;k<=nrows(M);k++){I=I+M[k,1];}
+ring R2 = 0, (A,B,C,D,s), dp;
+ideal I=imap(R,I); I=simplify(I,2); "number of coefficient equations:",size(I);
+ideal J=std(I); "dim",dim(J),"mult",mult(J);
+// (a) all minimal primes of the graph-chart Fano scheme over the s-line
+list L=minAssGTZ(I); "number of minimal primes:",size(L);
+int i; for(i=1;i<=size(L);i++){ ideal P=std(L[i]); "prime",i,": dim",dim(P),"  s-eliminant:",eliminate(P,A*B*C*D)[1]; kill P; }
+// (b) non-reduced points of fibres: rank of the 5x4 Jacobian wrt A,B,C,D drops
+matrix Jm=jacob(I); Jm=submat(Jm,1..size(I),1..4);
+ideal Mi=minor(Jm,4); ideal Nr=std(I+Mi); "nonreduced locus: dim",dim(Nr);
+ideal E=eliminate(Nr,A*B*C*D); "eliminant in s of nonreduced locus:"; factorize(E[1]);
+// (c) embedded components (points sitting on the 1-dim part): compare I with its equidimensional hull
+ideal H=std(equidimMax(I)); ideal Q=std(quotient(H,I)); "dim of (equidim hull : I) (-1 means no embedded/isolated extra components):",dim(Q);
+ideal E2=eliminate(Q,A*B*C*D); "s-eliminant of the non-equidimensional part:"; factorize(E2[1]);
+quit;

@@ -1,0 +1,15 @@
+lines on F0: 48  all on F0: True
+g00: sigma_g-real lines on the Fermat-type member: 8   (on Y56: 56)
+g01: sigma_g-real lines on the Fermat-type member: 0   (on Y56: 4)
+g02: sigma_g-real lines on the Fermat-type member: 8   (on Y56: 12)
+g12: sigma_g-real lines on the Fermat-type member: 0   (on Y56: 0)
+g13: sigma_g-real lines on the Fermat-type member: 8   (on Y56: 0)
+g24: sigma_g-real lines on the Fermat-type member: 8   (on Y56: 8)
+8 persistent lines lie on members (1,b,c) for random b,c: True
+g00: sigma_g-real persistent lines: 8
+g01: sigma_g-real persistent lines: 0
+g02: sigma_g-real persistent lines: 4
+g12: sigma_g-real persistent lines: 0
+g13: sigma_g-real persistent lines: 0
+g24: sigma_g-real persistent lines: 8
+memcap: exit 0, peak 0.44 GB of 8.00 GB cap

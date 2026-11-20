@@ -1,0 +1,67 @@
+orbits [16, 16, 8, 16]
+[0, 6, 10, 11, 12, 19, 29, 33, 35, 36, 42, 44, 48, 50, 54, 55]
+[1, 4, 8, 9, 13, 15, 16, 17, 25, 26, 31, 38, 46, 47, 49, 51]
+[2, 14, 22, 24, 27, 30, 43, 53]
+[3, 5, 7, 18, 20, 21, 23, 28, 32, 34, 37, 39, 40, 41, 45, 52]
+0 rank M 4 rank aug 5 OBSTRUCTED
+1 rank M 4 rank aug 4 deforms1
+2 rank M 4 rank aug 4 deforms1
+3 rank M 4 rank aug 4 deforms1
+4 rank M 4 rank aug 4 deforms1
+5 rank M 4 rank aug 4 deforms1
+6 rank M 4 rank aug 5 OBSTRUCTED
+7 rank M 4 rank aug 4 deforms1
+8 rank M 4 rank aug 4 deforms1
+9 rank M 4 rank aug 4 deforms1
+10 rank M 4 rank aug 5 OBSTRUCTED
+11 rank M 4 rank aug 5 OBSTRUCTED
+12 rank M 4 rank aug 5 OBSTRUCTED
+13 rank M 4 rank aug 4 deforms1
+14 rank M 4 rank aug 4 deforms1
+15 rank M 4 rank aug 4 deforms1
+16 rank M 4 rank aug 4 deforms1
+17 rank M 4 rank aug 4 deforms1
+18 rank M 4 rank aug 4 deforms1
+19 rank M 4 rank aug 5 OBSTRUCTED
+20 rank M 4 rank aug 4 deforms1
+21 rank M 4 rank aug 4 deforms1
+22 rank M 4 rank aug 4 deforms1
+23 rank M 4 rank aug 4 deforms1
+24 rank M 4 rank aug 4 deforms1
+25 rank M 4 rank aug 4 deforms1
+26 rank M 4 rank aug 4 deforms1
+27 rank M 4 rank aug 4 deforms1
+28 rank M 4 rank aug 4 deforms1
+29 rank M 4 rank aug 5 OBSTRUCTED
+30 rank M 4 rank aug 4 deforms1
+31 rank M 4 rank aug 4 deforms1
+32 rank M 4 rank aug 4 deforms1
+33 rank M 4 rank aug 5 OBSTRUCTED
+34 rank M 4 rank aug 4 deforms1
+35 rank M 4 rank aug 5 OBSTRUCTED
+36 rank M 4 rank aug 5 OBSTRUCTED
+37 rank M 4 rank aug 4 deforms1
+38 rank M 4 rank aug 4 deforms1
+39 rank M 4 rank aug 4 deforms1
+40 rank M 4 rank aug 4 deforms1
+41 rank M 4 rank aug 4 deforms1
+42 rank M 4 rank aug 5 OBSTRUCTED
+43 rank M 4 rank aug 4 deforms1
+44 rank M 4 rank aug 5 OBSTRUCTED
+45 rank M 4 rank aug 4 deforms1
+46 rank M 4 rank aug 4 deforms1
+47 rank M 4 rank aug 4 deforms1
+48 rank M 4 rank aug 5 OBSTRUCTED
+49 rank M 4 rank aug 4 deforms1
+50 rank M 4 rank aug 5 OBSTRUCTED
+51 rank M 4 rank aug 4 deforms1
+52 rank M 4 rank aug 4 deforms1
+53 rank M 4 rank aug 4 deforms1
+54 rank M 4 rank aug 5 OBSTRUCTED
+55 rank M 4 rank aug 5 OBSTRUCTED
+obstructed lines [0, 6, 10, 11, 12, 19, 29, 33, 35, 36, 42, 44, 48, 50, 54, 55] 16
+orbit 0 16 obstructed
+orbit 1 16 deforms
+orbit 2 8 deforms
+orbit 3 16 deforms
+memcap: exit 0, peak 0.06 GB of 8.00 GB cap

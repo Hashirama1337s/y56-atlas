@@ -1,0 +1,7 @@
+b_g12_sep0.out dim-code 0  real solutions 12  s>0: 0  s<0: 12
+b_g12_sep1.out dim-code 0  real solutions 0  s>0: 0  s<0: 0
+b_g13_sep0.out dim-code 0  real solutions 8  s>0: 0  s<0: 8
+b_g13_sep1.out dim-code 0  real solutions 12  s>0: 0  s<0: 12
+b_g12.out dim-code 0  real solutions 32  s>0: 12  s<0: 20
+b_g13.out dim-code 0  real solutions 40  s>0: 24  s<0: 16
+memcap: exit 0, peak 0.01 GB of 8.00 GB cap

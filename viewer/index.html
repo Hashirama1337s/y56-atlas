@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Y56 Atlas</title>
+<meta name="description" content="Interactive 3-D atlas of Y56, the smooth real quartic surface with 56 real lines: its lines, conics, family dial and six real faces.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f4f2ec; --panel: #ffffff; --panel-2: #f7f6f2; --ink: #1a1c23; --muted: #5b6170; --rule: #dcd8ce;
+  --accent: #2b6fd6; --accent-ink: #ffffff; --chip-off: #e9e6de;
+  --scene-bg: #eceef2; --glass: #8796b4;
+  --surf-a: #2d7fb8; --surf-b: #9cc0dc; --surf-opacity: 0.42;
+  --c-anchor: #0088b4; --c-wallA: #cf2f7b; --c-wallB: #2e8f37; --c-y56only: #161a2b;
+  --c-conic148: #dc7d18; --c-conic40: #8148dc; --c-plane: #8148dc; --c-node: #c98a00; --c-hi: #111111;
+  --halo: 0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0b0d12; --panel: #12151d; --panel-2: #171b25; --ink: #e8ecf4; --muted: #9aa3b5; --rule: #262c3a;
+    --accent: #5aa2ff; --accent-ink: #08101f; --chip-off: #1d2230;
+    --scene-bg: #07090e; --glass: #9fb8e6;
+    --surf-a: #45b4f0; --surf-b: #2c6fa8; --surf-opacity: 0.42;
+    --c-anchor: #3fd8ff; --c-wallA: #ff4fa8; --c-wallB: #8dff5a; --c-y56only: #fff1b8;
+    --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff;
+    --halo: 1;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b0d12; --panel: #12151d; --panel-2: #171b25; --ink: #e8ecf4; --muted: #9aa3b5; --rule: #262c3a;
+  --accent: #5aa2ff; --accent-ink: #08101f; --chip-off: #1d2230;
+  --scene-bg: #07090e; --glass: #9fb8e6;
+  --surf-a: #45b4f0; --surf-b: #2c6fa8; --surf-opacity: 0.42;
+  --c-anchor: #3fd8ff; --c-wallA: #ff4fa8; --c-wallB: #8dff5a; --c-y56only: #fff1b8;
+  --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff;
+  --halo: 1;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden; -webkit-text-size-adjust: 100%;
+}
+a { color: var(--accent); }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding: 14px 16px 10px; }
+header h1 { margin: 0; font-size: 22px; letter-spacing: 0.01em; }
+header .sub { color: var(--muted); font-size: 14px; }
+header .right { display: flex; gap: 8px; align-items: center; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 372px; gap: 16px; padding: 0 16px 16px; align-items: start; }
+#stage {
+  position: relative; height: calc(100vh - 86px); height: calc(100dvh - 86px); min-height: 440px;
+  border-radius: 14px; overflow: hidden; background: var(--scene-bg); border: 1px solid var(--rule);
+  touch-action: none; user-select: none; -webkit-user-select: none;
+}
+#stage canvas { display: block; width: 100%; height: 100%; outline: none; }
+.panel { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.card h2 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
+.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+button { font: inherit; color: inherit; }
+.tab, .btn, .chip, .face {
+  border: 1px solid var(--rule); background: var(--panel-2); border-radius: 9px; padding: 7px 10px; cursor: pointer;
+  font-size: 14px; line-height: 1.25; text-align: center; min-height: 36px;
+}
+.tab[aria-pressed="true"], .face[aria-pressed="true"], .btn.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; padding: 6px 9px; text-align: left; }
+.chip .sw { width: 14px; height: 14px; border-radius: 50%; flex: 0 0 auto; box-shadow: 0 0 0 1px rgba(127,127,127,0.35) inset; }
+.chip[aria-pressed="false"] { background: var(--chip-off); color: var(--muted); }
+.chip[aria-pressed="false"] .sw { opacity: 0.25; }
+.caption { margin: 0; font-size: 15px; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.facegrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.face { font-size: 13px; padding: 7px 8px; }
+.face b { display: block; font-size: 15px; }
+.dial { display: flex; flex-direction: column; gap: 6px; }
+.dial input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 0; }
+.ticks { position: relative; height: 30px; font-size: 11.5px; color: var(--muted); }
+.ticks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; text-align: center; line-height: 1.2; }
+.ticks span::before { content: ""; display: block; width: 1px; height: 6px; background: var(--muted); margin: 0 auto 2px; }
+.ticks span[style*="none"]::before { margin: 0 0 2px; }
+.presets { display: flex; gap: 6px; flex-wrap: wrap; }
+.presets .btn { flex: 1 1 auto; font-size: 13px; padding: 6px 8px; }
+.sval { font-variant-numeric: tabular-nums; font-weight: 600; }
+details summary { cursor: pointer; font-weight: 600; }
+details p { margin: 8px 0 0; }
+.overlay-tl { position: absolute; left: 12px; top: 10px; pointer-events: none; display: flex; flex-direction: column; gap: 2px; }
+.counter {
+  font-size: 15px; font-weight: 650; padding: 5px 11px; border-radius: 999px; width: max-content;
+  background: color-mix(in srgb, var(--panel) 78%, transparent); border: 1px solid var(--rule); font-variant-numeric: tabular-nums;
+}
+.counter.flash { animation: flash 1.6s ease-out 1; }
+@keyframes flash { 0% { box-shadow: 0 0 0 0 var(--c-y56only); transform: scale(1.18); } 60% { box-shadow: 0 0 28px 6px var(--c-y56only); } 100% { box-shadow: 0 0 0 0 transparent; transform: scale(1); } }
+.statusline { font-size: 12.5px; color: var(--muted); padding-left: 4px; text-shadow: 0 0 6px var(--scene-bg); }
+.overlay-br { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 6px; }
+.overlay-br .btn { font-size: 13px; padding: 5px 9px; min-height: 32px; background: color-mix(in srgb, var(--panel) 82%, transparent); }
+.overlay-br .btn.on { background: var(--accent); color: var(--accent-ink); }
+#busy { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 8px 14px; border-radius: 999px; background: var(--panel); border: 1px solid var(--rule); font-size: 14px; display: none; }
+#hover {
+  position: absolute; z-index: 5; max-width: min(360px, calc(100% - 24px)); pointer-events: none; display: none;
+  background: color-mix(in srgb, var(--panel) 94%, transparent); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 9px 11px; font-size: 13px; line-height: 1.45; box-shadow: 0 8px 28px rgba(0,0,0,0.25); overflow-wrap: anywhere;
+}
+#hover .hd { display: flex; align-items: center; gap: 7px; font-weight: 650; font-size: 14px; margin-bottom: 2px; }
+#hover .sw { width: 12px; height: 12px; border-radius: 50%; }
+#hover code { font-size: 12.5px; }
+#hover.pinned { left: 8px !important; right: 8px; bottom: 8px; top: auto !important; max-width: none; pointer-events: auto; }
+#msg { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--muted); }
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.eq { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; background: var(--panel-2); border-radius: 8px; padding: 6px 8px; overflow-x: auto; white-space: nowrap; }
+footer { padding: 4px 16px 22px; color: var(--muted); font-size: 13px; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+@media (max-width: 960px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  #stage { height: 62vh; height: 62dvh; min-height: 320px; }
+}
+@media (max-width: 420px) {
+  header h1 { font-size: 20px; }
+  .chip { font-size: 12.5px; }
+}
+@media (prefers-reduced-motion: reduce) { .counter.flash { animation: none; } }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<header>
+  <div>
+    <h1>The Y56 Atlas</h1>
+    <div class="sub">the smooth real quartic surface with 56 real lines</div>
+  </div>
+  <div class="right">
+    <button class="btn" id="themeBtn" type="button" title="Switch light / dark">Light / dark</button>
+  </div>
+</header>
+
+<div class="layout">
+  <section id="stage" aria-label="3-D view of the surface. Drag to turn, pinch or scroll to zoom, tap a curve for details.">
+    <div class="overlay-tl">
+      <div class="counter" id="counter">real lines: 56</div>
+      <div class="statusline" id="statusline">Y56</div>
+    </div>
+    <div class="overlay-br">
+      <button class="btn" id="spinBtn" type="button" aria-pressed="true">Spin</button>
+      <button class="btn" id="resetBtn" type="button">Reset view</button>
+    </div>
+    <div id="busy">Shaping the surface...</div>
+    <div id="hover" role="status" aria-live="polite"></div>
+    <div id="msg"></div>
+  </section>
+
+  <aside class="panel">
+    <div class="card">
+      <div class="tabs" role="group" aria-label="Mode">
+        <button class="tab" type="button" data-mode="y56" aria-pressed="true">Y56</button>
+        <button class="tab" type="button" data-mode="family" aria-pressed="false">Family dial</button>
+        <button class="tab" type="button" data-mode="faces" aria-pressed="false">Six faces</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 id="capTitle">What you see</h2>
+      <p class="caption" id="caption"></p>
+    </div>
+
+    <div class="card" id="ctlY56">
+      <h2>Show</h2>
+      <div class="chips" id="chipsY56"></div>
+      <p class="small muted" style="margin:8px 0 0">Tap or hover a line: it lights up with the 16 lines it meets, and the card gives its exact coordinates.</p>
+    </div>
+
+    <div class="card" id="ctlFamily" hidden>
+      <h2>The family dial</h2>
+      <div class="dial">
+        <label for="sRange" class="row"><span>s =</span> <span class="sval" id="sVal"></span> <span class="muted small" id="sNote"></span></label>
+        <input type="range" id="sRange" min="0" max="3" step="0.0005" aria-describedby="sNote">
+        <div class="ticks" id="ticks"></div>
+        <div class="presets">
+          <button class="btn" type="button" data-s="0">Fermat type</button>
+          <button class="btn" type="button" data-s="2">The wall</button>
+          <button class="btn" type="button" data-s="star">Y56</button>
+        </div>
+      </div>
+      <div class="chips" id="chipsFamily" style="margin-top:10px"></div>
+      <div class="eq" style="margin-top:10px">G<sub>s</sub> = Im(w<sup>4</sup>) + Im(p<sup>2</sup>)(s|w|<sup>2</sup> &minus; |p|<sup>2</sup>)</div>
+    </div>
+
+    <div class="card" id="ctlFaces" hidden>
+      <h2>Six real faces of one equation</h2>
+      <div class="facegrid" id="faceGrid"></div>
+      <div class="chips" id="chipsFaces" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <details id="startHere" open>
+        <summary>Start here</summary>
+        <p>A straight line can lie inside a curved surface, the way straight steel beams make up a curved cooling tower. Y56 is a smooth surface cut out by a single equation of degree 4, and it holds 56 perfectly straight lines, all of them real: the most real lines any smooth real surface of degree 4 can hold, and Y56 is the only one that does it (Degtyarev, Itenberg and Sertöz proved this; with complex lines allowed, the record is 64). Spin it, touch a line to read its exact coordinates (whole numbers and &radic;2), turn the family dial to watch 16 lines flash into existence at one single setting, and see the same equation through six different meanings of &ldquo;real&rdquo;.</p>
+        <p class="small muted"><b>How to read the ball.</b> All of space, including its points at infinity (projective space), is drawn as this glass ball. Whatever leaves through the glass comes back in at the exactly opposite point, so a straight line shows up as an arc running from one side of the ball to the opposite side.</p>
+      </details>
+    </div>
+
+    <div class="card small">
+      <details>
+        <summary>The equation and the picture</summary>
+        <p class="eq">F = 3&radic;2 z0&sup2;z1z2 + 3&radic;2 z1z2z3&sup2; &minus; &radic;2 z1&sup3;z2 &minus; &radic;2 z1z2&sup3; + 4z0&sup3;z3 &minus; 4z0z3&sup3;</p>
+        <p class="eq">F = Im(w<sup>4</sup>) + Im(p<sup>2</sup>)(3|w|<sup>2</sup> &minus; |p|<sup>2</sup>)/&radic;2, &nbsp;w = z0 + i z3, p = z1 + i z2</p>
+        <p>The picture uses coordinates y with z1 = 2<sup>1/8</sup>y1 and z2 = 2<sup>1/8</sup>y2, in which Y56 is the member s = 3/2<sup>1/4</sup> (s<sup>4</sup> = 81/2) of the family G<sub>s</sub>. Exact coordinates on the cards are in the original coordinates z. The ball is centred on the point (0 : 1 : 1 : 0); 16 of the 32 symmetries fix it, and they show up as the four-fold turn about the vertical axis, the mirrors and the point reflection that you can see in the picture.</p>
+        <p>Every curve is computed from the exact data (coordinates over Q(&radic;2)); each drawn sample point satisfies the equation to about one part in ten million. The surface is drawn by marching cubes in your browser, so its edges are accurate to the grid.</p>
+      </details>
+    </div>
+
+    <div class="card small">
+      <p style="margin:0">Y56 and the theorem that 56 real lines is the maximum, reached only by Y56, are due to Degtyarev, Itenberg and Sert&ouml;z (arXiv:1601.04238). The count of 636 conics is due to Degtyarev (arXiv:2407.00493). The exact line list, the conics drawn here, the family dial and the six-faces table: Moki &amp; Julio (AI-assisted).</p>
+      <p class="muted" style="margin:6px 0 0">Moki &amp; Julio (AI-assisted) &middot; the pictures are renderings of exactly verified data, not evidence.</p>
+    </div>
+  </aside>
+</div>
+<footer>The Y56 Atlas &middot; Moki &amp; Julio (AI-assisted) &middot; text and data CC BY 4.0</footer>
+
+<script>
+  // shown if the 3-D module cannot start (no network for the library, or no WebGL)
+  window.__y56fail = function (text) {
+    var m = document.getElementById('msg'); m.style.display = 'flex'; m.textContent = text;
+    var b = document.getElementById('busy'); if (b) b.style.display = 'none';
+  };
+  setTimeout(function () { if (!window.__y56started) window.__y56fail('The 3-D library did not load. This page needs an internet connection the first time it opens (it loads three.js from a public CDN).'); }, 12000);
+</script>
+<script src="data/y56-data.js"></script>
+<script src="core.js"></script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { edgeTable, triTable } from 'three/addons/objects/MarchingCubes.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+window.__y56started = true;
+
+const D = window.Y56DATA, C = window.Y56Core;
+const $ = (id) => document.getElementById(id);
+let needs = true, flashT0 = -1;
+const stage = $('stage');
+const SSTAR = D.s_star;
+const TOUCH = matchMedia('(pointer: coarse)').matches;
+const SMALL = Math.min(screen.width, screen.height) < 700;
+const NFULL = SMALL ? 88 : 124, NDRAG = SMALL ? 44 : 56;
+const ORBIT_VARS = ['--c-anchor', '--c-wallA', '--c-wallB', '--c-y56only'];
+const ORBIT_NAMES = ['orbit of 8', 'orbit A (16 lines)', 'orbit B (16 lines)', 'orbit S (16 lines)'];
+const ORBIT_ROLE = [
+  'one of the 8 anchor lines: it stays on every surface of the family dial',
+  'born at the wall s = 2 of the family dial; it rides along to Y56',
+  'born at the wall s = 2 of the family dial; it rides along to Y56',
+  'exists only on Y56: on the family dial it appears at the single setting s⁴ = 81/2'];
+
+// ---------- renderer ----------
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' });
+} catch (e) { window.__y56fail('This browser could not start WebGL, which the 3-D view needs.'); throw e; }
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+stage.insertBefore(renderer.domElement, stage.firstChild);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 60);
+camera.up.set(0, 0, 1);
+const HOME = new THREE.Vector3(2.9, 1.75, 1.45).normalize();
+camera.position.copy(HOME).multiplyScalar(4);
+scene.add(camera);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.08; controls.enablePan = false;
+controls.minDistance = 1.25; controls.maxDistance = 9; controls.autoRotate = true; controls.autoRotateSpeed = 0.55;
+scene.add(new THREE.HemisphereLight(0xffffff, 0x445066, 1.1));
+const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(1.5, 2, 3); camera.add(key);
+const world = new THREE.Group(); scene.add(world);
+
+// ---------- theme ----------
+const cssv = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const colorOf = (n) => new THREE.Color(cssv(n));
+const themed = []; // {mat, var, kind}
+function track(mat, v, kind) { themed.push({ mat, v, kind }); applyOne({ mat, v, kind }); return mat; }
+function applyOne(t) {
+  const c = colorOf(t.v), dark = cssv('--halo') === '1';
+  if (t.kind === 'core') { t.mat.color.copy(c); t.mat.emissive.copy(c).multiplyScalar(dark ? 0.55 : 0.18); }
+  else if (t.kind === 'halo') { t.mat.color.copy(c); t.mat.blending = dark ? THREE.AdditiveBlending : THREE.NormalBlending; t.mat.opacity = t.mat.userData.base * (dark ? 1 : 0.35); t.mat.needsUpdate = true; }
+  else if (t.kind === 'basic') { t.mat.color.copy(c); }
+  else if (t.kind === 'uniform') { t.mat.uniforms.col.value.copy(c); }
+}
+function applyTheme() {
+  scene.background = colorOf('--scene-bg');
+  surfMat.uniforms.colA.value.copy(colorOf('--surf-a'));
+  surfMat.uniforms.colB.value.copy(colorOf('--surf-b'));
+  surfMat.uniforms.opacity.value = parseFloat(cssv('--surf-opacity'));
+  surfMat.uniforms.dark.value = cssv('--halo') === '1' ? 1 : 0;
+  for (const t of themed) applyOne(t);
+  refreshChips(); needs = true;
+}
+$('themeBtn').addEventListener('click', () => {
+  const r = document.documentElement, dark = cssv('--halo') === '1';
+  r.setAttribute('data-theme', dark ? 'light' : 'dark'); applyTheme();
+});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (!document.documentElement.hasAttribute('data-theme')) applyTheme(); });
+
+// ---------- materials ----------
+const surfMat = new THREE.ShaderMaterial({
+  uniforms: { colA: { value: new THREE.Color() }, colB: { value: new THREE.Color() }, opacity: { value: 0.35 }, clipR: { value: 1.0 }, dark: { value: 1 } },
+  vertexShader: `
+    varying vec3 vN; varying vec3 vP; varying vec3 vV;
+    void main() {
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      vN = normalize(normalMatrix * normal); vP = position; vV = -mv.xyz;
+      gl_Position = projectionMatrix * mv;
+    }`,
+  fragmentShader: `
+    uniform vec3 colA; uniform vec3 colB; uniform float opacity; uniform float clipR; uniform float dark;
+    varying vec3 vN; varying vec3 vP; varying vec3 vV;
+    void main() {
+      if (length(vP) > clipR) discard;
+      vec3 n = normalize(vN); vec3 v = normalize(vV);
+      float d = dot(n, v);
+      vec3 base = d > 0.0 ? colA : colB;
+      if (d < 0.0) n = -n;
+      float ndv = abs(d);
+      vec3 L = normalize(vec3(0.35, 0.75, 0.6));
+      float diff = 0.45 + 0.55 * max(dot(n, L), 0.0);
+      vec3 hv = normalize(L + v);
+      float spec = pow(max(dot(n, hv), 0.0), 48.0) * 0.55;
+      float rim = pow(1.0 - ndv, 2.2);
+      vec3 col = base * diff + vec3(spec) + base * rim * (0.35 + 0.4 * dark);
+      float a = opacity * (0.6 + 0.6 * rim) + spec * 0.4;
+      gl_FragColor = vec4(col, clamp(a, 0.0, 0.95));
+    }`,
+  transparent: true, depthWrite: false, side: THREE.DoubleSide,
+});
+const surfMesh = new THREE.Mesh(new THREE.BufferGeometry(), surfMat);
+surfMesh.renderOrder = 2; world.add(surfMesh);
+
+const glassMat = new THREE.ShaderMaterial({
+  uniforms: { col: { value: new THREE.Color() } },
+  vertexShader: `varying vec3 vN; varying vec3 vV; void main(){ vec4 mv = modelViewMatrix*vec4(position,1.0); vN = normalize(normalMatrix*normal); vV = -mv.xyz; gl_Position = projectionMatrix*mv; }`,
+  fragmentShader: `uniform vec3 col; varying vec3 vN; varying vec3 vV; void main(){ float r = 1.0 - abs(dot(normalize(vN), normalize(vV))); gl_FragColor = vec4(col, 0.03 + 0.42*pow(r, 3.5)); }`,
+  transparent: true, depthWrite: false, side: THREE.FrontSide,
+});
+track(glassMat, '--glass', 'uniform');
+const glass = new THREE.Mesh(new THREE.SphereGeometry(1.0, 72, 48), glassMat);
+glass.renderOrder = 3; world.add(glass);
+
+function coreMat(v) { return track(new THREE.MeshPhongMaterial({ shininess: 70, specular: 0x333333 }), v, 'core'); }
+function haloMat(v, base) {
+  const m = new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false });
+  m.userData.base = base; return track(m, v, 'halo');
+}
+
+// ---------- curves -> tubes ----------
+const RAD_LINE = 0.0062, RAD_CONIC = 0.0032, RAD_HALO = 2.3;
+function tubesFor(segsList, radius, radial, density) {
+  const geos = [];
+  for (const segs of segsList) for (const s of segs) {
+    const pts = s.pts.map((p) => new THREE.Vector3(p[0], p[1], p[2]));
+    if (pts.length < 2) continue;
+    const curve = new THREE.CatmullRomCurve3(pts, s.closed, 'centripetal');
+    geos.push(new THREE.TubeGeometry(curve, Math.max(8, Math.round(pts.length * density)), radius, radial, s.closed));
+  }
+  if (!geos.length) return null;
+  const g = mergeGeometries(geos, false); geos.forEach((x) => x.dispose()); return g;
+}
+// a drawable group: core tubes (+ optional halo) and picking samples
+function makeGroup(curves, opts) {
+  // curves: [{segs, info}]
+  const grp = new THREE.Group();
+  const radial = SMALL ? 5 : 7;
+  const gcore = tubesFor(curves.map((c) => c.segs), opts.radius, radial, opts.density || 1);
+  if (gcore) {
+    const m = new THREE.Mesh(gcore, opts.mat); m.renderOrder = 1; grp.add(m);
+    if (opts.halo) { const h = new THREE.Mesh(tubesFor(curves.map((c) => c.segs), opts.radius * RAD_HALO, radial, (opts.density || 1) * 0.5), opts.halo); h.renderOrder = 4; grp.add(h); }
+  }
+  // picking: flatten sample points
+  let n = 0; for (const c of curves) for (const s of c.segs) n += s.pts.length;
+  const P = new Float32Array(3 * n), owner = new Int32Array(n);
+  let k = 0;
+  curves.forEach((c, ci) => { for (const s of c.segs) for (const p of s.pts) { P[3 * k] = p[0]; P[3 * k + 1] = p[1]; P[3 * k + 2] = p[2]; owner[k++] = ci; } });
+  grp.userData = { pick: { P, owner, curves }, opts };
+  return grp;
+}
+function disposeGroup(g) {
+  if (!g) return;
+  g.traverse((o) => { if (o.geometry) o.geometry.dispose(); });
+  if (g.parent) g.parent.remove(g);
+}
+const segsOf = (arr, i, n, c, E) => C.curveSegments(arr.subarray(4 * n * i, 4 * n * (i + 1)), n, c, E);
+
+// ---------- static Y56 data ----------
+const LINE_PTS = C.decodeF32(D.line_pts), CONIC_PTS = C.decodeF32(D.conic_pts);
+const CEN = D.centre, FR = D.frame;
+const lineSegs = D.lines.map((_, i) => segsOf(LINE_PTS, i, D.nline, CEN, FR));
+const conicSegs = D.conics.map((_, i) => segsOf(CONIC_PTS, i, D.nconic, CEN, FR));
+const MAT = {
+  orbit: ORBIT_VARS.map((v) => coreMat(v)), orbitHalo: ORBIT_VARS.map((v) => haloMat(v, 0.075)),
+  c148: coreMat('--c-conic148'), c40: coreMat('--c-conic40'),
+  hi: track(new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.95, depthTest: false }), '--c-hi', 'basic'),
+  hiN: track(new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.55, depthTest: false }), '--c-hi', 'basic'),
+  node: track(new THREE.MeshBasicMaterial(), '--c-node', 'basic'),
+  nodeHalo: haloMat('--c-node', 0.35),
+  plane: track(new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.07, depthWrite: false, side: THREE.DoubleSide }), '--c-plane', 'basic'),
+};
+const y56Groups = {
+  orbit: [0, 1, 2, 3].map((o) => makeGroup(D.lines.map((m, i) => ({ segs: lineSegs[i], info: { type: 'line', i } })).filter((c) => D.lines[c.info.i].orbit === o),
+    { radius: RAD_LINE, mat: MAT.orbit[o], halo: MAT.orbitHalo[o] })),
+  c148: makeGroup(D.conics.map((m, i) => ({ segs: conicSegs[i], info: { type: 'conic', i } })).filter((c) => D.conics[c.info.i].fam === 0), { radius: RAD_CONIC, mat: MAT.c148, density: 0.7 }),
+  c40: makeGroup(D.conics.map((m, i) => ({ segs: conicSegs[i], info: { type: 'conic', i } })).filter((c) => D.conics[c.info.i].fam === 1), { radius: RAD_CONIC * 1.15, mat: MAT.c40, density: 0.7 }),
+};
+// the 20 line-free planes as caps of the ball
+function capGeometry(n) {
+  const nn = n;
+  const dotv = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
+  let cp = CEN.map((x, k) => x - dotv(CEN, nn) * nn[k]); const L = Math.hypot(...cp); cp = cp.map((x) => x / L);
+  // two more orthonormal vectors orthogonal to n and cp
+  const basis = [nn, cp]; const extra = [];
+  for (let e = 0; e < 4 && extra.length < 2; e++) {
+    let v = [0, 0, 0, 0]; v[e] = 1;
+    for (const b of basis.concat(extra)) { const d = dotv(v, b); v = v.map((x, k) => x - d * b[k]); }
+    const l = Math.hypot(...v); if (l > 1e-6) extra.push(v.map((x) => x / l));
+  }
+  const NT = 14, NP = 64, pos = [], idx = [];
+  for (let a = 0; a <= NT; a++) {
+    const th = (Math.PI / 2) * a / NT;
+    for (let b = 0; b < NP; b++) {
+      const ph = 2 * Math.PI * b / NP;
+      const x = cp.map((v, k) => Math.cos(th) * v + Math.sin(th) * (Math.cos(ph) * extra[0][k] + Math.sin(ph) * extra[1][k]));
+      const o = [0, 0, 0]; C.project(x[0], x[1], x[2], x[3], CEN, FR, o, 0); pos.push(o[0], o[1], o[2]);
+    }
+  }
+  for (let a = 0; a < NT; a++) for (let b = 0; b < NP; b++) {
+    const p = a * NP + b, q = a * NP + (b + 1) % NP;
+    if (a === 0) { idx.push(p, p + NP, q + NP); continue; }
+    idx.push(p, p + NP, q, q, p + NP, q + NP);
+  }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); return g;
+}
+const planeGroup = new THREE.Group();
+const planeMeshes = D.pair_planes.map((p) => { const m = new THREE.Mesh(capGeometry(p.n), MAT.plane); m.renderOrder = 5; planeGroup.add(m); return m; });
+const planeHiMat = track(new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.2, depthWrite: false, side: THREE.DoubleSide }), '--c-plane', 'basic');
+let planeHi = null;
+// wall nodes (s = 2)
+const nodeGroup = new THREE.Group();
+for (const n of D.wall_nodes) {
+  const o = [0, 0, 0]; C.project(n[0], n[1], n[2], n[3], CEN, FR, o, 0);
+  const a = new THREE.Mesh(new THREE.SphereGeometry(0.022, 18, 12), MAT.node); a.position.set(...o); nodeGroup.add(a);
+  const b = new THREE.Mesh(new THREE.SphereGeometry(0.05, 18, 12), MAT.nodeHalo); b.position.set(...o); nodeGroup.add(b);
+}
+
+// ---------- surface ----------
+const surfCache = new Map();
+function buildSurface(key, coef, cen, fr, N) {
+  const ck = key + '|' + N;
+  let geo = surfCache.get(ck);
+  if (!geo) {
+    const f = C.compileQuartic(coef, D.monos);
+    const grid = C.sampleField(f, cen, fr, N, 1.03);
+    const m = C.marchingCubes(grid, f, cen, fr, edgeTable, triTable, 1.0);
+    geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(m.positions, 3));
+    geo.setAttribute('normal', new THREE.BufferAttribute(m.normals, 3));
+    geo.setIndex(new THREE.BufferAttribute(m.index, 1));
+    geo.computeBoundingSphere();
+    if (surfCache.size > 24) { const k0 = surfCache.keys().next().value; surfCache.get(k0).dispose(); surfCache.delete(k0); }
+    surfCache.set(ck, geo);
+  }
+  surfMesh.geometry = geo; needs = true;
+}
+function busy(on) { $('busy').style.display = on ? 'block' : 'none'; }
+function withBusy(fn) { busy(true); setTimeout(() => { try { fn(); } finally { busy(false); needs = true; } }, 20); }
+
+// ---------- state ----------
+const state = {
+  mode: 'y56',
+  y56: { surface: true, orbit: [true, true, true, true], c148: false, c40: false, planes: false, glass: true },
+  fam: { s: SSTAR, surface: true, lines: true, glass: true },
+  faces: { k: 0, surface: true, lines: true, ovals: true, glass: true },
+};
+let active = []; // groups currently pickable
+let famGroups = null, faceGroups = null, lastFamStar = true;
+
+// ---------- chips ----------
+function chip(label, cssVar, get, set) { return { label, cssVar, get, set }; }
+const CHIPS = {
+  y56: [
+    chip('Surface', '--surf-a', () => state.y56.surface, (v) => state.y56.surface = v),
+    ...[0, 1, 2, 3].map((o) => chip(['Orbit of 8 lines', 'Orbit A · 16 lines', 'Orbit B · 16 lines', 'Orbit S · 16 lines (Y56-only)'][o], ORBIT_VARS[o], () => state.y56.orbit[o], (v) => state.y56.orbit[o] = v)),
+    chip('148 conics beside line pairs', '--c-conic148', () => state.y56.c148, (v) => state.y56.c148 = v),
+    chip('40 conics in line-free planes', '--c-conic40', () => state.y56.c40, (v) => state.y56.c40 = v),
+    chip('20 two-conic planes', '--c-plane', () => state.y56.planes, (v) => state.y56.planes = v),
+    chip('Glass ball', '--glass', () => state.y56.glass, (v) => state.y56.glass = v),
+  ],
+  family: [
+    chip('Surface', '--surf-a', () => state.fam.surface, (v) => state.fam.surface = v),
+    chip('Real lines', '--c-anchor', () => state.fam.lines, (v) => state.fam.lines = v),
+    chip('Glass ball', '--glass', () => state.fam.glass, (v) => state.fam.glass = v),
+  ],
+  faces: [
+    chip('Surface', '--surf-a', () => state.faces.surface, (v) => state.faces.surface = v),
+    chip('Real lines', '--c-wallB', () => state.faces.lines, (v) => state.faces.lines = v),
+    chip('Conic ovals', '--c-conic148', () => state.faces.ovals, (v) => state.faces.ovals = v),
+    chip('Glass ball', '--glass', () => state.faces.glass, (v) => state.faces.glass = v),
+  ],
+};
+function renderChips(boxId, list) {
+  const box = $(boxId); box.innerHTML = '';
+  for (const c of list) {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
+    b.innerHTML = '<span class="sw"></span><span></span>'; b.lastChild.textContent = c.label;
+    b.addEventListener('click', () => { c.set(!c.get()); refreshChips(); applyVisibility(); setCaption(); });
+    b._c = c; box.appendChild(b);
+  }
+}
+function refreshChips() {
+  for (const id of ['chipsY56', 'chipsFamily', 'chipsFaces']) for (const b of $(id).children) {
+    b.setAttribute('aria-pressed', b._c.get() ? 'true' : 'false');
+    b.firstChild.style.background = cssv(b._c.cssVar);
+  }
+}
+renderChips('chipsY56', CHIPS.y56); renderChips('chipsFamily', CHIPS.family); renderChips('chipsFaces', CHIPS.faces);
+
+// ---------- visibility per mode ----------
+function setGroups(list) {
+  for (const g of [...y56Groups.orbit, y56Groups.c148, y56Groups.c40]) if (g.parent) world.remove(g);
+  if (famGroups) for (const g of famGroups.all) if (g.parent) world.remove(g);
+  if (faceGroups) for (const g of faceGroups.all) if (g.parent) world.remove(g);
+  if (planeGroup.parent) world.remove(planeGroup);
+  if (nodeGroup.parent) world.remove(nodeGroup);
+  for (const g of list) if (g) world.add(g);
+}
+function applyVisibility() {
+  clearHover();
+  const st = state.mode === 'y56' ? state.y56 : state.mode === 'family' ? state.fam : state.faces;
+  surfMesh.visible = st.surface; glass.visible = st.glass;
+  let list = [];
+  if (state.mode === 'y56' || (state.mode === 'faces' && state.faces.k === 0)) {
+    if (state.mode === 'y56') {
+      y56Groups.orbit.forEach((g, o) => { if (state.y56.orbit[o]) list.push(g); });
+      if (state.y56.c148) list.push(y56Groups.c148);
+      if (state.y56.c40) list.push(y56Groups.c40);
+      if (state.y56.planes) list.push(planeGroup);
+    } else {
+      if (state.faces.lines) list.push(...y56Groups.orbit);
+      if (state.faces.ovals) list.push(y56Groups.c148, y56Groups.c40);
+    }
+  } else if (state.mode === 'family' && famGroups) {
+    if (state.fam.lines) list.push(...famGroups.all);
+    if (Math.abs(state.fam.s - 2) < 1e-12) list.push(nodeGroup);
+  } else if (state.mode === 'faces' && faceGroups) {
+    if (state.faces.lines) list.push(...faceGroups.linesList);
+    if (state.faces.ovals) list.push(...faceGroups.ovals);
+  }
+  setGroups(list);
+  active = list.filter((g) => g.userData && g.userData.pick);
+  needs = true;
+}
+
+// ---------- family dial ----------
+function snap(s) {
+  if (Math.abs(s - SSTAR) < 0.012) return SSTAR;
+  if (Math.abs(s - 2) < 0.012) return 2;
+  if (s < 0.012) return 0;
+  return s;
+}
+function buildFamily(s, N) {
+  if (famGroups) for (const g of famGroups.all) disposeGroup(g);
+  const fl = C.familyLines(s);
+  const byOrbit = [[], [], [], []];
+  for (const l of fl.lines) {
+    const pts = C.linePoints(l.B, 96);
+    const segs = C.curveSegments(pts, 96, CEN, FR);
+    let o = 0, y56line = null;
+    if (l.kind === 'wall') { y56line = D.branch_to_line[l.branch]; o = D.lines[y56line].orbit; }
+    byOrbit[o].push({ segs, info: { type: 'famline', kind: l.kind, B: l.B, y56line, double: !!l.double } });
+  }
+  const isStar = Math.abs(s - SSTAR) < 1e-12;
+  if (isStar) for (const i of D.special16) byOrbit[3].push({ segs: lineSegs[i], info: { type: 'line', i, special: true } });
+  const all = byOrbit.map((cs, o) => cs.length ? makeGroup(cs, { radius: RAD_LINE, mat: MAT.orbit[o], halo: MAT.orbitHalo[o], density: 1 }) : null).filter(Boolean);
+  famGroups = { all };
+  const count = fl.count + (isStar ? 16 : 0);
+  const ctr = $('counter'); ctr.textContent = 'real lines: ' + count;
+  if (isStar && !lastFamStar) { ctr.classList.remove('flash'); void ctr.offsetWidth; ctr.classList.add('flash'); flashT0 = performance.now(); }
+  lastFamStar = isStar;
+  buildSurface('fam' + s.toFixed(6), C.familyCoef(D.family.K0, D.family.K1, s), CEN, FR, N);
+  $('sVal').textContent = isStar ? s.toFixed(5) + ' (s⁴ = 81/2)' : s === 2 ? '2 (the wall)' : s === 0 ? '0' : s.toFixed(3);
+  $('statusline').textContent = isStar ? 'Y56: the 16 extra lines exist only here' : s === 2 ? 'the wall: 8 pinch points, lines meet in pairs' : s === 0 ? 'Fermat type' : s < 2 ? 'below the wall' : 'past the wall';
+  setCaption();
+  applyVisibility();
+}
+let famTimer = null, famRAF = 0, famPending = null;
+function famInput(fast) {
+  const s = snap(parseFloat($('sRange').value));
+  state.fam.s = s;
+  if (famRAF) cancelAnimationFrame(famRAF);
+  famRAF = requestAnimationFrame(() => { famRAF = 0; buildFamily(s, fast ? NDRAG : NFULL); });
+  clearTimeout(famTimer);
+  if (fast) famTimer = setTimeout(() => withBusy(() => buildFamily(state.fam.s, NFULL)), 220);
+}
+$('sRange').addEventListener('input', () => famInput(true));
+$('sRange').addEventListener('change', () => { clearTimeout(famTimer); const s = snap(parseFloat($('sRange').value)); $('sRange').value = s; state.fam.s = s; withBusy(() => buildFamily(s, NFULL)); });
+for (const b of document.querySelectorAll('.presets .btn')) b.addEventListener('click', () => {
+  const s = b.dataset.s === 'star' ? SSTAR : parseFloat(b.dataset.s);
+  $('sRange').value = s; state.fam.s = s; withBusy(() => buildFamily(s, NFULL));
+});
+(function ticks() {
+  const t = $('ticks'), mk = (s, txt) => { const e = document.createElement('span'); e.style.left = (100 * s / 3) + '%'; if (s === 0) e.style.transform = 'none'; e.textContent = txt; t.appendChild(e); };
+  mk(0, 'Fermat type'); mk(2, 'wall'); mk(SSTAR, 'Y56');
+})();
+
+// ---------- six faces ----------
+const FACE_TEXT = {
+  g00: 'The usual meaning of real: one connected surface with ten handles, carrying all 56 real lines and all 188 conic ovals.',
+  g02: 'A second meaning of real: one surface with two handles, carrying 12 real lines and 10 conic ovals.',
+  g24: 'A third meaning of real: again two handles, with 8 real lines and 8 conic ovals, all from line-free planes (the 4 conics of its line-pair planes are real but have no real points).',
+  g01: 'A fourth meaning of real: two handles, 4 real lines and 8 conic ovals (2 amber, 6 violet).',
+  g12: 'No real lines at all: the surface falls apart into three separate bubbles, and all 22 conic ovals crowd onto one of the three while the other two stay bare (EXACT separation of the bubbles, NUMERICAL placement of the ovals).',
+  g13: 'No real lines and three bubbles again, but now 20 conic ovals, shared out among the bubbles; only the conics tell this face apart from the previous one.',
+};
+const faceBtns = [];
+D.faces.forEach((f, k) => {
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'face';
+  const topo = f.topology.includes('genus 10') ? 'genus 10' : f.topology.includes('genus 2') ? 'two handles' : 'three bubbles';
+  b.innerHTML = '<b>' + f.lines + ' lines</b>' + topo;
+  b.setAttribute('aria-pressed', k === 0 ? 'true' : 'false');
+  b.addEventListener('click', () => { state.faces.k = k; faceBtns.forEach((x, j) => x.setAttribute('aria-pressed', j === k ? 'true' : 'false')); withBusy(() => buildFace(k)); });
+  $('faceGrid').appendChild(b); faceBtns.push(b);
+});
+const faceCache = new Map();
+function buildFace(k) {
+  const f = D.faces[k];
+  if (k === 0) {
+    faceGroups = null;
+    buildSurface('fam' + SSTAR.toFixed(6), C.familyCoef(D.family.K0, D.family.K1, SSTAR), CEN, FR, NFULL);
+  } else {
+    let fg = faceCache.get(k);
+    if (!fg) {
+      const LP = C.decodeF32(f.line_pts), OP = C.decodeF32(f.oval_pts);
+      const byOrbit = [[], [], [], []];
+      f.line_ids.forEach((id, j) => byOrbit[D.lines[id].orbit].push({ segs: segsOf(LP, j, D.nline, f.centre, f.frame), info: { type: 'line', i: id, face: f.rep } }));
+      const lines = byOrbit.flatMap((cs, o) => cs.length ? [makeGroup(cs, { radius: RAD_LINE, mat: MAT.orbit[o], halo: MAT.orbitHalo[o] })] : []);
+      const ov = [[], []];
+      f.oval_meta.forEach((m, j) => ov[m.fam].push({ segs: segsOf(OP, j, D.nconic, f.centre, f.frame), info: { type: 'conic', i: m.conic, face: f.rep } }));
+      const ovals = ov.flatMap((cs, fam) => cs.length ? [makeGroup(cs, { radius: RAD_CONIC * 1.25, mat: fam ? MAT.c40 : MAT.c148, density: 0.7 })] : []);
+      fg = { linesList: lines, ovals, all: [...lines, ...ovals] };
+      faceCache.set(k, fg);
+    }
+    faceGroups = fg;
+    buildSurface('face' + f.rep, f.coef, f.centre, f.frame, NFULL);
+  }
+  $('counter').textContent = 'real lines: ' + f.lines;
+  $('statusline').textContent = f.topology;
+  setCaption(); applyVisibility();
+}
+
+// ---------- captions ----------
+function setCaption() {
+  let t = '', h = 'What you see';
+  if (state.mode === 'y56') {
+    h = 'Y56: 56 straight lines on a curved surface';
+    t = 'The blue sheet is Y56 and every coloured tube is a perfectly straight line lying entirely on it: 56 real lines, the most a smooth real surface of degree 4 can hold. The colours are the four groups that the 32 symmetries of the surface shuffle among themselves (8, 16, 16 and 16 lines); each line crosses exactly 16 others.';
+    if (state.y56.c148 || state.y56.c40) t += ' Amber and violet curves are conics (degree-2 ovals) on the surface: 148 sit beside a pair of crossing lines, and 40 come two by two in 20 flat planes that contain no line at all.';
+  } else if (state.mode === 'family') {
+    const s = state.fam.s;
+    h = 'One dial, a whole family of surfaces';
+    if (s === SSTAR) t = 'At exactly this setting, s⁴ = 81/2, sixteen extra lines (pale gold) appear all at once: three conditions that normally cannot all hold together are met here and nowhere else. That surface is Y56, with 56 real lines.';
+    else if (s === 2) t = 'The wall, s = 2: the surface pinches at 8 points (gold dots) and the 32 new lines arrive in 16 coincident pairs, so you see 8 + 16 = 24 lines.';
+    else if (s === 0) t = 'At s = 0 the surface is of Fermat type and only the 8 anchor lines are real; turn the dial to the right and watch what the wall does.';
+    else if (s < 2) t = 'Turn the dial s and the equation changes smoothly. Below the wall at s = 2 only the 8 anchor lines (cyan) are real; 32 more lines exist but are imaginary, invisible in a picture of real points.';
+    else t = 'Past the wall, 8 + 32 = 40 lines are real and slide smoothly as you turn the dial. Sixteen more lines exist on just one member of the family: try to find it (or press Y56).';
+  } else {
+    const f = D.faces[state.faces.k];
+    h = 'Six faces: ' + f.lines + ' real lines, ' + f.topology;
+    t = 'The same equation, read with six different meanings of “real point”, shows six different real surfaces with 56, 12, 8, 4, 0 and 0 real lines. ' + FACE_TEXT[f.rep];
+  }
+  $('capTitle').textContent = h; $('caption').textContent = t;
+}
+
+// ---------- modes ----------
+function setMode(m) {
+  state.mode = m;
+  for (const b of document.querySelectorAll('.tab')) b.setAttribute('aria-pressed', b.dataset.mode === m ? 'true' : 'false');
+  $('ctlY56').hidden = m !== 'y56'; $('ctlFamily').hidden = m !== 'family'; $('ctlFaces').hidden = m !== 'faces';
+  if (m === 'y56') {
+    withBusy(() => {
+      buildSurface('fam' + SSTAR.toFixed(6), C.familyCoef(D.family.K0, D.family.K1, SSTAR), CEN, FR, NFULL);
+      $('counter').textContent = 'real lines: 56'; $('statusline').textContent = 'Y56, all 56 lines real';
+      setCaption(); applyVisibility();
+    });
+  } else if (m === 'family') {
+    $('sRange').value = state.fam.s; lastFamStar = Math.abs(state.fam.s - SSTAR) < 1e-12;
+    withBusy(() => buildFamily(state.fam.s, NFULL));
+  } else {
+    withBusy(() => buildFace(state.faces.k));
+  }
+}
+for (const b of document.querySelectorAll('.tab')) b.addEventListener('click', () => setMode(b.dataset.mode));
+
+// ---------- hover / tap ----------
+const hover = $('hover');
+let hiGroup = null, hovered = null;
+const pretty = (t) => String(t).replace(/sqrt\(2\)/g, '√2').replace(/\*/g, '').replace(/^-/, '−').replace(/ - /g, ' − ');
+const vec = (r) => '(' + r.map(pretty).join(', ') + ')';
+function clearHover() {
+  hovered = null; hover.style.display = 'none'; hover.classList.remove('pinned');
+  if (hiGroup) { disposeGroup(hiGroup); hiGroup = null; }
+  if (planeHi) { world.remove(planeHi); planeHi = null; }
+  needs = true;
+}
+function highlight(curves, alsoCurves, scale = 1) {
+  if (hiGroup) disposeGroup(hiGroup);
+  hiGroup = new THREE.Group();
+  const g1 = tubesFor(curves, RAD_LINE * 2.1 * scale, 8, 1); if (g1) { const m = new THREE.Mesh(g1, MAT.hi); m.renderOrder = 10; hiGroup.add(m); }
+  if (alsoCurves && alsoCurves.length) { const g2 = tubesFor(alsoCurves, RAD_LINE * 1.5, 6, 0.6); if (g2) { const m = new THREE.Mesh(g2, MAT.hiN); m.renderOrder = 9; hiGroup.add(m); } }
+  world.add(hiGroup); needs = true;
+}
+function sw(v) { return '<span class="sw" style="background:' + cssv(v) + '"></span>'; }
+function describe(info) {
+  if (info.type === 'line') {
+    const m = D.lines[info.i];
+    let h = '<div class="hd">' + sw(ORBIT_VARS[m.orbit]) + 'Line ' + m.name + '</div>';
+    h += '<div>' + ORBIT_NAMES[m.orbit] + '; meets 16 other lines (highlighted).</div>';
+    h += '<div class="muted">' + ORBIT_ROLE[m.orbit] + '.</div>';
+    if (info.face && info.face !== 'g00') h += '<div class="muted">This line is real in this face, so it shows up here as well.</div>';
+    h += '<div style="margin-top:4px">Exact: all points s·<code>' + vec(m.exact[0]) + '</code> + t·<code>' + vec(m.exact[1]) + '</code> in (z0 : z1 : z2 : z3).</div>';
+    return h;
+  }
+  if (info.type === 'conic') {
+    const m = D.conics[info.i];
+    const v = m.fam === 0 ? '--c-conic148' : '--c-conic40';
+    let h = '<div class="hd">' + sw(v) + 'Conic (an oval of degree 2)</div>';
+    if (m.fam === 0) h += '<div>One of the 148 conics: its plane cuts the surface in the two lines ' + m.lines.join(' and ') + ' plus this oval.</div>';
+    else h += '<div>One of the 40 conics: its plane (orbit ' + m.label + ') contains no line at all and cuts the surface in exactly two ovals.</div>';
+    h += '<div style="margin-top:4px">Plane: <code>' + planeEq(m.plane) + ' = 0</code></div>';
+    if (info.face && info.face !== 'g00') h += '<div class="muted">Real in this face, and it has real points.</div>';
+    return h;
+  }
+  if (info.type === 'famline') {
+    const o = info.kind === 'anchor' ? 0 : D.lines[info.y56line].orbit;
+    let h = '<div class="hd">' + sw(ORBIT_VARS[o]) + (info.kind === 'anchor' ? 'Anchor line' : 'Line born at the wall') + '</div>';
+    if (info.kind === 'anchor') h += '<div>It lies in the plane z1 = 0 or z2 = 0 and stays on every surface of the family.</div>';
+    else h += '<div>It exists as a real line for every s ≥ 2 and slides as you turn the dial; at Y56 it becomes line ' + D.lines[info.y56line].name + ' (' + ORBIT_NAMES[o] + ').' + (info.double ? ' At the wall two such lines coincide here.' : '') + '</div>';
+    const r = (x) => x.toFixed(4).replace(/^-/, '−').replace(/\.?0+$/, '') || '0';
+    h += '<div style="margin-top:4px" class="muted">Spanned by <code>(' + info.B[0].map(r).join(', ') + ')</code> and <code>(' + info.B[1].map(r).join(', ') + ')</code> in picture coordinates y.</div>';
+    return h;
+  }
+  return '';
+}
+function planeEq(n) {
+  const terms = [];
+  n.forEach((c, k) => {
+    const s = String(c).trim(); if (s === '0') return;
+    let t = pretty(s);
+    if (/[+−\/-]/.test(t.replace(/^−/, ''))) t = '(' + t + ')';
+    if (t === '1') t = ''; else if (t === '−1') t = '−';
+    terms.push(t + 'z' + k);
+  });
+  return terms.join(' + ').replace(/\+ −/g, '− ');
+}
+const tmpV = new THREE.Vector3();
+function pick(cx, cy) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  const mx = cx - rect.left, my = cy - rect.top, W = rect.width, H = rect.height;
+  const M = new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse).multiply(world.matrixWorld);
+  const e = M.elements;
+  const thr = TOUCH ? 22 : 11;
+  let best = null, bd = thr * thr;
+  for (const g of active) {
+    const { P, owner, curves } = g.userData.pick;
+    const n = owner.length;
+    for (let i = 0; i < n; i++) {
+      const x = P[3 * i], y = P[3 * i + 1], z = P[3 * i + 2];
+      const w = e[3] * x + e[7] * y + e[11] * z + e[15];
+      if (w <= 0) continue;
+      const sx = ((e[0] * x + e[4] * y + e[8] * z + e[12]) / w * 0.5 + 0.5) * W;
+      const sy = (0.5 - (e[1] * x + e[5] * y + e[9] * z + e[13]) / w * 0.5) * H;
+      const d = (sx - mx) ** 2 + (sy - my) ** 2;
+      const zz = (e[2] * x + e[6] * y + e[10] * z + e[14]) / w;
+      const score = d + zz * 8; // slight preference for the front
+      if (d < thr * thr && (best === null || score < bd)) { bd = score; best = { g, c: curves[owner[i]] }; }
+    }
+  }
+  return best;
+}
+function showHover(hit, cx, cy, pinned) {
+  if (!hit) { clearHover(); return; }
+  const info = hit.c.info;
+  if (hovered !== hit.c) {
+    clearHover(); hovered = hit.c;
+    let extra = [];
+    if (info.type === 'line' && (state.mode === 'y56' || (state.mode === 'faces' && state.faces.k === 0))) extra = D.lines[info.i].meets.map((j) => lineSegs[j]);
+    highlight([hit.c.segs], extra, info.type === 'conic' ? 0.6 : 1);
+    if (info.type === 'conic' && D.conics[info.i].fam === 1 && (state.mode === 'y56' || (state.mode === 'faces' && state.faces.k === 0))) {
+      planeHi = new THREE.Mesh(planeMeshes[D.conics[info.i].plane_index].geometry, planeHiMat); planeHi.renderOrder = 6; world.add(planeHi);
+    }
+    hover.innerHTML = describe(info);
+  }
+  hover.style.display = 'block';
+  if (pinned) { hover.classList.add('pinned'); }
+  else {
+    hover.classList.remove('pinned');
+    const r = stage.getBoundingClientRect();
+    let x = cx - r.left + 16, y = cy - r.top + 16;
+    const w = hover.offsetWidth, h = hover.offsetHeight;
+    if (x + w > r.width - 8) x = Math.max(8, cx - r.left - w - 16);
+    if (y + h > r.height - 8) y = Math.max(8, cy - r.top - h - 16);
+    hover.style.left = x + 'px'; hover.style.top = y + 'px';
+  }
+  needs = true;
+}
+let down = null, moveRAF = 0, lastMove = null;
+const el = renderer.domElement;
+el.addEventListener('pointerdown', (ev) => { down = { x: ev.clientX, y: ev.clientY, t: performance.now() }; stopSpin(); });
+el.addEventListener('pointerup', (ev) => {
+  if (down && Math.hypot(ev.clientX - down.x, ev.clientY - down.y) < 7) {
+    const hit = pick(ev.clientX, ev.clientY);
+    if (ev.pointerType !== 'mouse') showHover(hit, ev.clientX, ev.clientY, true);
+    else if (!hit) clearHover();
+  }
+  down = null;
+});
+el.addEventListener('pointermove', (ev) => {
+  if (ev.pointerType !== 'mouse' || ev.buttons) return;
+  lastMove = ev;
+  if (!moveRAF) moveRAF = requestAnimationFrame(() => { moveRAF = 0; const e = lastMove; showHover(pick(e.clientX, e.clientY), e.clientX, e.clientY, false); });
+});
+el.addEventListener('pointerleave', () => { if (!TOUCH) clearHover(); });
+
+// ---------- spin / reset ----------
+function stopSpin() { controls.autoRotate = false; $('spinBtn').setAttribute('aria-pressed', 'false'); $('spinBtn').classList.remove('on'); }
+$('spinBtn').addEventListener('click', () => {
+  controls.autoRotate = !controls.autoRotate;
+  $('spinBtn').setAttribute('aria-pressed', controls.autoRotate ? 'true' : 'false'); $('spinBtn').classList.toggle('on', controls.autoRotate); needs = true;
+});
+$('spinBtn').classList.add('on');
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) stopSpin();
+let fitDist = 4;
+$('resetBtn').addEventListener('click', () => { controls.target.set(0, 0, 0); camera.position.copy(HOME).multiplyScalar(fitDist); controls.update(); needs = true; });
+
+// ---------- sizing and loop ----------
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  if (!w || !h) return;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+  const vf = THREE.MathUtils.degToRad(camera.fov) / 2;
+  const hf = Math.atan(Math.tan(vf) * camera.aspect);
+  const nd = 1.1 / Math.sin(Math.min(vf, hf));
+  const cur = camera.position.length();
+  if (Math.abs(cur - fitDist) < 1e-3 || !resize.done) camera.position.setLength(nd);
+  fitDist = nd; resize.done = true; needs = true;
+}
+new ResizeObserver(resize).observe(stage);
+controls.addEventListener('change', () => { needs = true; });
+function loop(t) {
+  requestAnimationFrame(loop);
+  controls.update();
+  if (flashT0 >= 0) {
+    const a = (t - flashT0) / 1600;
+    const o = MAT.orbitHalo[3];
+    if (a >= 1) { flashT0 = -1; applyOne({ mat: o, v: '--c-y56only', kind: 'halo' }); }
+    else { o.opacity = o.userData.base * (cssv('--halo') === '1' ? 1 : 0.35) * (1 + 7 * (1 - a) * (1 - a)); }
+    needs = true;
+  }
+  if (needs) { renderer.render(scene, camera); needs = false; }
+}
+
+// ---------- start ----------
+applyTheme();
+resize();
+setMode('y56');
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

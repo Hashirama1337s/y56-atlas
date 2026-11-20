@@ -1,0 +1,31 @@
+number of coefficient equations: 5
+dim 1 mult 32
+number of minimal primes: 12
+prime 1 : dim 0   s-eliminant: 2s4-81
+prime 2 : dim 1   s-eliminant: 0
+prime 3 : dim 0   s-eliminant: 2s4-81
+prime 4 : dim 0   s-eliminant: 2s4-81
+prime 5 : dim 0   s-eliminant: 2s4-81
+prime 6 : dim 1   s-eliminant: 0
+prime 7 : dim 0   s-eliminant: 2s4-81
+prime 8 : dim 1   s-eliminant: 0
+prime 9 : dim 0   s-eliminant: 2s4-81
+prime 10 : dim 0   s-eliminant: 2s4-81
+prime 11 : dim 0   s-eliminant: 2s4-81
+prime 12 : dim 1   s-eliminant: 0
+nonreduced locus: dim 0
+eliminant in s of nonreduced locus:
+[1]:
+   _[1]=1
+   _[2]=s-2
+   _[3]=s+2
+   _[4]=s2+4
+[2]:
+   1,1,1,1
+dim of (equidim hull : I) (-1 means no embedded/isolated extra components): -1
+s-eliminant of the non-equidimensional part:
+[1]:
+   _[1]=1
+[2]:
+   1
+exit 0

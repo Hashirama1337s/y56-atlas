@@ -1,0 +1,5 @@
+(i) line-graph automorphisms (own backtracking): 64
+(i) the 32 projective permutations are among them: True
+(ii)/(iii) involution classes incl. identity: 6; (class size, real lines, Euler 2 - tr(g|N)): [(1, 56, -18), (4, 12, -2), (1, 8, -2), (4, 4, -2), (4, 0, 6), (2, 0, 6)]
+       total real structures (identity + involutions): 16
+(iv) 148 conics with nonzero Hessian det: 148; problems: 0

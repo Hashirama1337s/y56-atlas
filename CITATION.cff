@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Y56 atlas: the real quartic surface with 56 lines, its symmetric pencil, and a machine-checked core"
+authors:
+  - name: "Moki & Julio"
+version: "1.0"
+license: CC-BY-4.0
+keywords:
+  - quartic surface
+  - K3 surface
+  - lines on surfaces
+  - conics on surfaces
+  - real algebraic geometry
+  - automorphism group
+  - Neron-Severi lattice
+  - Noether-Lefschetz locus
+  - pencil of quartics
+  - Fermat quartic
+  - Lean 4
+  - Mathlib
+  - computer algebra
+abstract: >-
+  Y56 is the smooth real quartic surface F = 0 with F = 3 sqrt2 z0^2 z1 z2 + 3 sqrt2 z1 z2 z3^2 - sqrt2 z1^3 z2
+  - sqrt2 z1 z2^3 + 4 z0^3 z3 - 4 z0 z3^3, introduced by Degtyarev, Itenberg and Sertoz (arXiv 1601.04238), who
+  proved that 56 is the maximal number of real lines on a smooth real quartic and that Y56 is the unique maximiser.
+  This atlas gives exact coordinates over Q(sqrt2) for all 56 lines, the 148 + 50 planes through them, the 188
+  irreducible conics and the 20 line-free planes that cut two conics (with completeness through the line lattice and
+  a cited determinant), the symmetry group of order 32 (SmallGroup(32,43)) with its line orbits 8 + 16 + 16 + 16, an
+  exact explanation of the 64 line-graph symmetries by a Galois twist, and the six real faces of the equation
+  (56, 12, 8, 4, 0, 0 real lines). It then frees the coefficient 3 of their equation: in the resulting symmetric pencil
+  G_s, which also contains a member projectively equivalent over C to the Fermat quartic, and an 8-nodal wall, every smooth member carries exactly 40 lines
+  spanning a primitive rank-19 lattice of determinant 128, which is the Neron-Severi lattice of the very general member;
+  lines jump only at the Fermat member (48) and at Y56 (56), where a class of square -32 becomes algebraic and 16 lines,
+  one orbit of the group, appear because three equations in two unknowns agree only at 2 s^4 = 81. The finite core
+  facts and that step are checked in Lean 4 with Mathlib (524 theorems, standard axioms only). Included: a
+  one-command exact re-check, all program transcripts, independent referee re-derivations, pictures and an
+  interactive 3-D viewer. The surface, its line count, its group order and the conic counts are published work of
+  others and are credited. Code is MIT-licensed (LICENSE-CODE). Written with AI assistance.

@@ -1,0 +1,12 @@
+edge set recomputed exactly from lines == s1 pickle: True 448
+igraph/bliss count_automorphisms: 64  generators returned: 4
+closure of bliss generators: order 64
+every closure element preserves the edge set: True
+networkx VF2 set size 64  equal to bliss closure as sets: True
+solution-space dimensions over the 64: Counter({0: 32, 1: 32})
+realised (dim 1) == listed 32: True 32
+realised closed under composition: True
+cycle type of an unrealised automorphism: Counter({1: 24, 2: 16})
+orders of the 32 unrealised automorphisms: {2: 16, 8: 8, 4: 8}
+time 73.8s
+memcap: exit 0, peak 0.48 GB of 8.00 GB cap

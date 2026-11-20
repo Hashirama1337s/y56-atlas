@@ -1,0 +1,22 @@
+Y56_L5c_neg.lean:143:2: error: ring failed, ring expressions not equal
+R : Type u_1
+inst✝ : CommRing R
+s : R
+hs : s * s = 2
+x y w : R
+⊢ -(s * x ^ 2 * y * w * 1680) - s * x ^ 2 * y ^ 2 * 154 - s * x ^ 2 * w ^ 2 * 154 + s * x ^ 3 * y * 1274 +
+                              s * x ^ 3 * w * 1274 -
+                            s * x ^ 4 * 2744 +
+                          s ^ 2 * x ^ 2 * y * w * 504 +
+                        s ^ 2 * x ^ 2 * y ^ 2 * 252 +
+                      s ^ 2 * x ^ 2 * w ^ 2 * 252 -
+                    s ^ 2 * x ^ 3 * y * 588 -
+                  s ^ 2 * x ^ 3 * w * 588 +
+                x ^ 2 * y * w * 1386 -
+              x ^ 2 * y ^ 2 * 336 -
+            x ^ 2 * w ^ 2 * 336 -
+          x ^ 3 * y * 588 -
+        x ^ 3 * w * 588 +
+      x ^ 4 * 4116 =
+    0
+seconds: 22

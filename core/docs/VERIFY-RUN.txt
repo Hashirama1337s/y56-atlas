@@ -1,0 +1,25 @@
+PASS data loads: 56 lines, 32 symmetries, 148 + 50 line planes, 20 conic-pair planes : (56, 32, 148, 50, 20)
+PASS 1a all 56 lines lie on F = 0 (F(tA+B) is identically 0 over Q(sqrt2)) : failing: []
+PASS 1b the 56 lines are pairwise distinct
+PASS 2a intersection graph has 448 edges and is 16-regular : edges 448, degrees [16]
+PASS 2b edge list in data/edges.json equals the recomputed one
+PASS 3a all 32 matrices satisfy F(Mz) = c F(z) with c a nonzero real scalar in Q(sqrt2); matrices invertible
+PASS 3b each matrix maps line i to line sigma[i] as listed; sigma are permutations
+PASS 3c the 32 line permutations are distinct and closed under composition (a group of order 32)
+PASS 3d orbits of the group on the 56 lines: 16 + 16 + 16 + 8 : [16, 16, 16, 8]
+PASS 4a the 448 meeting pairs lie in 148 two-line planes and 50 four-line planes (148 + 6 x 50 = 448) : {4: 50, 2: 148}
+PASS 4b the shipped plane list equals the recomputed one (normals and line sets)
+PASS 4c each listed plane contains exactly its listed lines (all 56 lines tested)
+PASS 4d 148 two-line planes: section = line x line x irreducible nondegenerate conic over Q(sqrt2) (det of the 3x3 conic matrix != 0) : bad [], degenerate [] (64 s)
+PASS 4e 50 four-line planes: section = four distinct lines over Q(sqrt2) : bad [] (15 s)
+PASS 5a 20 conic-pair planes: section = nonzero constant x Q1 x Q2, Q1 and Q2 irreducible over Q(sqrt2) and nondegenerate : bad [] (14 s)
+PASS 5b none of the 56 lines lies in any of the 20 conic-pair planes
+PASS 6a all 40 conics of the conic-pair planes have real points (Gram matrix indefinite) : definite: []
+PASS 6b all 148 conics of the two-line planes have real points (Gram matrix indefinite) : definite: []
+PASS 7a orbits on the 148 two-line planes: 32, 16 x 6, 8, 8, 4 : [32, 16, 16, 16, 16, 16, 16, 8, 8, 4]
+PASS 7b orbits on the 50 four-line planes: 16, 16, 16, 2 : [16, 16, 16, 2]
+PASS 7c orbits on the 20 conic-pair planes: 8, 8, 4 (list closed under the group) : [8, 8, 4]
+
+SUMMARY: 21 checks, 21 PASS, 0 FAIL, 98 s
+Recorded elsewhere, not re-run here: Singular Fano scheme length 56 -> data/logs/fano_rerun.out; msolve degree 112 -> data/logs/analyze.log; group id -> data/gap_out.txt
+memcap: exit 0, peak 0.07 GB of 8.00 GB cap

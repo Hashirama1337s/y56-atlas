@@ -1,0 +1,21 @@
+|A| 128
+orders [(1, 1), (2, 7), (4, 24), (8, 96)]
+q values on A (value: count) [(0, 28), (Fraction(1, 4), 8), (Fraction(1, 2), 20), (Fraction(3, 4), 8), (Fraction(1, 1), 20), (Fraction(5, 4), 8), (Fraction(3, 2), 28), (Fraction(7, 4), 8)]
+isotropic nonzero elements 27
+isotropic subgroups (incl trivial): 15 Counter({8: 6, 4: 5, 2: 3, 1: 1})
+{'order': 1, 'even': True, 'det': 128, 'snf': [2, 8, 8], 'roots_h0': 0, 'roots_h0_new': 0, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 40, 'deg1_m2_new': 0, 'deg2_m2': 0}
+{'order': 2, 'even': True, 'det': 32, 'snf': [2, 4, 4], 'roots_h0': 22, 'roots_h0_new': 22, 'e_deg1': 0, 'e_deg2': 4, 'deg1_m2': 80, 'deg1_m2_new': 40, 'deg2_m2': 0}
+{'order': 2, 'even': True, 'det': 32, 'snf': [2, 4, 4], 'roots_h0': 22, 'roots_h0_new': 22, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 80, 'deg1_m2_new': 40, 'deg2_m2': 0}
+{'order': 2, 'even': True, 'det': 32, 'snf': [2, 4, 4], 'roots_h0': 22, 'roots_h0_new': 22, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 80, 'deg1_m2_new': 40, 'deg2_m2': 0}
+{'order': 4, 'even': True, 'det': 8, 'snf': [2, 2, 2], 'roots_h0': 62, 'roots_h0_new': 62, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 160, 'deg1_m2_new': 120, 'deg2_m2': 0}
+{'order': 4, 'even': True, 'det': 8, 'snf': [2, 2, 2], 'roots_h0': 66, 'roots_h0_new': 66, 'e_deg1': 0, 'e_deg2': 4, 'deg1_m2': 160, 'deg1_m2_new': 120, 'deg2_m2': 0}
+{'order': 4, 'even': True, 'det': 8, 'snf': [2, 2, 2], 'roots_h0': 62, 'roots_h0_new': 62, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 160, 'deg1_m2_new': 120, 'deg2_m2': 0}
+{'order': 4, 'even': True, 'det': 8, 'snf': [2, 2, 2], 'roots_h0': 62, 'roots_h0_new': 62, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 160, 'deg1_m2_new': 120, 'deg2_m2': 0}
+{'order': 4, 'even': True, 'det': 8, 'snf': [2, 2, 2], 'roots_h0': 62, 'roots_h0_new': 62, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 160, 'deg1_m2_new': 120, 'deg2_m2': 0}
+{'order': 8, 'even': True, 'det': 2, 'snf': [2], 'roots_h0': 126, 'roots_h0_new': 126, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 352, 'deg1_m2_new': 312, 'deg2_m2': 0}
+{'order': 8, 'even': True, 'det': 2, 'snf': [2], 'roots_h0': 126, 'roots_h0_new': 126, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 352, 'deg1_m2_new': 312, 'deg2_m2': 0}
+{'order': 8, 'even': True, 'det': 2, 'snf': [2], 'roots_h0': 146, 'roots_h0_new': 146, 'e_deg1': 0, 'e_deg2': 4, 'deg1_m2': 320, 'deg1_m2_new': 280, 'deg2_m2': 0}
+{'order': 8, 'even': True, 'det': 2, 'snf': [2], 'roots_h0': 126, 'roots_h0_new': 126, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 352, 'deg1_m2_new': 312, 'deg2_m2': 0}
+{'order': 8, 'even': True, 'det': 2, 'snf': [2], 'roots_h0': 126, 'roots_h0_new': 126, 'e_deg1': 0, 'e_deg2': 0, 'deg1_m2': 352, 'deg1_m2_new': 312, 'deg2_m2': 0}
+{'order': 8, 'even': True, 'det': 2, 'snf': [2], 'roots_h0': 146, 'roots_h0_new': 146, 'e_deg1': 0, 'e_deg2': 4, 'deg1_m2': 320, 'deg1_m2_new': 280, 'deg2_m2': 0}
+memcap: exit 0, peak 0.40 GB of 8.00 GB cap
