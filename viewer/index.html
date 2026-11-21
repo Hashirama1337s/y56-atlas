@@ -13,7 +13,7 @@
   --scene-bg: #eceef2; --glass: #8796b4;
   --surf-a: #2d7fb8; --surf-b: #9cc0dc; --surf-opacity: 0.42;
   --c-anchor: #0088b4; --c-wallA: #cf2f7b; --c-wallB: #2e8f37; --c-y56only: #161a2b;
-  --c-conic148: #dc7d18; --c-conic40: #8148dc; --c-plane: #8148dc; --c-node: #c98a00; --c-hi: #111111; --c-hopf: #2a8f6a; --c-hopfcurve: #d6336c; --c-hopf0: #1b7f5a; --c-hopf1: #2f8f9e; --c-hopf2: #3a6fc4; --c-hopf3: #6a55c8; --c-hopf4: #9a45b0;
+  --c-conic148: #dc7d18; --c-conic40: #8148dc; --c-plane: #8148dc; --c-node: #c98a00; --c-hi: #111111; --c-hopf: #2a8f6a; --c-hopfcurve: #d6336c; --c-hopf0: #1b7f5a; --c-hopf1: #2f8f9e; --c-hopf2: #3a6fc4; --c-hopf3: #6a55c8; --c-hopf4: #9a45b0; --c-r4: #c0392b; --c-r12: #d68910; --c-r24: #1f8a70; --c-r48: #2e6bd1;
   --halo: 0;
 }
 @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@
     --scene-bg: #07090e; --glass: #9fb8e6;
     --surf-a: #45b4f0; --surf-b: #2c6fa8; --surf-opacity: 0.42;
     --c-anchor: #3fd8ff; --c-wallA: #ff4fa8; --c-wallB: #8dff5a; --c-y56only: #fff1b8;
-    --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff; --c-hopf: #5fd3a8; --c-hopfcurve: #ff6fa3; --c-hopf0: #5fe0a8; --c-hopf1: #4fd0e0; --c-hopf2: #6aa8ff; --c-hopf3: #a08cff; --c-hopf4: #e08cf0;
+    --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff; --c-hopf: #5fd3a8; --c-hopfcurve: #ff6fa3; --c-hopf0: #5fe0a8; --c-hopf1: #4fd0e0; --c-hopf2: #6aa8ff; --c-hopf3: #a08cff; --c-hopf4: #e08cf0; --c-r4: #ff6b6b; --c-r12: #ffc145; --c-r24: #4fe0b0; --c-r48: #7aa8ff;
     --halo: 1;
   }
 }
@@ -35,7 +35,7 @@
   --scene-bg: #07090e; --glass: #9fb8e6;
   --surf-a: #45b4f0; --surf-b: #2c6fa8; --surf-opacity: 0.42;
   --c-anchor: #3fd8ff; --c-wallA: #ff4fa8; --c-wallB: #8dff5a; --c-y56only: #fff1b8;
-  --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff; --c-hopf: #5fd3a8; --c-hopfcurve: #ff6fa3; --c-hopf0: #5fe0a8; --c-hopf1: #4fd0e0; --c-hopf2: #6aa8ff; --c-hopf3: #a08cff; --c-hopf4: #e08cf0;
+  --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff; --c-hopf: #5fd3a8; --c-hopfcurve: #ff6fa3; --c-hopf0: #5fe0a8; --c-hopf1: #4fd0e0; --c-hopf2: #6aa8ff; --c-hopf3: #a08cff; --c-hopf4: #e08cf0; --c-r4: #ff6b6b; --c-r12: #ffc145; --c-r24: #4fe0b0; --c-r48: #7aa8ff;
   --halo: 1;
 }
 * { box-sizing: border-box; }
@@ -164,6 +164,7 @@ footer { padding: 4px 16px 22px; color: var(--muted); font-size: 13px; }
         <button class="tab" type="button" data-mode="y56" aria-pressed="true">Y56</button>
         <button class="tab" type="button" data-mode="family" aria-pressed="false">Family dial</button>
         <button class="tab" type="button" data-mode="faces" aria-pressed="false">Six faces</button>
+        <button class="tab" type="button" data-mode="r656" aria-pressed="false">656 conics</button>
       </div>
     </div>
 
@@ -192,6 +193,12 @@ footer { padding: 4px 16px 22px; color: var(--muted); font-size: 13px; }
       </div>
       <div class="chips" id="chipsFamily" style="margin-top:10px"></div>
       <div class="eq" style="margin-top:10px">G<sub>s</sub> = Im(w<sup>4</sup>) + Im(p<sup>2</sup>)(s|w|<sup>2</sup> &minus; |p|<sup>2</sup>)</div>
+    </div>
+
+    <div class="card" id="ctlR656" hidden>
+      <h2>A cousin: 656 real conics</h2>
+      <div class="chips" id="chipsR656"></div>
+      <p class="small muted" style="margin-top:8px">Degtyarev proved (2024) that a smooth real quartic surface carrying 656 real conics exists, the most known, but gave no equation. This is an explicit equation for it, found and checked by the lab; the record and the configuration are his. Colours: conic families of size 4, 12, 24 and 48 under the 48 symmetries. Equation, exact count and proof: <a href="https://github.com/Hashirama1337s/conic-records">conic-records</a> (DOI <a href="https://doi.org/10.5281/zenodo.24413371">10.5281/zenodo.24413371</a>).</p>
     </div>
 
     <div class="card" id="ctlFaces" hidden>
@@ -550,6 +557,7 @@ const state = {
   y56: { surface: true, orbit: [true, true, true, true], c148: false, c40: false, planes: false, hopf: false, glass: true },
   fam: { s: SSTAR, surface: true, lines: true, glass: true },
   faces: { k: 0, surface: true, lines: true, ovals: true, glass: true },
+  r656: { surface: true, conics: true, glass: true },
 };
 let active = []; // groups currently pickable
 let famGroups = null, faceGroups = null, lastFamStar = true;
@@ -577,6 +585,11 @@ const CHIPS = {
     chip('Conic ovals', '--c-conic148', () => state.faces.ovals, (v) => state.faces.ovals = v),
     chip('Glass ball', '--glass', () => state.faces.glass, (v) => state.faces.glass = v),
   ],
+  r656: [
+    chip('Surface', '--surf-a', () => state.r656.surface, (v) => state.r656.surface = v),
+    chip('656 real conics', '--c-r24', () => state.r656.conics, (v) => state.r656.conics = v),
+    chip('Glass ball', '--glass', () => state.r656.glass, (v) => state.r656.glass = v),
+  ],
 };
 function renderChips(boxId, list) {
   const box = $(boxId); box.innerHTML = '';
@@ -593,7 +606,7 @@ function refreshChips() {
     b.firstChild.style.background = cssv(b._c.cssVar);
   }
 }
-renderChips('chipsY56', CHIPS.y56); renderChips('chipsFamily', CHIPS.family); renderChips('chipsFaces', CHIPS.faces);
+renderChips('chipsY56', CHIPS.y56); renderChips('chipsFamily', CHIPS.family); renderChips('chipsFaces', CHIPS.faces); renderChips('chipsR656', CHIPS.r656);
 
 // ---------- visibility per mode ----------
 function setGroups(list) {
@@ -603,11 +616,12 @@ function setGroups(list) {
   if (planeGroup.parent) world.remove(planeGroup);
   if (nodeGroup.parent) world.remove(nodeGroup);
   if (hopfGroup && hopfGroup.parent) world.remove(hopfGroup);
+  if (r656Groups) for (const g of r656Groups) if (g.parent) world.remove(g);
   for (const g of list) if (g) world.add(g);
 }
 function applyVisibility() {
   clearHover();
-  const st = state.mode === 'y56' ? state.y56 : state.mode === 'family' ? state.fam : state.faces;
+  const st = state.mode === 'y56' ? state.y56 : state.mode === 'family' ? state.fam : state.mode === 'r656' ? state.r656 : state.faces;
   surfMesh.visible = st.surface; glass.visible = st.glass;
   let list = [];
   if (state.mode === 'y56' || (state.mode === 'faces' && state.faces.k === 0)) {
@@ -624,6 +638,8 @@ function applyVisibility() {
   } else if (state.mode === 'family' && famGroups) {
     if (state.fam.lines) list.push(...famGroups.all);
     if (Math.abs(state.fam.s - 2) < 1e-12) list.push(nodeGroup);
+  } else if (state.mode === 'r656') {
+    if (state.r656.conics && r656Groups) list.push(...r656Groups);
   } else if (state.mode === 'faces' && faceGroups) {
     if (state.faces.lines) list.push(...faceGroups.linesList);
     if (state.faces.ovals) list.push(...faceGroups.ovals);
@@ -730,6 +746,27 @@ function buildFace(k) {
   setCaption(); applyVisibility();
 }
 
+// ---------- the 656-conic cousin (loaded on first use) ----------
+let r656Groups = null, r656Promise = null;
+function load656() {
+  if (window.C656DATA) return Promise.resolve();
+  if (!r656Promise) r656Promise = new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = 'data/c656-data.js'; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
+  return r656Promise;
+}
+function build656() {
+  const R = window.C656DATA;
+  if (!r656Groups) {
+    const P = C.decodeF32(R.conic_pts), n = R.nconic;
+    const size = new Map(); R.conics.forEach((c) => { const k = c.orbit + c.role; size.set(k, (size.get(k) || 0) + 1); });
+    const bySize = { 4: [], 12: [], 24: [], 48: [] };
+    R.conics.forEach((c, i) => { const sz = size.get(c.orbit + c.role); (bySize[sz] || bySize[48]).push({ segs: C.curveSegments(P.subarray(4 * n * i, 4 * n * (i + 1)), n, R.centre, R.frame), info: { type: 'c656', i, size: sz } }); });
+    r656Groups = [4, 12, 24, 48].filter((k) => bySize[k].length).map((k) => makeGroup(bySize[k], { radius: RAD_CONIC * 0.9, mat: coreMat('--c-r' + k), density: 0.5 }));
+  }
+  buildSurface('r656', R.coef, R.centre, R.frame, NFULL);
+  $('counter').textContent = 'real conics: 656'; $('statusline').textContent = 'all 656 conics real, each with real points';
+  setCaption(); applyVisibility();
+}
+
 // ---------- captions ----------
 function setCaption() {
   let t = '', h = 'What you see';
@@ -738,6 +775,9 @@ function setCaption() {
     t = 'The blue sheet is Y56 and every coloured tube is a perfectly straight line lying entirely on it: 56 real lines, the most a smooth real surface of degree 4 can hold. The colours are the four groups that the 32 symmetries of the surface shuffle among themselves (8, 16, 16 and 16 lines); each line crosses exactly 16 others.';
     if (state.y56.hopf) t += ' The coloured circles are Hopf circles, one colour per doughnut, from the thinnest (green) to the fattest (violet): space can be filled with nested doughnuts (Hopf tori), each wrapped by circles that pairwise link like chain links, and every one of these circles is itself a straight line of this projective space. Five of the doughnuts are drawn. On each one, Y56 leaves a single wavy curve (pink): sin 4a + ρ sin 2b = 0 in the doughnut’s two angles, with ρ fixed by which doughnut it is.';
     if (state.y56.c148 || state.y56.c40) t += ' Amber and violet curves are conics (degree-2 ovals) on the surface: 148 sit beside a pair of crossing lines, and 40 come two by two in 20 flat planes that contain no line at all.';
+  } else if (state.mode === 'r656') {
+    h = 'A cousin of Y56 with 656 real conics';
+    t = 'The sheet is a smooth surface of degree 4, w⁴ − e·q·w² + q² + t·(x⁴+y⁴+z⁴) = 0 with q = x²+y²+z², where t ≈ −1.80081 is the real root of 9t³ + 48t² + 125t + 122 = 0 and e ≈ 0.99211 is the square root of (1688 − 1140t − 1044t²)/361. Every coloured loop is a conic lying on it: 656 of them, two in each of 328 flat planes, every one a real oval. That is the most real conics known on such a surface; Degtyarev proved in 2024 that such a surface exists, and this equation makes it visible. The ball is centred on the surface’s symmetry point, so its 48 symmetries are the symmetries of a cube.';
   } else if (state.mode === 'family') {
     const s = state.fam.s;
     h = 'One dial, a whole family of surfaces';
@@ -758,7 +798,7 @@ function setCaption() {
 function setMode(m) {
   state.mode = m;
   for (const b of document.querySelectorAll('.tab')) b.setAttribute('aria-pressed', b.dataset.mode === m ? 'true' : 'false');
-  $('ctlY56').hidden = m !== 'y56'; $('ctlFamily').hidden = m !== 'family'; $('ctlFaces').hidden = m !== 'faces';
+  $('ctlY56').hidden = m !== 'y56'; $('ctlFamily').hidden = m !== 'family'; $('ctlFaces').hidden = m !== 'faces'; $('ctlR656').hidden = m !== 'r656';
   if (m === 'y56') {
     withBusy(() => {
       buildSurface('fam' + SSTAR.toFixed(6), C.familyCoef(D.family.K0, D.family.K1, SSTAR), CEN, FR, NFULL);
@@ -768,6 +808,9 @@ function setMode(m) {
   } else if (m === 'family') {
     $('sRange').value = state.fam.s; lastFamStar = Math.abs(state.fam.s - SSTAR) < 1e-12;
     withBusy(() => buildFamily(state.fam.s, NFULL));
+  } else if (m === 'r656') {
+    busy(true);
+    load656().then(() => withBusy(build656)).catch(() => { busy(false); $('statusline').textContent = 'could not load the 656 data'; });
   } else {
     withBusy(() => buildFace(state.faces.k));
   }
@@ -812,6 +855,9 @@ function describe(info) {
     h += '<div style="margin-top:4px">Plane: <code>' + planeEq(m.plane) + ' = 0</code></div>';
     if (info.face && info.face !== 'g00') h += '<div class="muted">Real in this face, and it has real points.</div>';
     return h;
+  }
+  if (info.type === 'c656') {
+    return '<div class="hd">' + sw('--c-r' + info.size) + 'Conic ' + (info.i + 1) + ' of 656</div><div>A real oval on the 656-conic surface; its family under the 48 symmetries has ' + info.size + ' members. Its plane cuts the surface in exactly two conics.</div><div class="muted">Exact equations: lab archive (checked symbolically over a number field of degree 12).</div>';
   }
   if (info.type === 'famline') {
     const o = info.kind === 'anchor' ? 0 : D.lines[info.y56line].orbit;
