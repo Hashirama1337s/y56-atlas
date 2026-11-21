@@ -13,7 +13,7 @@
   --scene-bg: #eceef2; --glass: #8796b4;
   --surf-a: #2d7fb8; --surf-b: #9cc0dc; --surf-opacity: 0.42;
   --c-anchor: #0088b4; --c-wallA: #cf2f7b; --c-wallB: #2e8f37; --c-y56only: #161a2b;
-  --c-conic148: #dc7d18; --c-conic40: #8148dc; --c-plane: #8148dc; --c-node: #c98a00; --c-hi: #111111;
+  --c-conic148: #dc7d18; --c-conic40: #8148dc; --c-plane: #8148dc; --c-node: #c98a00; --c-hi: #111111; --c-hopf: #2a8f6a; --c-hopfcurve: #d6336c; --c-hopf0: #1b7f5a; --c-hopf1: #2f8f9e; --c-hopf2: #3a6fc4; --c-hopf3: #6a55c8; --c-hopf4: #9a45b0;
   --halo: 0;
 }
 @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@
     --scene-bg: #07090e; --glass: #9fb8e6;
     --surf-a: #45b4f0; --surf-b: #2c6fa8; --surf-opacity: 0.42;
     --c-anchor: #3fd8ff; --c-wallA: #ff4fa8; --c-wallB: #8dff5a; --c-y56only: #fff1b8;
-    --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff;
+    --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff; --c-hopf: #5fd3a8; --c-hopfcurve: #ff6fa3; --c-hopf0: #5fe0a8; --c-hopf1: #4fd0e0; --c-hopf2: #6aa8ff; --c-hopf3: #a08cff; --c-hopf4: #e08cf0;
     --halo: 1;
   }
 }
@@ -35,7 +35,7 @@
   --scene-bg: #07090e; --glass: #9fb8e6;
   --surf-a: #45b4f0; --surf-b: #2c6fa8; --surf-opacity: 0.42;
   --c-anchor: #3fd8ff; --c-wallA: #ff4fa8; --c-wallB: #8dff5a; --c-y56only: #fff1b8;
-  --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff;
+  --c-conic148: #ffae42; --c-conic40: #b68cff; --c-plane: #b68cff; --c-node: #ffd23d; --c-hi: #ffffff; --c-hopf: #5fd3a8; --c-hopfcurve: #ff6fa3; --c-hopf0: #5fe0a8; --c-hopf1: #4fd0e0; --c-hopf2: #6aa8ff; --c-hopf3: #a08cff; --c-hopf4: #e08cf0;
   --halo: 1;
 }
 * { box-sizing: border-box; }
@@ -401,7 +401,7 @@ const lineSegs = D.lines.map((_, i) => segsOf(LINE_PTS, i, D.nline, CEN, FR));
 const conicSegs = D.conics.map((_, i) => segsOf(CONIC_PTS, i, D.nconic, CEN, FR));
 const MAT = {
   orbit: ORBIT_VARS.map((v) => coreMat(v)), orbitHalo: ORBIT_VARS.map((v) => haloMat(v, 0.075)),
-  c148: coreMat('--c-conic148'), c40: coreMat('--c-conic40'),
+  c148: coreMat('--c-conic148'), c40: coreMat('--c-conic40'), hopf: [0, 1, 2, 3, 4].map((k) => coreMat('--c-hopf' + k)), hopfCurve: coreMat('--c-hopfcurve'),
   hi: track(new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.95, depthTest: false }), '--c-hi', 'basic'),
   hiN: track(new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.55, depthTest: false }), '--c-hi', 'basic'),
   node: track(new THREE.MeshBasicMaterial(), '--c-node', 'basic'),
@@ -454,6 +454,74 @@ for (const n of D.wall_nodes) {
   const b = new THREE.Mesh(new THREE.SphereGeometry(0.05, 18, 12), MAT.nodeHalo); b.position.set(...o); nodeGroup.add(b);
 }
 
+// ---------- Hopf tori ----------
+// In the viewer's coordinates (z1, z2 rescaled, the family's frame) Y56 is G = Im(w^4) + Im(p^2)(s|w|^2 - |p|^2) at s = s*,
+// w = z0 + i z3, p = z1 + i z2. On the unit sphere w = cos(chi) e^{ia}, p = sin(chi) e^{ib}: each level chi is a torus
+// (a Hopf torus), its circles a = a0 + th, b = b0 + th are Hopf fibres (each one a real projective line), and Y56 meets the
+// torus in the curve sin 4a + rho sin 2b = 0, rho = tau (s - tau), tau = tan^2 chi.
+const HOPF_TAU = [0.18, 0.55, 1.2, 2.3, 4.2];
+function hopfPoint(chi, a, b, out, o) {
+  const cw = Math.cos(chi), sw = Math.sin(chi);
+  out[o] = cw * Math.cos(a); out[o + 1] = sw * Math.cos(b); out[o + 2] = sw * Math.sin(b); out[o + 3] = cw * Math.sin(a);
+}
+function hopfFibre(chi, a0, n) { // half a great circle: one projective line
+  const P = new Float32Array(4 * n);
+  for (let i = 0; i < n; i++) { const th = Math.PI * i / n; hopfPoint(chi, a0 + th, th, P, 4 * i); }
+  return P;
+}
+function torusCurves(chi, s, N) { // marching squares for sin 4a + rho sin 2b = 0 on [0,2pi)^2, chained into closed loops
+  const tau = Math.tan(chi) ** 2, rho = tau * (s - tau), h = 2 * Math.PI / N;
+  const g = (i, j) => Math.sin(4 * h * i) + rho * Math.sin(2 * h * j);
+  const V = new Float64Array(N * N);
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) V[i * N + j] = g(i, j);
+  const val = (i, j) => V[((i % N + N) % N) * N + ((j % N + N) % N)];
+  const pt = new Map(); // edge key -> [a, b]
+  const key = (i, j, d) => (((i % N + N) % N) * N + ((j % N + N) % N)) * 2 + d; // d = 0: edge (i,j)-(i+1,j), d = 1: (i,j)-(i,j+1)
+  function ept(i, j, d) {
+    const k = key(i, j, d);
+    if (!pt.has(k)) { const v0 = val(i, j), v1 = d ? val(i, j + 1) : val(i + 1, j), t = v0 / (v0 - v1);
+      pt.set(k, d ? [h * i, h * (j + t)] : [h * (i + t), h * j]); }
+    return k;
+  }
+  const adj = new Map(); const link = (x, y) => { (adj.get(x) || adj.set(x, []).get(x)).push(y); (adj.get(y) || adj.set(y, []).get(y)).push(x); };
+  for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+    const c = [val(i, j), val(i + 1, j), val(i + 1, j + 1), val(i, j + 1)];
+    const e = []; // edges of the cell with a sign change: bottom, right, top, left
+    if ((c[0] > 0) !== (c[1] > 0)) e.push(ept(i, j, 0));
+    if ((c[1] > 0) !== (c[2] > 0)) e.push(ept(i + 1, j, 1));
+    if ((c[3] > 0) !== (c[2] > 0)) e.push(ept(i, j + 1, 0));
+    if ((c[0] > 0) !== (c[3] > 0)) e.push(ept(i, j, 1));
+    if (e.length === 2) link(e[0], e[1]);
+    else if (e.length === 4) { link(e[0], e[1]); link(e[2], e[3]); } // saddle: rare at this resolution; either pairing draws the same picture
+  }
+  const seen = new Set(), loops = [];
+  for (const start of adj.keys()) {
+    if (seen.has(start)) continue;
+    const chain = [start]; seen.add(start); let prev = -1, cur = start;
+    for (;;) { const nb = (adj.get(cur) || []).filter((x) => x !== prev && !seen.has(x)); if (!nb.length) break; prev = cur; cur = nb[0]; seen.add(cur); chain.push(cur); }
+    if (chain.length < 6) continue;
+    const P = new Float32Array(4 * chain.length);
+    chain.forEach((k, m) => { const [a, b] = pt.get(k); hopfPoint(chi, a, b, P, 4 * m); });
+    loops.push(P);
+  }
+  return loops;
+}
+let hopfGroup = null;
+function buildHopf() {
+  if (hopfGroup) return hopfGroup;
+  hopfGroup = new THREE.Group();
+  const fibs = HOPF_TAU.map(() => []), cur = [];
+  HOPF_TAU.forEach((tau, ti) => {
+    const chi = Math.atan(Math.sqrt(tau)), fib = fibs[ti];
+    for (let k = 0; k < 10; k++) fib.push({ segs: C.curveSegments(hopfFibre(chi, 2 * Math.PI * k / 10, 96), 96, CEN, FR), info: { type: 'hopf' } });
+    for (const L of torusCurves(chi, SSTAR, 220)) cur.push({ segs: C.curveSegments(L, L.length / 4, CEN, FR), info: { type: 'hopf' } });
+  });
+  const gs = fibs.map((fib, ti) => makeGroup(fib, { radius: RAD_CONIC * 0.75, mat: MAT.hopf[ti], density: 0.6 }));
+  gs.push(makeGroup(cur, { radius: RAD_CONIC * 1.4, mat: MAT.hopfCurve, density: 0.5 }));
+  for (const g of gs) { delete g.userData.pick; hopfGroup.add(g); }
+  return hopfGroup;
+}
+
 // ---------- surface ----------
 const surfCache = new Map();
 function buildSurface(key, coef, cen, fr, N) {
@@ -479,7 +547,7 @@ function withBusy(fn) { busy(true); setTimeout(() => { try { fn(); } finally { b
 // ---------- state ----------
 const state = {
   mode: 'y56',
-  y56: { surface: true, orbit: [true, true, true, true], c148: false, c40: false, planes: false, glass: true },
+  y56: { surface: true, orbit: [true, true, true, true], c148: false, c40: false, planes: false, hopf: false, glass: true },
   fam: { s: SSTAR, surface: true, lines: true, glass: true },
   faces: { k: 0, surface: true, lines: true, ovals: true, glass: true },
 };
@@ -495,6 +563,7 @@ const CHIPS = {
     chip('148 conics beside line pairs', '--c-conic148', () => state.y56.c148, (v) => state.y56.c148 = v),
     chip('40 conics in line-free planes', '--c-conic40', () => state.y56.c40, (v) => state.y56.c40 = v),
     chip('20 two-conic planes', '--c-plane', () => state.y56.planes, (v) => state.y56.planes = v),
+    chip('Hopf tori', '--c-hopf', () => state.y56.hopf, (v) => state.y56.hopf = v),
     chip('Glass ball', '--glass', () => state.y56.glass, (v) => state.y56.glass = v),
   ],
   family: [
@@ -533,6 +602,7 @@ function setGroups(list) {
   if (faceGroups) for (const g of faceGroups.all) if (g.parent) world.remove(g);
   if (planeGroup.parent) world.remove(planeGroup);
   if (nodeGroup.parent) world.remove(nodeGroup);
+  if (hopfGroup && hopfGroup.parent) world.remove(hopfGroup);
   for (const g of list) if (g) world.add(g);
 }
 function applyVisibility() {
@@ -546,6 +616,7 @@ function applyVisibility() {
       if (state.y56.c148) list.push(y56Groups.c148);
       if (state.y56.c40) list.push(y56Groups.c40);
       if (state.y56.planes) list.push(planeGroup);
+      if (state.y56.hopf) list.push(buildHopf());
     } else {
       if (state.faces.lines) list.push(...y56Groups.orbit);
       if (state.faces.ovals) list.push(y56Groups.c148, y56Groups.c40);
@@ -665,6 +736,7 @@ function setCaption() {
   if (state.mode === 'y56') {
     h = 'Y56: 56 straight lines on a curved surface';
     t = 'The blue sheet is Y56 and every coloured tube is a perfectly straight line lying entirely on it: 56 real lines, the most a smooth real surface of degree 4 can hold. The colours are the four groups that the 32 symmetries of the surface shuffle among themselves (8, 16, 16 and 16 lines); each line crosses exactly 16 others.';
+    if (state.y56.hopf) t += ' The coloured circles are Hopf circles, one colour per doughnut, from the thinnest (green) to the fattest (violet): space can be filled with nested doughnuts (Hopf tori), each wrapped by circles that pairwise link like chain links, and every one of these circles is itself a straight line of this projective space. Five of the doughnuts are drawn. On each one, Y56 leaves a single wavy curve (pink): sin 4a + ρ sin 2b = 0 in the doughnut’s two angles, with ρ fixed by which doughnut it is.';
     if (state.y56.c148 || state.y56.c40) t += ' Amber and violet curves are conics (degree-2 ovals) on the surface: 148 sit beside a pair of crossing lines, and 40 come two by two in 20 flat planes that contain no line at all.';
   } else if (state.mode === 'family') {
     const s = state.fam.s;

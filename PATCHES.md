@@ -207,3 +207,7 @@ MANIFEST.sha256 was refreshed for these files. The Zenodo v1.0 archive keeps the
 ## After release: live viewer (main branch, after v1.0)
 
 GitHub Pages now serves the repository, so the viewer runs at https://hashirama1337s.github.io/y56-atlas/viewer/. README.md step 2 links there. An empty `.nojekyll` file stops GitHub from running its site builder over the Markdown, so every file is served exactly as stored.
+
+## After release: Hopf tori layer in the viewer (main branch, after v1.0)
+
+viewer/index.html gains a "Hopf tori" switch in the Y56 tab. With w = z0 + i z3 and p = z1 + i z2 on the unit sphere, w = cos(chi) e^{ia}, p = sin(chi) e^{ib}, so each fixed chi is a torus (a Hopf torus) and the circles a = a0 + th, b = b0 + th are Hopf fibres; each fibre is a real projective line. Five tori are drawn (tan^2 chi = 0.18, 0.55, 1.2, 2.3, 4.2), each with 10 fibres in its own colour, and on each torus the curve where Y56 meets it, sin 4a + rho sin 2b = 0 with rho = tau (s* - tau), tau = tan^2 chi, in the viewer's family coordinates (z1, z2 rescaled). Checks before release: the drawn torus curves satisfy the family equation at s* to 2.4e-16 (2058 points, double precision); three points of a fibre span a plane (minors ~1e-17), so each fibre is a line; no console errors when toggling the layer or switching tabs. EXPLORATORY-RENDER: a picture, not evidence. The torus description of Y56 is the lab's exploratory note, checked here numerically, not refereed.
