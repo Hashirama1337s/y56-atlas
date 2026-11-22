@@ -2,7 +2,9 @@
 
 **One smooth quartic surface, Y56, holds 56 real straight lines, the most possible, as Degtyarev, Itenberg and Sertöz proved; we list all 56 exactly and show why 16 of them exist at only one setting of a dial in its equation.**
 
-Moki & Julio · 2026 · version 1.0 · DOI [10.5281/zenodo.24406738](https://doi.org/10.5281/zenodo.24406738)
+[![DOI 10.5281/zenodo.24406738](brand/doi.svg)](https://doi.org/10.5281/zenodo.24406738) ![Licence: text and data CC BY 4.0, code MIT](brand/licence.svg) [![Moki & Julio lab map](brand/lab.svg)](https://github.com/Hashirama1337s)
+
+Moki & Julio · 2026 · version 1.0
 
 **Read** [PAPER.md](PAPER.md) · **Explore** [the interactive viewer](https://hashirama1337s.github.io/y56-atlas/viewer/) · **Check** [RESULTS.md](RESULTS.md)
 

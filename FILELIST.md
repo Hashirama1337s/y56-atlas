@@ -19,6 +19,9 @@ Every file in this archive: its purpose, its source in the working folder (paths
 | `PRIOR-ART.md` | document | `STAGE-V1/PRIOR-ART.md; gate/PRIOR-ART-Y56.md; gate/PRIOR-ART-Y56-2.md; gate/PRIOR-ART-S3.md` | new |
 | `README.md` | document | `STAGE-V1/README.md` | new |
 | `TECHNICAL.md` | the previous front page, kept word for word (technical detail) | new | new |
+| `brand/doi.svg` | badge image | `new` | new |
+| `brand/lab.svg` | badge image | `new` | new |
+| `brand/licence.svg` | badge image | `new` | new |
 | `index.html` | viewer page or script | `new` (sends the site root to viewer/) | new |
 | `RESULTS.md` | document | `STAGE-V1/RESULTS.md; s3-nl/RESULT-v2.md` | new |
 | `checks/README.md` | document | `new` | new |
